@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chewy.fwd.service.ReviewMapper">
+	
+	<!-- 리뷰 조회 -->
+	<select id="selectReviewList" resultType="reviewVo">
+		SELECT * FROM review ORDER BY r_no
+	</select>
+	
+	<!-- 리뷰 등록 -->
+	<insert id="insertReview" parameterType="reviewVo">
+		INSERT INTO review (r_nick, r_title, r_content, r_star, r_grade, r_gcontent, r_photo)
+			VALUES (#{r_nick}, #{r_title}, #{r_content}, #{r_star}, #{r_grade}, #{r_gcontent}, #{r_photo} )
+	</insert>
+</mapper>
