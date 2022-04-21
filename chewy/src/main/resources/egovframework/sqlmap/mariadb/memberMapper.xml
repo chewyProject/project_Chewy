@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chewy.fwd.service.MemberMapper">
+	
+	<select id="selectEmail" resultType="memberVo">
+		SELECT M_EMAIL FROM member WHERE M_EMAIL=#{m_email} 
+	</select>
+	
+	<select id="selectNo" resultType="memberVo">
+		SELECT M_NO FROM member WHERE M_EMAIL=#{m_email}
+	</select>
+	
+	
+	<update id="changePw">
+		UPDATE member SET M_PASSWORD = #{m_password} WHERE M_NO = #{m_no}
+	</update>
+	
+</mapper>
