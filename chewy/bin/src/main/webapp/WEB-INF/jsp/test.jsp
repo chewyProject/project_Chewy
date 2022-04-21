@@ -8,11 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>TEST</h1>
-	<c:forEach var="test" items="${test }">
-		${test.no }
-		${test.name }
-		${test.job }
-	</c:forEach>
+	<h1>TEST : ${test } </h1>
 </body>
 </html>
