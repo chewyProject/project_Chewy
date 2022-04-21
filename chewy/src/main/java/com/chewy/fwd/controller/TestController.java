@@ -28,6 +28,6 @@ public class TestController {
 		System.out.println("test : " + test);
 		return "test";
 		
-		// commit test
+//		 commit test
 	}
 }
