@@ -55,6 +55,7 @@
 <!-- 			<button>등록</button> -->
 <!-- 			<button>재설정</button> -->
 		</form>
+			<button type="button" onclick="location.href='reviewList.do'"></button>
 	</div>
 </body>
 </html>
