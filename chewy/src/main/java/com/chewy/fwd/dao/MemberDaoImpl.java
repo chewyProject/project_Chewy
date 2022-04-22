@@ -33,4 +33,13 @@ public class MemberDaoImpl implements MemberDao{
 		return mapper.selectNo(memberVo);
 	}
 
+	@Override
+	public List<MemberVo> login(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		
+		System.out.println("dao");
+		
+		return mapper.login(memberVo);
+	}
+
 }

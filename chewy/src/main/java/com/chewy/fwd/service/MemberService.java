@@ -14,4 +14,7 @@ public interface MemberService {
 	
 	// 회원 고유번호 조회
 	public int selectNo(MemberVo memberVo) throws Exception;
+	
+	// 로그인
+	public int login(MemberVo memberVo) throws Exception;
 }

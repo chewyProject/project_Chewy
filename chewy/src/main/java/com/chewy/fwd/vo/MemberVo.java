@@ -23,13 +23,15 @@ public class MemberVo {
 
 	}
 
-	public MemberVo(int m_no, String m_name, String m_email, String m_password, int m_phone, String m_road,
-			String m_city, String m_state, int m_zipcode, String m_payment, int m_autoship, LocalDateTime m_autodate,
-			LocalDateTime m_logindate, int m_seccession) {
+	public MemberVo(int m_no, String m_name, String m_email, String m_password, String m_confirmpw, int m_phone,
+			String m_road, String m_city, String m_state, int m_zipcode, String m_payment, int m_autoship,
+			LocalDateTime m_autodate, LocalDateTime m_logindate, int m_seccession) {
+		super();
 		this.m_no = m_no;
 		this.m_name = m_name;
 		this.m_email = m_email;
 		this.m_password = m_password;
+		this.m_confirmpw = m_confirmpw;
 		this.m_phone = m_phone;
 		this.m_road = m_road;
 		this.m_city = m_city;
@@ -40,7 +42,6 @@ public class MemberVo {
 		this.m_autodate = m_autodate;
 		this.m_logindate = m_logindate;
 		this.m_seccession = m_seccession;
-
 	}
 
 	public int getM_no() {
@@ -163,4 +164,16 @@ public class MemberVo {
 		this.m_seccession = m_seccession;
 	}
 
+	@Override
+	public String toString() {
+		return "MemberVo [m_no=" + m_no + ", m_name=" + m_name + ", m_email=" + m_email + ", m_password=" + m_password
+				+ ", m_confirmpw=" + m_confirmpw + ", m_phone=" + m_phone + ", m_road=" + m_road + ", m_city=" + m_city
+				+ ", m_state=" + m_state + ", m_zipcode=" + m_zipcode + ", m_payment=" + m_payment + ", m_autoship="
+				+ m_autoship + ", m_autodate=" + m_autodate + ", m_logindate=" + m_logindate + ", m_seccession="
+				+ m_seccession + "]";
+	}
+
+	
+	
+	
 }

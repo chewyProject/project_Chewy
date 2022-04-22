@@ -11,4 +11,7 @@ public interface MemberDao {
 	public void changePw(MemberVo memberVo) throws Exception;
 	
 	public List<MemberVo> selectNo(MemberVo memberVo) throws Exception;
+	
+	public List<MemberVo> login(MemberVo memberVo) throws Exception;
+	
 }
