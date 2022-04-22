@@ -38,6 +38,22 @@ public class MemberServiceImpl implements MemberService{
 		
 		return memberdao.selectNo(memberVo).get(0).getM_no(); 
 	}
+
+	@Override
+	public int login(MemberVo memberVo) throws Exception {
+		
+		System.out.println("service");
+		
+		int status = 0;
+		
+		if(memberdao.login(memberVo).size() > 0 ) {
+			status = 200;
+			memberdao.login(memberVo);
+		}else {
+			status = 400;
+		}
+		return status;
+	}
 	
 	
 }

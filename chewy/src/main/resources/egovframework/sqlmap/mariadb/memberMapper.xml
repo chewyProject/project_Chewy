@@ -16,4 +16,17 @@
 		UPDATE member SET M_PASSWORD = #{m_password} WHERE M_NO = #{m_no}
 	</update>
 	
+	<!-- 로그인  -->
+<!-- 	<select id="login" resultType="memberVo"> -->
+<!-- 		SELECT * FROM member -->
+<!-- 		WHERE M_EMAIL = #{m_email} AND M_PASSWORD = #{m_password} -->
+<!-- 	</select> -->
+	
+	<select id="login" resultType="memberVo">
+		SELECT M_NO FROM member 
+		WHERE M_EMAIL = #{m_email} AND M_PASSWORD = #{m_password}
+	
+	</select>
+	
+	
 </mapper>
