@@ -5,6 +5,9 @@ import java.util.List;
 import com.chewy.fwd.vo.MemberVo;
 
 public interface MemberMapper {
+	
+	// 회원가입 인서트
+		void insertRegister(MemberVo memeberVo) throws Exception;
 
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception;
 	

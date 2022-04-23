@@ -20,6 +20,27 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
+	// 회원 가입
+	@RequestMapping(value = "register.do", method = RequestMethod.GET)
+	public String registerPage() {
+		System.out.println("회원 가입 페이지");
+
+		return "register";
+	}
+
+	// 회원 가입 insert
+	@RequestMapping(value = "register2.do", method = RequestMethod.POST)
+	public String insertRegister(MemberVo memberVo, Model model) throws Exception {
+		System.out.println(memberVo.getM_name());
+		System.out.println(memberVo);
+
+		memberService.insertRegister(memberVo);
+		System.out.println(memberVo.getM_password());
+
+		return "redirect:test.do";
+	}
+
+
 	// 이메일 확인
 	@RequestMapping(value = "email.do", method = RequestMethod.GET)
 	public String PwEmail() {
@@ -67,7 +88,6 @@ public class MemberController {
 		return "/changePw/password";
 	}
 
-	
 	// 로그인
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
@@ -75,17 +95,17 @@ public class MemberController {
 		System.out.println("로그인페이지");
 		return "login";
 	}
-	
+
 	// 로그인
-	
+
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
 		System.out.println("로그인 포스트");
 		System.out.println("memberService.login(MemberVo) : " + memberService.login(memberVo));
-		int login =  memberService.login(memberVo);
+		int login = memberService.login(memberVo);
 		System.out.println("login : " + login);
-		
-		if(login > 0) {
+
+		if (login > 0) {
 			model.addAttribute("login", login);
 			session.setAttribute("memberVo", memberVo);
 			System.out.println("로그인 성공");
@@ -94,12 +114,8 @@ public class MemberController {
 			System.out.println("로그인실패");
 			return "loginnk";
 		}
-		
-		
-		
-		
+
 	}
-	
 
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)
 //	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {

@@ -13,6 +13,18 @@ public class MemberServiceImpl implements MemberService{
 
 	@Autowired
 	private MemberDao memberdao;
+	
+	// 회원가입
+		@Override
+		public void register(MemberVo memberVo) throws Exception{
+			memberdao.register(memberVo);
+		}
+		
+		// 회원 가입 인서트
+		@Override
+		public void insertRegister(MemberVo memberVo) throws Exception{
+			memberdao.insertRegister(memberVo);
+		}
 
 	@Override
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception {

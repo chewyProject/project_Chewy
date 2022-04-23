@@ -6,6 +6,10 @@ import com.chewy.fwd.vo.MemberVo;
 
 public interface MemberService {
 	
+	// 회원가입 페이지
+		public void register(MemberVo memberVo)  throws Exception;
+		void insertRegister(MemberVo memberVo) throws Exception;
+	
 	// 이메일 유무 확인
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception;
 	
