@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.chewy.fwd.service.MemberMapper">
+
+	<!-- 회원가입 인서트 -->
+	<insert id="insertRegister" parameterType="memberVo">
+		INSERT INTO member (M_NAME, M_EMAIL, M_PASSWORD)
+		VALUES (#{m_name}, #{m_email}, #{m_password})
+	</insert>
+	
 	
 	<select id="selectEmail" resultType="memberVo">
 		SELECT M_EMAIL FROM member WHERE M_EMAIL=#{m_email} 
