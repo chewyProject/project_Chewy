@@ -2,18 +2,27 @@ package com.chewy.fwd.controller;
 
 import java.util.List;
 
+import javax.resource.spi.AuthenticationMechanism;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.chewy.fwd.service.MemberService;
+//import com.chewy.fwd.service.memberVo;
 import com.chewy.fwd.vo.MemberVo;
 
+//@SessionAttributes("login")
 @Controller
 public class MemberController {
 
@@ -39,7 +48,6 @@ public class MemberController {
 
 		return "redirect:test.do";
 	}
-
 
 	// 이메일 확인
 	@RequestMapping(value = "email.do", method = RequestMethod.GET)
@@ -99,30 +107,54 @@ public class MemberController {
 	// 로그인
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
-		System.out.println("로그인 포스트");
-		System.out.println("memberService.login(MemberVo) : " + memberService.login(memberVo));
-		int login = memberService.login(memberVo);
-		System.out.println("login : " + login);
+	   public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
+	      System.out.println("로그인 포스트");
+	      System.out.println("memberVo: " + memberVo);
+	      System.out.println("memberService.login(MemberVo) : " + memberService.login(memberVo));
+	      List<MemberVo> login =  memberService.login(memberVo);
+	      System.out.println("memberVo: " + memberVo);
+	      System.out.println("login : " + login);
+	      
+	      if(!login.isEmpty()) {
+	         model.addAttribute("login", login);
+	         session.setAttribute("memberVo", memberVo);
+	         System.out.println("로그인 성공");
+	         return "redirect:main_final.jsp";
+	      } else {
+	         System.out.println("로그인실패");
+	         return "redirect:loginnk";
+	      }
+	}
+	// 마이페이지
+	@RequestMapping(value = "mypage.do", method = RequestMethod.GET)
+	public String mypage(MemberVo memberVo, HttpServletRequest req, Model model) throws Exception {
+		HttpSession session = req.getSession();
+		MemberVo userInfo = (MemberVo) session.getAttribute("memberVo");
+		memberVo.setM_no(userInfo.getM_no());
 
-		if (login > 0) {
-			model.addAttribute("login", login);
-			session.setAttribute("memberVo", memberVo);
-			System.out.println("로그인 성공");
-			return "redirect:main_final.jsp";
-		} else {
-			System.out.println("로그인실패");
-			return "loginnk";
-		}
+		model.addAttribute("memberVo", memberVo);
 
+		System.out.println("user : " + userInfo);
+
+		return "mypage";
+
+	}
+
+	// 마이페이지
+	@RequestMapping(value = "/mypageupdate.do", method = RequestMethod.POST)
+	public String mypage(MemberVo memberVo, HttpSession session, Model model) throws Exception {
+		memberService.mypage(memberVo);
+		session.invalidate();
+
+		return "redirect:mypage.jsp";
 	}
 
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)
 //	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
 //		System.out.println("memberService.login(MemberVo) : " + memberService.login(memberVo));
-//		List<MemberVo> login = memberService.login(memberVo);
+//		int login = memberService.login(memberVo);
 //		System.out.println("login : " + login);
-//		if (!login.isEmpty()) {
+//		if (login > 0) {
 //			model.addAttribute("login", login);
 //			session.setAttribute("MemberVo", memberVo);
 //			System.out.println("POST 로그인");

@@ -7,7 +7,10 @@ import com.chewy.fwd.vo.MemberVo;
 public interface MemberMapper {
 	
 	// 회원가입 인서트
-		void insertRegister(MemberVo memeberVo) throws Exception;
+	void insertRegister(MemberVo memeberVo) throws Exception;
+	
+	// 마이페이지
+	public List<MemberVo> mypage(MemberVo memberVo) throws Exception;
 
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception;
 	

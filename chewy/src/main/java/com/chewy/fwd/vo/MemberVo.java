@@ -1,6 +1,6 @@
 package com.chewy.fwd.vo;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class MemberVo {
 	private int m_no;
@@ -15,8 +15,8 @@ public class MemberVo {
 	private int m_zipcode;
 	private String m_payment;
 	private int m_autoship;
-	private LocalDateTime m_autodate;
-	private LocalDateTime m_logindate;
+	private Date m_autodate;
+	private Date m_logindate;
 	private int m_seccession;
 
 	public MemberVo() {
@@ -25,7 +25,7 @@ public class MemberVo {
 
 	public MemberVo(int m_no, String m_name, String m_email, String m_password, String m_confirmpw, int m_phone,
 			String m_road, String m_city, String m_state, int m_zipcode, String m_payment, int m_autoship,
-			LocalDateTime m_autodate, LocalDateTime m_logindate, int m_seccession) {
+			Date m_autodate, Date m_logindate, int m_seccession) {
 		super();
 		this.m_no = m_no;
 		this.m_name = m_name;
@@ -140,19 +140,19 @@ public class MemberVo {
 		this.m_autoship = m_autoship;
 	}
 
-	public LocalDateTime getM_autodate() {
+	public Date getM_autodate() {
 		return m_autodate;
 	}
 
-	public void setM_autodate(LocalDateTime m_autodate) {
+	public void setM_autodate(Date m_autodate) {
 		this.m_autodate = m_autodate;
 	}
 
-	public LocalDateTime getM_logindate() {
+	public Date getM_logindate() {
 		return m_logindate;
 	}
 
-	public void setM_logindate(LocalDateTime m_logindate) {
+	public void setM_logindate(Date m_logindate) {
 		this.m_logindate = m_logindate;
 	}
 
@@ -173,6 +173,7 @@ public class MemberVo {
 				+ m_seccession + "]";
 	}
 
+	
 	
 	
 	
