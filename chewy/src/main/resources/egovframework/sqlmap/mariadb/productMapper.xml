@@ -7,4 +7,8 @@
 		SELECT * FROM product WHERE P_NO = #{p_no}
 	</select>
 	
+	
+	<select id="productImg" resultType="imgVo">
+		SELECT * FROM img WHERE P_NO = #{p_no}
+	</select>
 </mapper>

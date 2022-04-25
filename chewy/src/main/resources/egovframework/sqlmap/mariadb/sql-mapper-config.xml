@@ -8,5 +8,6 @@
 		<typeAlias alias="reviewVo" type="com.chewy.fwd.vo.ReviewVo"/>
 		<typeAlias alias="cartVo" type="com.chewy.fwd.vo.CartVo"/>
 		<typeAlias alias="productVo" type="com.chewy.fwd.vo.ProductVo"/>
+		<typeAlias alias="imgVo" type="com.chewy.fwd.vo.ImgVo"/>
     </typeAliases>
 </configuration>
