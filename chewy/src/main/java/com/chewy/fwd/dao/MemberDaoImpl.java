@@ -10,24 +10,30 @@ import com.chewy.fwd.service.MemberMapper;
 import com.chewy.fwd.vo.MemberVo;
 
 @Repository
-public class MemberDaoImpl implements MemberDao{
-	
+public class MemberDaoImpl implements MemberDao {
+
 	@Autowired
 	private SqlSession sqlSession;
-	
+
 	// 회원가입 페이지
-		@Override
-		public void register(MemberVo memberVo) throws Exception{
-			
-		}
-		
-		// 회원가입 인서트
-		 @Override
-		 public void insertRegister(MemberVo memberVo) throws Exception{
-			 MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-			 mapper.insertRegister(memberVo);
-		 }
+	@Override
+	public void register(MemberVo memberVo) throws Exception {
+
+	}
+
+	// 회원가입 인서트
+	@Override
+	public void insertRegister(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		mapper.insertRegister(memberVo);
+	}
 	
+	// 마이페이지
+	@Override
+	public void mypage(MemberVo memberVo) throws Exception{
+		
+	}
+
 	@Override
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
@@ -49,9 +55,9 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public List<MemberVo> login(MemberVo memberVo) throws Exception {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		
+
 		System.out.println("dao");
-		
+
 		return mapper.login(memberVo);
 	}
 

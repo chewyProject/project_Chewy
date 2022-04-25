@@ -30,7 +30,8 @@
 <!-- 	</select> -->
 	
 	<select id="login" resultType="memberVo">
-		SELECT M_NO FROM member 
+		SELECT M_NO, M_NAME, M_EMAIL, M_PHONE, M_ROAD, M_CITY, M_STATE, M_ZIPCODE, M_AUTOSHIP, M_AUTODATE, M_LOGINDATE, M_SECCESSION 
+		FROM member 
 		WHERE M_EMAIL = #{m_email} AND M_PASSWORD = #{m_password}
 	
 	</select>
