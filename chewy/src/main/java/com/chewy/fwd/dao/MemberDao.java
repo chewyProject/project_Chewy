@@ -13,7 +13,7 @@ public interface MemberDao {
 	public void insertRegister(MemberVo memberVo) throws Exception;
 	
 	// 마이페이지
-	public void mypage(MemberVo memberVo) throws Exception;
+	public List<MemberVo> mypageSelectOne(int m_no) throws Exception;
 	
 
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception;

@@ -27,8 +27,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 	// 마이페이지
 	@Override
-	public void mypage(MemberVo memberVo) throws Exception{
-		memberdao.mypage(memberVo);
+	public List<MemberVo> mypageSelectOne(int m_no) throws Exception{
+		return memberdao.mypageSelectOne(m_no);
 	}
 
 	@Override

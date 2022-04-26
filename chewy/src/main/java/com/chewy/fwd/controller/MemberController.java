@@ -2,6 +2,7 @@ package com.chewy.fwd.controller;
 
 import java.util.List;
 
+import javax.jms.Session;
 import javax.resource.spi.AuthenticationMechanism;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -22,7 +23,7 @@ import com.chewy.fwd.service.MemberService;
 //import com.chewy.fwd.service.memberVo;
 import com.chewy.fwd.vo.MemberVo;
 
-//@SessionAttributes("login")
+@SessionAttributes({"m_no","m_name", "m_password", "m_email"})
 @Controller
 public class MemberController {
 
@@ -117,7 +118,7 @@ public class MemberController {
 	      
 	      if(!login.isEmpty()) {
 	         model.addAttribute("login", login);
-	         session.setAttribute("memberVo", memberVo);
+	         session.setAttribute("memberVo", login.get(0).getM_no());
 	         System.out.println("로그인 성공");
 	         return "redirect:main_final.jsp";
 	      } else {
@@ -126,27 +127,43 @@ public class MemberController {
 	      }
 	}
 	// 마이페이지
-	@RequestMapping(value = "mypage.do", method = RequestMethod.GET)
-	public String mypage(MemberVo memberVo, HttpServletRequest req, Model model) throws Exception {
+	@RequestMapping(value = "mypage.do", method = RequestMethod.POST)
+	public String mypage(HttpServletRequest req, Model model) throws Exception{
+		System.out.println("controller");
 		HttpSession session = req.getSession();
-		MemberVo userInfo = (MemberVo) session.getAttribute("memberVo");
-		memberVo.setM_no(userInfo.getM_no());
-
-		model.addAttribute("memberVo", memberVo);
-
-		System.out.println("user : " + userInfo);
-
-		return "mypage";
-
+		int no = (int)session.getAttribute("memberVo"); // 회원 고유값 저장
+		try {
+			if(no>0) {
+			
+				List<MemberVo> memberInfo = memberService.mypageSelectOne(no);
+				model.addAttribute("info", memberInfo);
+				return "mypage";
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "login";
+		
 	}
-
-	// 마이페이지
-	@RequestMapping(value = "/mypageupdate.do", method = RequestMethod.POST)
-	public String mypage(MemberVo memberVo, HttpSession session, Model model) throws Exception {
-		memberService.mypage(memberVo);
-		session.invalidate();
-
-		return "redirect:mypage.jsp";
+	// 마이페이지 updateForm 페이지
+	@RequestMapping(value="profile.do", method = RequestMethod.POST)
+	public String profile(HttpServletRequest req, Model model) throws Exception{
+		System.out.println("controller");
+		HttpSession session = req.getSession();
+		int no = (int)session.getAttribute("memberVo"); // 회원 고유값 저장
+		try {
+			if(no>0) {
+			
+				List<MemberVo> memberInfo = memberService.mypageSelectOne(no);
+				model.addAttribute("info", memberInfo);
+				return "profile";
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return "redirect:main_final.jsp";
 	}
 
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)

@@ -1,11 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%
-    String memberVo = "세션에 저장된 데이터가 바로 접니다. ^O^";
-    session.setAttribute("MemberVo", memberVo);    // "Testing"을 키로 문자열을 저장
-   
-    session.setAttribute("MyData", 10);    // "MyData"를 키로 정수를 저장
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -157,7 +151,10 @@ a:hover {
 
 </head>
 <body>
-<button onclick="location.href='/mypage.do'">my page</button>
+	<form action="mypage.do" method="POST">
+		<button type="submit" >my page</button>
+	</form>
+
 	<div id="app">
 		<div class="container slide_container"> 
 		

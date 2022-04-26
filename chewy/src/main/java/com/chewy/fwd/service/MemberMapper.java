@@ -10,7 +10,7 @@ public interface MemberMapper {
 	void insertRegister(MemberVo memeberVo) throws Exception;
 	
 	// 마이페이지
-	public List<MemberVo> mypage(MemberVo memberVo) throws Exception;
+	public List<MemberVo> mypageSelectOne(int m_no) throws Exception;
 
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception;
 	
@@ -19,4 +19,5 @@ public interface MemberMapper {
 	public List<MemberVo> selectNo(MemberVo memberVo) throws Exception;
 	
 	public List<MemberVo> login(MemberVo memberVo) throws Exception;
+
 }

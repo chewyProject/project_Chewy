@@ -30,8 +30,9 @@ public class MemberDaoImpl implements MemberDao {
 	
 	// 마이페이지
 	@Override
-	public void mypage(MemberVo memberVo) throws Exception{
-		
+	public List<MemberVo> mypageSelectOne(int m_no) throws Exception{
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		return mapper.mypageSelectOne(m_no);
 	}
 
 	@Override
@@ -61,4 +62,5 @@ public class MemberDaoImpl implements MemberDao {
 		return mapper.login(memberVo);
 	}
 
+	
 }
