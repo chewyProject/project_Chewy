@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<button type="button" onclick="location.href='/cart.do'">your cart</button>
+<button type="button" onclick="location.href='/mypage.do'">your cart</button>
 
 </body>
 </html>

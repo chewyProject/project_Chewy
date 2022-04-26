@@ -13,7 +13,7 @@ public interface MemberService {
 	void insertRegister(MemberVo memberVo) throws Exception;
 	
 	// 마이페이지 
-	public void mypage(MemberVo memberVo) throws Exception;
+	public List<MemberVo> mypageSelectOne(int m_no) throws Exception;
 
 	// 이메일 유무 확인
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception;
@@ -26,4 +26,5 @@ public interface MemberService {
 
 	// 로그인
 	public List<MemberVo> login(MemberVo memberVo) throws Exception;
+	
 }

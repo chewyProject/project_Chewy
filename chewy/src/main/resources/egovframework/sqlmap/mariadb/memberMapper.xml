@@ -35,6 +35,10 @@
 		WHERE M_EMAIL = #{m_email} AND M_PASSWORD = #{m_password}
 	
 	</select>
+		<select id="mypageSelectOne" resultType="memberVo">
+		SELECT * FROM member 
+		WHERE M_NO = #{m_no}
 	
+	</select>
 	
 </mapper>
