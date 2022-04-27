@@ -129,7 +129,7 @@ public class MemberController {
 	// 마이페이지
 	@RequestMapping(value = "mypage.do", method = RequestMethod.POST)
 	public String mypage(HttpServletRequest req, Model model) throws Exception{
-		System.out.println("controller");
+		System.out.println("mypage controller");
 		HttpSession session = req.getSession();
 		int no = (int)session.getAttribute("memberVo"); // 회원 고유값 저장
 		try {
@@ -145,10 +145,18 @@ public class MemberController {
 		return "login";
 		
 	}
+	
+	@RequestMapping(value="profile.do", method = RequestMethod.GET)
+	public void profileGet(HttpServletRequest req, Model model) throws Exception {
+		
+		profile(req, model);
+		
+	}
+	
 	// 마이페이지 updateForm 페이지
 	@RequestMapping(value="profile.do", method = RequestMethod.POST)
 	public String profile(HttpServletRequest req, Model model) throws Exception{
-		System.out.println("controller");
+		System.out.println("updateForm controller");
 		HttpSession session = req.getSession();
 		int no = (int)session.getAttribute("memberVo"); // 회원 고유값 저장
 		try {
@@ -163,7 +171,43 @@ public class MemberController {
 		}
 		
 		
-		return "redirect:main_final.jsp";
+		return "profile";
+	}
+	
+	// 마이페이지 update
+	@RequestMapping(value="nameupdate.do", method = RequestMethod.POST)
+	public String nameupdate(MemberVo memberVo) throws Exception {
+		System.out.println("update controller");
+		String nameupdate = memberService.nameupdate(memberVo);
+		
+		return "profile";
+	}
+	
+	@RequestMapping(value="emailupdate.do", method = RequestMethod.POST)
+	public String emailupdate(MemberVo memberVo) throws Exception{
+		System.out.println("email controller");
+		String emailupdate = memberService.emailupdate(memberVo);
+		
+		return "profile";
+	}
+	
+	@RequestMapping(value="pwupdate.do", method = RequestMethod.POST)
+	public String pwdate(HttpServletRequest req, MemberVo memberVo, Model model) throws Exception{
+		HttpSession session = req.getSession();
+		int no = (int) session.getAttribute("memberVo");
+		memberVo.setM_no(no);
+		
+		String result = memberService.pwupdate(memberVo);
+		
+		System.out.println(result);
+		
+//		System.out.println("pw controller");
+		
+		// 현재 비밀번호, 바꿀 비밀번호, 바꿀 비밀번호 확인 3개를 받는다.
+		// if문을 통해서 현재 비밀번호와 바꿀 비밀번호가 같다면 상태코드 전달 / 비밀번호랑 비밀번호 확인이 다르면 상태코드 전달
+		// 통과했으면 업데이트 진행
+		
+		return "profile";
 	}
 
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)

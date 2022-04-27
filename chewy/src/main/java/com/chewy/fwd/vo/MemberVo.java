@@ -7,6 +7,7 @@ public class MemberVo {
 	private String m_name;
 	private String m_email;
 	private String m_password;
+	private String m_newpw;
 	private String m_confirmpw; // 비밀번호 변경을 하기 위함.
 	private int m_phone;
 	private String m_road;
@@ -164,6 +165,14 @@ public class MemberVo {
 		this.m_seccession = m_seccession;
 	}
 
+	public String getM_newpw() {
+		return m_newpw;
+	}
+
+	public void setM_newpw(String m_newpw) {
+		this.m_newpw = m_newpw;
+	}
+
 //	@Override
 //	public String toString() {
 //		return "MemberVo [m_no=" + m_no + ", m_name=" + m_name + ", m_email=" + m_email + ", m_password=" + m_password
@@ -173,8 +182,4 @@ public class MemberVo {
 //				+ m_seccession + "]";
 //	}
 
-	
-	
-	
-	
 }

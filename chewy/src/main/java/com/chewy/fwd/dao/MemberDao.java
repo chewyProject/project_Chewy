@@ -23,5 +23,11 @@ public interface MemberDao {
 	public List<MemberVo> selectNo(MemberVo memberVo) throws Exception;
 
 	public List<MemberVo> login(MemberVo memberVo) throws Exception;
+	
+	public String nameupdate(MemberVo memberVo) throws Exception;
+
+	public String emailupdate(MemberVo memberVo) throws Exception;
+	
+	public void pwupdate(MemberVo memberVo) throws Exception;
 
 }

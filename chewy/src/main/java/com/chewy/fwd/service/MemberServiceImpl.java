@@ -73,5 +73,43 @@ public class MemberServiceImpl implements MemberService {
 //		}
 //		return status;
 	}
+	
+	
+	// nameupdate
+	@Override
+	public String nameupdate(MemberVo memberVo) throws Exception {
+		System.out.println("service");
+		return memberdao.nameupdate(memberVo);
+	}
 
+	@Override
+	public String emailupdate(MemberVo memberVo) throws Exception {
+		System.out.println("service");
+		return memberdao.emailupdate(memberVo);
+	}
+
+	@Override
+	public String pwupdate(MemberVo memberVo) throws Exception {
+		System.out.println("service");
+		
+		System.out.println(memberVo.getM_no());
+		
+		List<MemberVo> memberInfo = memberdao.mypageSelectOne(memberVo.getM_no());
+
+		System.out.println(memberInfo.get(0).getM_password());
+		
+		// 입력한 비밀번호랑 기존 비밀번호가 일치하는지 확인
+		if(memberInfo.get(0).getM_password().equals(memberVo.getM_password())) {
+			System.out.println("같음");
+			// 기존 비밀번호랑 변경할 비밀번호가 다른지 확인 && 변경할 비밀번호랑 확인비밀번호가 같은지 확인
+			if((!memberVo.getM_password().equals(memberVo.getM_newpw())) && (memberVo.getM_newpw().equals(memberVo.getM_confirmpw()))) {
+				memberdao.pwupdate(memberVo);
+				return "success";
+			} else {
+				return "fail";
+				}
+			} else {
+				return "fail";
+			}
+		}
 }
