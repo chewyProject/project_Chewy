@@ -63,18 +63,18 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public String nameupdate(MemberVo memberVo) throws Exception {
+	public void nameupdate(MemberVo memberVo) throws Exception {
 		System.out.println("update dao");
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		return mapper.nameupdate(memberVo);
+		mapper.nameupdate(memberVo);
 	}
 
 	@Override
-	public String emailupdate(MemberVo memberVo) throws Exception {
+	public void emailupdate(MemberVo memberVo) throws Exception {
 		System.out.println("emailupdate dao");
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
 		
-		return mapper.emailupdate(memberVo);
+		mapper.emailupdate(memberVo);
 	}
 
 	@Override

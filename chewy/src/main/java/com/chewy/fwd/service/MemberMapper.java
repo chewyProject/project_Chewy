@@ -24,6 +24,6 @@ public interface MemberMapper {
 
 	public String emailupdate(MemberVo memberVo) throws Exception;
 
-	public void pwupdate(MemberVo memberVo) throws Exception;
+	public String pwupdate(MemberVo memberVo) throws Exception;
 
 }

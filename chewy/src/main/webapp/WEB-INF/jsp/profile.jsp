@@ -13,7 +13,7 @@
 			<input name="m_no" type="hidden" value="${info[0].m_no }">
 			<p>이름 : ${info[0].m_name }</p>
 			<input name="m_name" type="text" placeholder="new Full name">
-			<input name="m_password" type="test" placeholder="password">			<input type="submit" value="수정">
+			<input name="m_password" type="text" placeholder="password">			<input type="submit" value="수정">
 		</form>
 	</div>
 	<div>
@@ -21,6 +21,7 @@
 			<input name="m_no" type="hidden" value="${info[0].m_no }">
 			<p>이메일 : ${info[0].m_email }</p>
 			<input name="m_email" type="text" placeholder="new email">
+			<input name="m_password" type="text" placeholder="password">	
 			<input type="submit" value="수정">
 		</form>
 	</div>

@@ -176,7 +176,10 @@ public class MemberController {
 	
 	// 마이페이지 update
 	@RequestMapping(value="nameupdate.do", method = RequestMethod.POST)
-	public String nameupdate(MemberVo memberVo) throws Exception {
+	public String nameupdate(HttpServletRequest req,MemberVo memberVo) throws Exception {
+		HttpSession session = req.getSession();
+		int no = (int) session.getAttribute("memberVo");
+		memberVo.setM_no(no);
 		System.out.println("update controller");
 		String nameupdate = memberService.nameupdate(memberVo);
 		
@@ -184,7 +187,10 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="emailupdate.do", method = RequestMethod.POST)
-	public String emailupdate(MemberVo memberVo) throws Exception{
+	public String emailupdate(HttpServletRequest req,MemberVo memberVo) throws Exception{
+		HttpSession session = req.getSession();
+		int no = (int) session.getAttribute("memberVo");
+		memberVo.setM_no(no);
 		System.out.println("email controller");
 		String emailupdate = memberService.emailupdate(memberVo);
 		
