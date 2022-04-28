@@ -1,7 +1,9 @@
 package com.chewy.fwd.service;
 
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -73,5 +75,72 @@ public class MemberServiceImpl implements MemberService {
 //		}
 //		return status;
 	}
+	
+	
+	// nameupdate
+	@Override
+	public String nameupdate(MemberVo memberVo) throws Exception {
+		System.out.println("service");
+		List<MemberVo> memberInfo = memberdao.mypageSelectOne(memberVo.getM_no());
+		if(memberInfo.get(0).getM_password().equals(memberVo.getM_password())) {
+			memberdao.nameupdate(memberVo);
+			
+			return "profile";
+		}else {
+			
+			return "nameupdate";
+		}
+	}
 
+	@Override
+	public String emailupdate(MemberVo memberVo) throws Exception {
+		List<MemberVo> memberInfo = memberdao.mypageSelectOne(memberVo.getM_no());
+		System.out.println("service");
+		
+		if(memberInfo.get(0).getM_password().equals(memberVo.getM_password())) {
+			memberdao.emailupdate(memberVo);
+			
+			return "profile";
+		}else {
+			
+			return "emailupdate";
+		}
+		
+		
+		
+	}
+//
+	@Override
+	public String pwupdate(MemberVo memberVo) throws Exception {
+		System.out.println("service");
+		List<MemberVo> memberInfo = memberdao.mypageSelectOne(memberVo.getM_no());
+
+		// 입력한 비밀번호랑 기존 비밀번호가 일치하는지 확인
+		if(memberInfo.get(0).getM_password().equals(memberVo.getM_password())) {
+			// 기존 비밀번호랑 변경할 비밀번호가 다른지 확인 && 변경할 비밀번호랑 확인비밀번호가 같은지 확인
+			if((!memberVo.getM_password().equals(memberVo.getM_newpw())) && (memberVo.getM_newpw().equals(memberVo.getM_confirmpw()))) {
+				memberdao.pwupdate(memberVo);
+
+				return "profile";
+			} else {
+				return "pwupdate";
+				}
+			} else {
+				return "pwupdate";
+			}
+		}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

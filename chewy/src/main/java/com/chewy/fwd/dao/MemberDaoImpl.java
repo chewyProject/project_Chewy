@@ -62,5 +62,27 @@ public class MemberDaoImpl implements MemberDao {
 		return mapper.login(memberVo);
 	}
 
+	@Override
+	public void nameupdate(MemberVo memberVo) throws Exception {
+		System.out.println("update dao");
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		mapper.nameupdate(memberVo);
+	}
+
+	@Override
+	public void emailupdate(MemberVo memberVo) throws Exception {
+		System.out.println("emailupdate dao");
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		
+		mapper.emailupdate(memberVo);
+	}
+
+	@Override
+	public void pwupdate(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		System.out.println("pwupdate dao");
+		mapper.pwupdate(memberVo);
+	}
+
 	
 }

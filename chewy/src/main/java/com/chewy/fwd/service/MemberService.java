@@ -27,4 +27,13 @@ public interface MemberService {
 	// 로그인
 	public List<MemberVo> login(MemberVo memberVo) throws Exception;
 	
+	// 마이페이지 이름수정
+	public String nameupdate(MemberVo memberVo) throws Exception;
+	
+	// 마이페이지 이메일 수정
+	public String emailupdate(MemberVo memberVo) throws Exception;
+	
+	// 마이페이지 비밀번호 수정
+	public String pwupdate(MemberVo memberVo) throws Exception;
+	
 }

@@ -41,4 +41,16 @@
 	
 	</select>
 	
+	<update id="nameupdate" parameterType="memberVo">
+		UPDATE member SET M_NAME = #{m_name} WHERE M_NO = #{m_no}
+	</update>
+	
+	<update id="emailupdate" parameterType="memberVo">
+		UPDATE member SET M_EMAIL = #{m_email} WHERE M_NO = #{m_no}
+	</update>
+	
+	<update id="pwupdate" parameterType="memberVo">
+		UPDATE member SET M_PASSWORD = #{m_newpw} WHERE M_NO = #{m_no}
+	</update>
+	
 </mapper>

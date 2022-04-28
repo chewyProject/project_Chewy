@@ -13,7 +13,7 @@
 	<p>이메일 : ${info[0].m_email }</p>
 	
 	<form action="profile.do" method="POST">
-		<button type="submit" >my page</button>
+		<button type="submit" >profile 수정</button>
 	</form>
 </div>
 </body>
