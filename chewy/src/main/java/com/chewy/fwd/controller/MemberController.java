@@ -147,9 +147,11 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="profile.do", method = RequestMethod.GET)
-	public void profileGet(HttpServletRequest req, Model model) throws Exception {
+	public String profileGet(HttpServletRequest req, Model model) throws Exception {
 		
 		profile(req, model);
+		
+		return "profile";
 		
 	}
 	
@@ -171,19 +173,18 @@ public class MemberController {
 		}
 		
 		
-		return "profile";
+		return "redirect:profile";
 	}
 	
 	// 마이페이지 update
 	@RequestMapping(value="nameupdate.do", method = RequestMethod.POST)
-	public String nameupdate(HttpServletRequest req,MemberVo memberVo) throws Exception {
+	public void nameupdate(HttpServletRequest req,MemberVo memberVo) throws Exception {
 		HttpSession session = req.getSession();
 		int no = (int) session.getAttribute("memberVo");
 		memberVo.setM_no(no);
 		System.out.println("update controller");
 		String nameupdate = memberService.nameupdate(memberVo);
 		
-		return "profile";
 	}
 	
 	@RequestMapping(value="emailupdate.do", method = RequestMethod.POST)
@@ -215,6 +216,46 @@ public class MemberController {
 		
 		return "profile";
 	}
+
+	
+	@RequestMapping(value="address.do", method = RequestMethod.GET)
+	public String addressGet(HttpServletRequest req, Model model) throws Exception {
+		System.out.println("adress controller");
+		address(req, model);
+		
+		return "address";
+		
+	}
+	
+	@RequestMapping(value="address.do", method = RequestMethod.POST)
+	public String address(HttpServletRequest req, Model model) throws Exception{
+		System.out.println("adress controller");
+		HttpSession session = req.getSession();
+		int no = (int)session.getAttribute("memberVo"); // 회원 고유값 저장
+		try {
+			if(no>0) {
+				List<MemberVo> memberInfo = memberService.mypageSelectOne(no);
+				model.addAttribute("info", memberInfo);
+				return "address";
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "redirect:profile";
+	}
+	@RequestMapping(value="addressupdate.do", method = RequestMethod.POST)
+	public String addressupdate(HttpServletRequest req,MemberVo memberVo) throws Exception{
+		System.out.println("addupdate controller");
+		HttpSession session = req.getSession();
+		int no = (int) session.getAttribute("memberVo");
+		memberVo.setM_no(no);
+
+		
+		return "addressupdate";
+	}
+	
+	
 
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)
 //	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {

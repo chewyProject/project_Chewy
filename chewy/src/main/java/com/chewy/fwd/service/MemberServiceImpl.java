@@ -83,12 +83,11 @@ public class MemberServiceImpl implements MemberService {
 		System.out.println("service");
 		List<MemberVo> memberInfo = memberdao.mypageSelectOne(memberVo.getM_no());
 		if(memberInfo.get(0).getM_password().equals(memberVo.getM_password())) {
-			memberdao.nameupdate(memberVo);
 			
-			return "profile";
+			
+			return memberdao.nameupdate(memberVo);
 		}else {
-			
-			return "nameupdate";
+			return "fail";
 		}
 	}
 

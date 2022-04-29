@@ -11,9 +11,13 @@
 <div>
 	<p>이름 : ${info[0].m_name }</p>
 	<p>이메일 : ${info[0].m_email }</p>
+	<p>비밀번호 : ${info[0].m_password }</p>
 	
 	<form action="profile.do" method="POST">
 		<button type="submit" >profile 수정</button>
+	</form>
+	<form action="address.do" method="POST">
+		<button type="submit">address 수정</button>
 	</form>
 </div>
 </body>
