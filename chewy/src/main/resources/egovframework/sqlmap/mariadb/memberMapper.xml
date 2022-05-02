@@ -38,7 +38,6 @@
 		<select id="mypageSelectOne" resultType="memberVo">
 		SELECT * FROM member 
 		WHERE M_NO = #{m_no}
-	
 	</select>
 	
 	<update id="nameupdate" parameterType="memberVo">
@@ -51,6 +50,10 @@
 	
 	<update id="pwupdate" parameterType="memberVo">
 		UPDATE member SET M_PASSWORD = #{m_newpw} WHERE M_NO = #{m_no}
+	</update>
+	
+	<update id="addressupdate" parameterType="memberVo">
+		UPDATE member SET M_NAME = #{m_name}, M_ROAD = #{m_road}, M_STATE = #{m_state}, M_CITY = #{m_city}, M_ZIPCODE = #{m_zipcode} WHERE M_NO = #{m_no} 
 	</update>
 	
 </mapper>

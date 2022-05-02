@@ -63,10 +63,11 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public void nameupdate(MemberVo memberVo) throws Exception {
+	public String nameupdate(MemberVo memberVo) throws Exception {
 		System.out.println("update dao");
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		mapper.nameupdate(memberVo);
+		
+		return mapper.nameupdate(memberVo);
 	}
 
 	@Override
@@ -82,6 +83,19 @@ public class MemberDaoImpl implements MemberDao {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
 		System.out.println("pwupdate dao");
 		mapper.pwupdate(memberVo);
+	}
+
+	@Override
+	public String addressupdate(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		System.out.println("address dao");
+		
+		return mapper.addressupdate(memberVo);
+	}
+
+	@Override
+	public void addupdateForm(MemberVo memberVo) throws Exception {
+		
 	}
 
 	
