@@ -85,5 +85,18 @@ public class MemberDaoImpl implements MemberDao {
 		mapper.pwupdate(memberVo);
 	}
 
+	@Override
+	public String addressupdate(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		System.out.println("address dao");
+		
+		return mapper.addressupdate(memberVo);
+	}
+
+	@Override
+	public void addupdateForm(MemberVo memberVo) throws Exception {
+		
+	}
+
 	
 }

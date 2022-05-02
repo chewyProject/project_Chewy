@@ -128,6 +128,17 @@ public class MemberServiceImpl implements MemberService {
 				return "pwupdate";
 			}
 		}
+
+	@Override
+	public String addressupdate(MemberVo memberVo) throws Exception {
+		System.out.println("service");
+		return memberdao.addressupdate(memberVo);
+	}
+
+	@Override
+	public void addupdateForm(MemberVo memberVo) throws Exception {
+		memberdao.nameupdate(memberVo);
+	}
 }
 
 

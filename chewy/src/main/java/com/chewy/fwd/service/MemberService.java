@@ -36,4 +36,8 @@ public interface MemberService {
 	// 마이페이지 비밀번호 수정
 	public String pwupdate(MemberVo memberVo) throws Exception;
 	
+	public void addupdateForm(MemberVo memberVo) throws Exception;
+	
+	public String addressupdate(MemberVo memberVo) throws Exception;
+	
 }

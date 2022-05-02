@@ -29,5 +29,9 @@ public interface MemberDao {
 	public void emailupdate(MemberVo memberVo) throws Exception;
 	
 	public void pwupdate(MemberVo memberVo) throws Exception;
+	
+	public void addupdateForm(MemberVo memberVo) throws Exception;
+	
+	public String addressupdate(MemberVo memberVo) throws Exception;
 
 }

@@ -244,19 +244,29 @@ public class MemberController {
 		
 		return "redirect:profile";
 	}
+	
+	@RequestMapping(value="addressupdateForm.do", method = RequestMethod.GET)
+		public String addressupdateForm () {
+			System.out.println("add updateForm controller");
+			
+			return "addressupdate";
+		}
+	
+	
+
 	@RequestMapping(value="addressupdate.do", method = RequestMethod.POST)
-	public String addressupdate(HttpServletRequest req,MemberVo memberVo) throws Exception{
+	public String addressupdate(HttpServletRequest req,Model model,MemberVo memberVo) throws Exception{
 		System.out.println("addupdate controller");
 		HttpSession session = req.getSession();
 		int no = (int) session.getAttribute("memberVo");
 		memberVo.setM_no(no);
+		memberService.addressupdate(memberVo);
 
 		
-		return "addressupdate";
+		return "address";
 	}
 	
 	
-
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)
 //	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
 //		System.out.println("memberService.login(MemberVo) : " + memberService.login(memberVo));

@@ -13,7 +13,7 @@
 	<p>city : ${info[0].m_city }</p>
 	<p>state : ${info[0].m_state }</p>
 	<p>zipcode : ${info[0].m_zipcode }</p>
-	<form action="addressupdate.do" method="POST">
+	<form action="addressupdateForm.do" method="GET">
 		<button type="submit" >address 등록</button>
 	</form>
 </body>
