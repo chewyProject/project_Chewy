@@ -10,11 +10,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/header/category.css" />
+<link rel="stylesheet" href="../css/header/headerMain.css" />
 </head>
 <body>
 
-<%@ include file="header/category.jsp" %>
+<%@ include file="header/headerMain.jsp" %>
 <!-- <button type="button" onclick="location.href='/cart.do'">your cart</button> -->
 
 </body>
