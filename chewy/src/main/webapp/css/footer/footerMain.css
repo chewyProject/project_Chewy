@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 10px;
+}
+
+.footer_one {
+	background-color: #1c49c2;
+}
+
+.one_wrap {
+	padding: 0 6rem;
+	margin: 0 auto;
+    max-width: 1400px;
+}
+
+.one_wrap>ul {
+	list-style: none;
+	color: #fff;
+	display: flex;
+    justify-content: space-between;
+    font-size: 1.9rem;
+}
+
+.one_wrap>ul>li {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    align-items: center;
+    display: flex;
+}	
+
+.one_wrap>ul>li>span, .one_wrap>ul>li>a {
+	font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.one_wrap>ul .one_top_btn {
+	background-color: #fff;
+	color: #121212;
+}
