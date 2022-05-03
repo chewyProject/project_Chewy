@@ -8,7 +8,37 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
+<main id="page-content" class="main-content">
+        <div id="container">
+                    <section class="account-section">
+                        <nav class="sub-nav" id="account-subnav" style="display: flex;">
+    <ul class="container">
+        <li class="js-browse-sub-nav-analytics--overview "><a href="/app/account">Overview</a></li>
+        <li class="js-browse-sub-nav-analytics--order-history "><a href="/app/account/orderhistory">Orders</a></li>
+        <li class="js-browse-sub-nav-analytics--manage-autoship "><a href="/app/subs">Autoship</a></li>
+        <li class="js-browse-sub-nav-analytics--pet-profile "><a href="/pets">My Pets</a></li>
+        <li class="js-browse-sub-nav-analytics--favorites "><a href="/app/account/favorites">Favorites</a></li>
+        <li class="js-browse-sub-nav-analytics--buy-again "><a href="/app/account/reorder">Buy Again</a></li>
+        <li class="js-browse-sub-nav-analytics--gift-card "><a href="/app/account/giftcard">Gift Cards</a></li>
+        <li class="js-browse-sub-nav-analytics--pet-prescriptions "><a href="/pethealth/my-prescriptions" }="">Prescriptions</a></li>
+        <li class="js-browse-sub-nav-analytics--pet-health "><a href="/pethealth">My Pet Health</a></li>
+        <li class="js-browse-sub-nav-analytics--pet-vet-clinics "><a href="/app/account/clinics">My Vet Clinics</a></li>
+        <li class="js-browse-sub-nav-analytics--my-rescues "><a href="/g/my-rescues">My Rescues</a></li>
+        </ul>
+</nav>
+
+<script>
+    var selected = document.querySelector(
+        '.sub-nav .container .sub-nav--selected'
+    );
+    if (selected) selected.scrollIntoView();
+    document.querySelector('.sub-nav').style.display = "none";
+    window.addEventListener('load', function() {
+        document.querySelector('.sub-nav').style.display = "flex";
+    });
+</script>
+<!---->
+                        <div class="container">
                             <div class="cw-account-wrapper">
             <div id="breadcrumbs">
     <a href="/app/account">Account</a> ›
@@ -19,6 +49,26 @@
     <div class="account__profile">
         <h1>Profile</h1>
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div>
             <ul class="accordion profile-accordion cw-card-list">
                 <li class="accordion-item " data-autoheight="true">
@@ -46,7 +96,7 @@
                                 </div>
                                 <div class="buttons">
                                     <input name="updateFullName" disabled="disabled" id="account-profile-form--name-submit" type="submit" data-ga-action="clicked save" class="cw-btn cw-btn--action js-tracked-profile" data-ga-label="edit name" value="Save"><input name="cancel" disabled="disabled" type="button" data-ga-action="clicked cancel" class="cw-btn cw-btn--default accordion-trigger js-tracked-profile" data-ga-label="edit name" value="Cancel"></div>
-                            <div style="display: none;"><input type="hidden" name="_sourcePage" value="hImxokJU-sLy0e7XXI_vuEWVwUIeWn_vUYEi4UfUGy_FqMR_clEpFOxz-mxMUZTAJvddHUJaFXNvXxsz-q3NoKuavrUyUWmWExqwC3r3GOwMsJg8zY860g=="><input type="hidden" name="__fp" value="79MQShDZwnyk2XE_gPOBsI7oSpCTDAb-El9jj7jFXlGnDZpvrubRm7droZqAWIUB"></div></form><script type="text/javascript">
+                            <div style="display: none;"><input type="hidden" name="_sourcePage" value="eZXquY4nzvUd2hNKG1WTwjXL8Fxt4ylDjSl1YK3BTQeO7YrLoWFJ_a_Kz0TLPoLEWBhkWtoyze4shPKWNsZqDmZ7-fYiNHTWBwvR5ASViB94aDsPGFQ3zw=="><input type="hidden" name="__fp" value="cjQd-tZoRgH4We7qKcU0mp4iWyqUQJAC-jLlFLhWmqSQ01vEawjlpbRe6jGJjOoC"></div></form><script type="text/javascript">
                                 function disableUsernameSubmitButton() {
                                     var submitButton = document.getElementById('account-profile-form--name-submit');
                                     setTimeout(function() {
@@ -89,7 +139,7 @@
                                 <div class="sfw-account-profile"><!----></div>
                                 <div class="buttons">
                                     <input name="updateEmail" disabled="disabled" type="submit" data-ga-action="clicked save" class="cw-btn cw-btn--action js-tracked-profile" data-ga-label="edit email" value="Save"><input name="cancel" disabled="disabled" type="button" data-ga-action="clicked cancel" class="cw-btn cw-btn--default accordion-trigger js-tracked-profile" data-ga-label="edit email" value="Cancel"></div>
-                            <div style="display: none;"><input type="hidden" name="_sourcePage" value="dCJmGtl58vl1G_OSw1-RvvFowdARdl2fRG8ZB6P8WTwrdlWO284oIlZTUhPLj-nQaZ_EHIu7N_-kU71ocfKuuw2ZtGFOrtL_cGhrHUx8_ehfnDPF3bzXqg=="><input type="hidden" name="__fp" value="2AUR5_GdJfh2XaSm3zIXz7H7WHPwFcDA7d-oZAb80dd5due0byASiyzJeXot03-_"></div></form></div>
+                            <div style="display: none;"><input type="hidden" name="_sourcePage" value="K0d-kcUyXUU35jW_KAhOcDrjAZKhlgHP8gt0D3eFjEQp1RxOH_Ekq_M7SwIvskBKyLcMfzu_ceywhJahDjfu3xyZYxnoJIB4n5KGWde_iebaP7KkpkvAFg=="><input type="hidden" name="__fp" value="FFFXX__19kSiRlfk6T_MLN3cqU6OeSULQgRNISTH6f5JRwLora2qgvxxKekUi_F_"></div></form></div>
                     </div>
                 </li>
                 <li class="accordion-item " data-autoheight="true">
@@ -127,7 +177,7 @@
 
                                 <div class="buttons">
                                     <input name="updatePassword" disabled="disabled" id="account-profile-form--password-submit" type="submit" data-ga-action="clicked save" class="cw-btn cw-btn--action js-tracked-profile" data-ga-label="edit password" value="Save"><input name="cancel" disabled="disabled" type="button" data-ga-action="clicked cancel" class="cw-btn cw-btn--default accordion-trigger js-tracked-profile" data-ga-label="edit password" value="Cancel"></div>
-                            <div style="display: none;"><input type="hidden" name="_sourcePage" value="tEfyMmBecnmL_v08S72ukoSIVsuWI2rcxwruMy9E17A4zwF8q-bl-nXgea--tUo_2GMKH_za5v3A5y_RfpTp6ZMcgIRJ03OSFLK0FdbrB_NawuzH3mJgLA=="><input type="hidden" name="__fp" value="bAn4o7HUDoUiYBwcDJBS1sCcjbEw6VRJFTCae3740otxvwCY3zLT-cdBofMps_xT"></div></form><script type="text/javascript">
+                            <div style="display: none;"><input type="hidden" name="_sourcePage" value="Wu30vWwqZQrPJoKm7r4Ua9j6Kpv1f9keoYP_FczvWRFMtLwr4b34zg6ZIOy318VZ8Z6Tt4WssBvUmjsS8VRHdjS0dcmLK6ueuKrtVH7Ql8ATdDG5ZgoAOQ=="><input type="hidden" name="__fp" value="Cj45-e2n2ljV3dQnxE1WQefeW74J-tBMUGHSJ7GWQtOUXUR1tTb6iBmvbXYAQeyX"></div></form><script type="text/javascript">
                                 function disablePasswordSubmitButton() {
                                     var submitButton = document.getElementById('account-profile-form--password-submit');
                                     setTimeout(function() {
@@ -154,6 +204,9 @@
                                 </div>
                             </section>
                         </div>
+                    </section>
+            </div>
+            </main>
 
 <!-- 	<h1>프로필 업데이트 / 수정</h1> -->
 <!-- 	<div> -->
