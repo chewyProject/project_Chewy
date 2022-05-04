@@ -30,10 +30,30 @@
 <!-- 	</select> -->
 	
 	<select id="login" resultType="memberVo">
-		SELECT M_NO FROM member 
+		SELECT M_NO, M_NAME, M_EMAIL, M_PHONE, M_ROAD, M_CITY, M_STATE, M_ZIPCODE, M_AUTOSHIP, M_AUTODATE, M_LOGINDATE, M_SECCESSION 
+		FROM member 
 		WHERE M_EMAIL = #{m_email} AND M_PASSWORD = #{m_password}
 	
 	</select>
+		<select id="mypageSelectOne" resultType="memberVo">
+		SELECT * FROM member 
+		WHERE M_NO = #{m_no}
+	</select>
 	
+	<update id="nameupdate" parameterType="memberVo">
+		UPDATE member SET M_NAME = #{m_name} WHERE M_NO = #{m_no}
+	</update>
+	
+	<update id="emailupdate" parameterType="memberVo">
+		UPDATE member SET M_EMAIL = #{m_email} WHERE M_NO = #{m_no}
+	</update>
+	
+	<update id="pwupdate" parameterType="memberVo">
+		UPDATE member SET M_PASSWORD = #{m_newpw} WHERE M_NO = #{m_no}
+	</update>
+	
+	<update id="addressupdate" parameterType="memberVo">
+		UPDATE member SET M_NAME = #{m_name}, M_ROAD = #{m_road}, M_STATE = #{m_state}, M_CITY = #{m_city}, M_ZIPCODE = #{m_zipcode} WHERE M_NO = #{m_no} 
+	</update>
 	
 </mapper>

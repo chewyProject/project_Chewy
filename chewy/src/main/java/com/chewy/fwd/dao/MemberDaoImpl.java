@@ -10,24 +10,31 @@ import com.chewy.fwd.service.MemberMapper;
 import com.chewy.fwd.vo.MemberVo;
 
 @Repository
-public class MemberDaoImpl implements MemberDao{
-	
+public class MemberDaoImpl implements MemberDao {
+
 	@Autowired
 	private SqlSession sqlSession;
-	
+
 	// 회원가입 페이지
-		@Override
-		public void register(MemberVo memberVo) throws Exception{
-			
-		}
-		
-		// 회원가입 인서트
-		 @Override
-		 public void insertRegister(MemberVo memberVo) throws Exception{
-			 MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-			 mapper.insertRegister(memberVo);
-		 }
+	@Override
+	public void register(MemberVo memberVo) throws Exception {
+
+	}
+
+	// 회원가입 인서트
+	@Override
+	public void insertRegister(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		mapper.insertRegister(memberVo);
+	}
 	
+	// 마이페이지
+	@Override
+	public List<MemberVo> mypageSelectOne(int m_no) throws Exception{
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		return mapper.mypageSelectOne(m_no);
+	}
+
 	@Override
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
@@ -49,10 +56,47 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public List<MemberVo> login(MemberVo memberVo) throws Exception {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		
+
 		System.out.println("dao");
-		
+
 		return mapper.login(memberVo);
 	}
 
+	@Override
+	public String nameupdate(MemberVo memberVo) throws Exception {
+		System.out.println("update dao");
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		
+		return mapper.nameupdate(memberVo);
+	}
+
+	@Override
+	public void emailupdate(MemberVo memberVo) throws Exception {
+		System.out.println("emailupdate dao");
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		
+		mapper.emailupdate(memberVo);
+	}
+
+	@Override
+	public void pwupdate(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		System.out.println("pwupdate dao");
+		mapper.pwupdate(memberVo);
+	}
+
+	@Override
+	public String addressupdate(MemberVo memberVo) throws Exception {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		System.out.println("address dao");
+		
+		return mapper.addressupdate(memberVo);
+	}
+
+	@Override
+	public void addupdateForm(MemberVo memberVo) throws Exception {
+		
+	}
+
+	
 }

@@ -1,5 +1,7 @@
 package com.chewy.fwd.vo;
 
+import java.util.List;
+
 public class ProductVo {
 
 	private int p_no;
@@ -8,7 +10,7 @@ public class ProductVo {
 	private int sct_no;
 	private int b_no;
 	private String p_name;
-	private String p_img;
+	private List<ImgVo> img;
 	private int p_price;
 	private int p_total;
 	private int p_discount;
@@ -19,7 +21,7 @@ public class ProductVo {
 	public ProductVo() {
 	}
 
-	public ProductVo(int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, String p_img, int p_price,
+	public ProductVo(int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, List<ImgVo> img, int p_price,
 			int p_total, int p_discount, float p_star, String p_question, String p_answer) {
 		this.p_no = p_no;
 		this.bct_no = bct_no;
@@ -27,7 +29,7 @@ public class ProductVo {
 		this.sct_no = sct_no;
 		this.b_no = b_no;
 		this.p_name = p_name;
-		this.p_img = p_img;
+		this.img = img;
 		this.p_price = p_price;
 		this.p_total = p_total;
 		this.p_discount = p_discount;
@@ -84,12 +86,12 @@ public class ProductVo {
 		this.p_name = p_name;
 	}
 
-	public String getP_img() {
-		return p_img;
+	public List<ImgVo> getImg() {
+		return img;
 	}
 
-	public void setP_img(String p_img) {
-		this.p_img = p_img;
+	public void setImg(List<ImgVo> img) {
+		this.img = img;
 	}
 
 	public int getP_price() {

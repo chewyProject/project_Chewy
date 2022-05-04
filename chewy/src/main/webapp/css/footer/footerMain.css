@@ -1,0 +1,220 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 10px;
+}
+
+ul {
+	list-style: none;
+}
+
+.footer_one {
+	background-color: #1c49c2;
+}
+
+.one_wrap, .two_wrap, .three_wrap, .four_wrap {
+	padding: 0 6rem;
+	margin: 0 auto;
+    max-width: 1400px;
+}
+
+footer .footer_one .one_wrap>ul {
+	list-style: none;
+	color: #fff;
+	display: flex;
+    justify-content: space-between;
+    font-size: 1.9rem;
+    align-items: center;
+}
+
+.one_wrap>ul>li {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    align-items: center;
+    display: flex;
+}
+
+.one_wrap>ul>li>span, .one_wrap>ul>li>a {
+	font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.8rem;
+    transition: background-color .25s ease-out;
+    border-radius: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.one_wrap>ul>li>a>span {
+	font-size: 1.6rem;
+}
+
+.one_wrap>ul .one_top_btn {
+	background-color: #fff;
+	border: 0;
+	border-radius: 40px;
+	height: 4.8rem;
+	position: relative;
+	padding: 0 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.one_wrap>ul .one_top_btn>a {
+	color: #121212;
+	font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.two_wrap {
+    display: grid;
+    grid-template-columns: 7fr 1fr 2fr;
+    align-items: center;
+}
+
+.footer_two {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    background-color: #f9f9f9;
+}
+
+.footer_two .two_wrap>ul {
+	display: flex;
+	align-items: center;
+	padding-top: 1.6rem;
+	padding-bottom: 2.4rem;
+}
+
+.footer_two .two_wrap>ul>.left_about {
+	padding: 0px 1.6rem 0px 0px;
+}
+
+.footer_two .two_wrap>ul>li {
+	padding: 0 1.6rem;
+}
+
+.two_wrap>ul, .two_wrap>ul>li>a {
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+
+.footer_two .two_wrap .two_right>li {
+	padding: 0;
+	margin: 0;
+}
+
+.YW8Nub {
+	max-width: 15rem;
+    max-height: 4.1rem;
+    padding-top: 1.3em;
+    padding-left: 0.9rem;
+}
+
+.two_right_last {
+	background-color: #f5f5f5;
+    height: 5.4rem;
+    padding: 0;
+    width: 16.5rem;
+    border: 1px solid #ddd;
+}
+
+.footer_three .three_wrap {
+	justify-content: center;
+    padding: 2.4rem 2.4rem 2.4rem 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer_three .three_wrap .three_left {
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
+}
+
+.footer_three .three_wrap .three_left>a {
+	padding-top: 0.8rem;
+    padding-right: 1.6rem;
+    display: inline-block;
+}
+
+.footer_three .three_wrap .three_left>a img {
+	height: 4rem;
+}
+
+.footer_three .three_wrap .three_right {
+	padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    border-left: 0.1rem solid #ddd;
+}
+
+.footer_three .three_wrap .three_right .pharmacy_img img {
+	width: 118px;
+    aspect-ratio: auto 118 / 34;
+    height: 34px;
+}
+
+.footer_three .three_wrap .three_right .www_img img {
+    width: 57px;
+    aspect-ratio: auto 57 / 41;
+    height: 41px;
+}
+
+.footer_three .three_wrap .three_right .achc_img img {
+    width: 63px;
+    aspect-ratio: auto 63 / 41;
+    height: 41px;
+}
+
+.footer_four {
+	border-top: 0.1rem solid #ddd;
+}
+
+.footer_four .four_wrap .four_ulwrap {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+}
+
+.footer_four .four_wrap .four_ulwrap>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer_four .four_wrap .four_ulwrap>ul>li {
+	margin: 0;
+    padding: 0;
+    color: #666;
+    font-size: 1.4rem;
+    line-height: 1.28571;
+}
+
+.footer_four .four_wrap .four_ulwrap>ul>li>a {
+	padding-right: 1.6rem;
+    padding-left: 1.6rem;
+    color: #666;
+    font-size: 1.4rem;
+    line-height: 1.28571;
+}
+
+.footer_one ul .one_li>a:hover {
+	background-color: #11389e;
+}
+
+.footer_one .one_wrap>ul .one_top_btn:hover {
+	background-color: #dbebf9;
+}
+
+.footer_one ul>li>a, .footer_two ul>li>a, .footer_four ul>li>a {
+	cursor: pointer;
+}
+
+.footer_two ul>li>a:hover, .footer_four ul>li>a:hover {
+	text-decoration: underline;
+}

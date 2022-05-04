@@ -1,12 +1,13 @@
 package com.chewy.fwd.vo;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class MemberVo {
 	private int m_no;
 	private String m_name;
 	private String m_email;
 	private String m_password;
+	private String m_newpw;
 	private String m_confirmpw; // 비밀번호 변경을 하기 위함.
 	private int m_phone;
 	private String m_road;
@@ -15,8 +16,8 @@ public class MemberVo {
 	private int m_zipcode;
 	private String m_payment;
 	private int m_autoship;
-	private LocalDateTime m_autodate;
-	private LocalDateTime m_logindate;
+	private Date m_autodate;
+	private Date m_logindate;
 	private int m_seccession;
 
 	public MemberVo() {
@@ -25,7 +26,7 @@ public class MemberVo {
 
 	public MemberVo(int m_no, String m_name, String m_email, String m_password, String m_confirmpw, int m_phone,
 			String m_road, String m_city, String m_state, int m_zipcode, String m_payment, int m_autoship,
-			LocalDateTime m_autodate, LocalDateTime m_logindate, int m_seccession) {
+			Date m_autodate, Date m_logindate, int m_seccession) {
 		super();
 		this.m_no = m_no;
 		this.m_name = m_name;
@@ -140,19 +141,19 @@ public class MemberVo {
 		this.m_autoship = m_autoship;
 	}
 
-	public LocalDateTime getM_autodate() {
+	public Date getM_autodate() {
 		return m_autodate;
 	}
 
-	public void setM_autodate(LocalDateTime m_autodate) {
+	public void setM_autodate(Date m_autodate) {
 		this.m_autodate = m_autodate;
 	}
 
-	public LocalDateTime getM_logindate() {
+	public Date getM_logindate() {
 		return m_logindate;
 	}
 
-	public void setM_logindate(LocalDateTime m_logindate) {
+	public void setM_logindate(Date m_logindate) {
 		this.m_logindate = m_logindate;
 	}
 
@@ -164,16 +165,21 @@ public class MemberVo {
 		this.m_seccession = m_seccession;
 	}
 
-	@Override
-	public String toString() {
-		return "MemberVo [m_no=" + m_no + ", m_name=" + m_name + ", m_email=" + m_email + ", m_password=" + m_password
-				+ ", m_confirmpw=" + m_confirmpw + ", m_phone=" + m_phone + ", m_road=" + m_road + ", m_city=" + m_city
-				+ ", m_state=" + m_state + ", m_zipcode=" + m_zipcode + ", m_payment=" + m_payment + ", m_autoship="
-				+ m_autoship + ", m_autodate=" + m_autodate + ", m_logindate=" + m_logindate + ", m_seccession="
-				+ m_seccession + "]";
+	public String getM_newpw() {
+		return m_newpw;
 	}
 
-	
-	
-	
+	public void setM_newpw(String m_newpw) {
+		this.m_newpw = m_newpw;
+	}
+
+//	@Override
+//	public String toString() {
+//		return "MemberVo [m_no=" + m_no + ", m_name=" + m_name + ", m_email=" + m_email + ", m_password=" + m_password
+//				+ ", m_confirmpw=" + m_confirmpw + ", m_phone=" + m_phone + ", m_road=" + m_road + ", m_city=" + m_city
+//				+ ", m_state=" + m_state + ", m_zipcode=" + m_zipcode + ", m_payment=" + m_payment + ", m_autoship="
+//				+ m_autoship + ", m_autodate=" + m_autodate + ", m_logindate=" + m_logindate + ", m_seccession="
+//				+ m_seccession + "]";
+//	}
+
 }
