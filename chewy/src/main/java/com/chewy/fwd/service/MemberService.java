@@ -16,5 +16,5 @@ public interface MemberService {
 	public int selectNo(MemberVo memberVo) throws Exception;
 	
 	// 로그인
-	public int login(MemberVo memberVo) throws Exception;
+	public List<MemberVo> login(MemberVo memberVo) throws Exception;
 }

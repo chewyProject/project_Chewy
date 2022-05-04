@@ -81,18 +81,20 @@ public class MemberController {
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
 		System.out.println("로그인 포스트");
+		System.out.println("memberVo: " + memberVo);
 		System.out.println("memberService.login(MemberVo) : " + memberService.login(memberVo));
-		int login =  memberService.login(memberVo);
+		List<MemberVo> login =  memberService.login(memberVo);
+		System.out.println("memberVo: " + memberVo);
 		System.out.println("login : " + login);
 		
-		if(login > 0) {
+		if(!login.isEmpty()) {
 			model.addAttribute("login", login);
 			session.setAttribute("memberVo", memberVo);
 			System.out.println("로그인 성공");
 			return "redirect:main_final.jsp";
 		} else {
 			System.out.println("로그인실패");
-			return "loginnk";
+			return "redirect:loginnk";
 		}
 		
 		

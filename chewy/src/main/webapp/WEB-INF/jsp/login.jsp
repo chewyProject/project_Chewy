@@ -33,7 +33,7 @@
 <!-- 										<label for="username" class=""></label> -->
 										<label for="username" class="">Email Address</label>
 										<div class="field__wrapper" data-hj-suppress="">
-											<input size="40" name="m_email" id="m_email" type="email" class="field__input field__input--email input--email" value="">
+											<input size="40" name="m_email" id="m_email" type="email" class="field__input field__input--email input--email" value="" required="required">
 										</div>
 									</li>
 
@@ -41,7 +41,7 @@
 <!-- 										<label for="password" class=""></label> -->
 										<label for="password" class="">Password</label>
 										<div class="field__wrapper" data-hj-suppress="">
-											<input size="25" name="m_password" id="m_password" type="password" class="field__input field__input--pw input--password">
+											<input size="25" name="m_password" id="m_password" type="password" class="field__input field__input--pw input--password" required="required">
 										</div>
 									</li>
 									<li>
@@ -67,10 +67,10 @@
 					</div>
 
 					<input name="targetUrl" type="hidden" value="/app/account">
-					<div style="display: none;">
-						<input type="hidden" name="_sourcePage" value="fEEtLIuM0jM0JSSDSr9L8Xyap6ttx7rNLRp__uMMy8iBS8v7lhkmQifNvyJPE6PpqK7nM5vwY5KR2Gq8bmaO9A4_3DDT-Jo0eC1m8a-dQuc=">
-						<input type="hidden" name="__fp" value="BGDOC4i4z_esGy0zdu4YpxxqhnZgFKt14D7G5b9YG8mn6pqPcFkX2XWlisMjvPVJ">
-					</div>
+<!-- 					<div style="display: none;"> -->
+<!-- 						<input type="hidden" name="_sourcePage" value="fEEtLIuM0jM0JSSDSr9L8Xyap6ttx7rNLRp__uMMy8iBS8v7lhkmQifNvyJPE6PpqK7nM5vwY5KR2Gq8bmaO9A4_3DDT-Jo0eC1m8a-dQuc="> -->
+<!-- 						<input type="hidden" name="__fp" value="BGDOC4i4z_esGy0zdu4YpxxqhnZgFKt14D7G5b9YG8mn6pqPcFkX2XWlisMjvPVJ"> -->
+<!-- 					</div> -->
 				</form>
 			</div>
 		</div>

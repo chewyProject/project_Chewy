@@ -12,7 +12,7 @@
 <script	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!-- <link rel="stylesheet" type="text/css" href="/assets/css/department.907fb9ba3c46bb88e334.css"> -->
-<link rel="stylesheet" href="css/main/dog.css" />
+<link rel="stylesheet" href="css/main/dog2.css" />
 <title>Dog Supplies: Best Dog & Puppy Products (Free Shipping) | Chewy</title>
 </head>
 
@@ -33,66 +33,95 @@
 	<div class="container">
 		<div class="dept-sliders">
 			<div class="dept-slider">
-				
-					<section class="chewy-home-content padding-top-default">
+					<section class="dept-slider__inner">
 						<div class="slider">
 							<header class="section-heading">	
-								<h2 class="section-heading-heading">Shop By Pet</h2>
+								 <h2>
+	                      			<a href="/b/food-332">
+	                        			Food<span>Shop All</span>
+	                      			</a>
+	                    		</h2>
 							</header>
-							<ul class="bxslider_four">
-								<li>
+							<ul class="bxslider_four row">
+								<li class="col">
 									<a href="https://www.chewy.com/b/dog-288">
-						 				<img src="https://cms-www.chewy.com/contentAsset/image/5d711871-420a-4a49-8523-cfdd1da16389/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsDog-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+							 				<img src="//img.chewy.com/is/image/category/294-MAIN-dog-dry-food._AC_SX190_SY150_V1514926976_.jpg" class="petImage">
+										</span>
+							 			<p>DRY FOOD</p>
 						 			</a>
-						 			<div class="pet-name-text">Dog</div>
 								 </li>
 								 <li>
 									<a href="https://www.chewy.com/b/cat-325">
-										<img src="https://cms-www.chewy.com/contentAsset/image/9b9d82af-d798-4026-be7d-86bfbe0e923a/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsCat-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+											<img src="//img.chewy.com/is/image/category/293-MAIN-dog-wet-food._AC_SX190_SY150_V1644506181_.jpg" class="petImage">
+										</span>
+										<p>WET FOOD</p>
 									</a>
-									<div class="pet-name-text">Cat</div>
 								</li>
 								<li>
 									<a href="https://www.chewy.com/b/small-pet-977">
-				 						<img src="https://cms-www.chewy.com/contentAsset/image/dcdf9d88-8a18-491b-94e2-15644238f7fa/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsSmallPet-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+					 						<img src="//img.chewy.com/is/image/category/459-MAIN-dog-prescription-food._AC_SX190_SY150_V1644506181_.jpg" class="petImage">
+										</span>
+					 					<p>Veterinary Diets</p>
 				 					</a>
-				 					<div class="pet-name-text">Small pet</div>
 								</li>
 								<li>
 									<a href="https://www.chewy.com/b/bird-941">
-				 						<img src="https://cms-www.chewy.com/contentAsset/image/f0fe058f-896c-4060-a2bc-320971c93357/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsBird-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+					 						<img src="//img.chewy.com/is/image/category/11728-MAIN-dog-premium-food._AC_SX190_SY150_V1593093995_.jpg" class="petImage">
+										</span>
+					 					<p>PREMIUM FOOD</p>
 				 					</a>
-				 					<div class="pet-name-text">Bird</div>
 								</li>
 								<li>				
 									<a href="https://www.chewy.com/b/fish-885">
-				 						<img src="https://cms-www.chewy.com/contentAsset/image/1fb36d70-7daf-4c6c-8e48-8cd1bfdc1c05/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsFish-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+					 						<img src="//img.chewy.com/is/image/catalog/368093_MAIN._AC_SX190_SY150_V1644525123_.jpg" class="petImage">
+										</span>
+					 					<p>FRESH & PREPARED MEALS</p>
 				 					</a>
-				 					<div class="pet-name-text">Fish</div>
 								</li>
 								<li>
 									<a href="https://www.chewy.com/b/reptile-1025">
-				 						<img src="https://cms-www.chewy.com/contentAsset/image/07a43f5a-b000-42cc-a86d-36da0e2a0713/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsReptile-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+					 						<img src="//img.chewy.com/is/image/category/8424-MAIN-dog-raw-food._AC_SX190_SY150_V1566239075_.jpg" class="petImage">
+										</span>
+					 					<p>RAW FOOD</p>
 				 					</a>
-				 					<div class="pet-name-text">Reptile</div>
 								</li>
 								<li>
 									<a href="https://www.chewy.com/b/horse-1663">
-				 						<img src="https://cms-www.chewy.com/contentAsset/image/fb2ba0ba-0795-402b-a7ed-beafe0c2382b/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsHorse-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+					 						<img src="https://img.chewy.com/is/image/category/1902-MAIN-dog-human-grade-food._AC_SX190_SY150_V1594413972_.jpg" class="petImage">
+										</span>
+					 					<p>HUMAN-GRADE</p>
 				 					</a>
-				 					<div class="pet-name-text">Horse</div>
 								</li>
 								<li>
 									<a href="https://www.chewy.com/b/farm-animal-8403">
-				 						<img src="https://cms-www.chewy.com/contentAsset/image/bd2f9c28-558c-4146-aa31-a5329fea2ab4/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsChicken-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+					 						<img src="https://img.chewy.com/is/image/category/337-MAIN-dog-food-toppings._AC_SX190_SY150_V1519244738_.jpg" class="petImage">
+										</span>
+					 					<p>FOOD TOPPINGS</p>
 				 					</a>
-				 					<div class="pet-name-text">Farm Animal</div>
 								</li>
 								<li>
 									<a href="https://www.chewy.com/b/pet-parents-15439">
-				 						<img src="https://cms-www.chewy.com/contentAsset/image/b73ff3e3-c8c8-4bef-a4c0-c29803eae400/fileAsset/byInode/1/filter/Resize,Jpeg/jpeg_q/100/resize_w/222/resize_h/222/PET-TILES-Deal-FlagsPetParent-2x.jpg" class="petImage">
+										<span class="dept-slider__img">
+					 						<img src="https://img.chewy.com/is/image/category/334-MAIN-dog-frozen-food._AC_SX190_SY150_V1532619416_.jpg" class="petImage">
+										</span>
+					 					<p>FROZEN FOOD</p>
 				 					</a>
-				 					<div class="pet-name-text">And Pet Parents, Too</div>
+								</li>
+								<li>
+									<a href="https://www.chewy.com/b/pet-parents-15439">
+										<span class="dept-slider__img">
+					 						<img src="https://img.chewy.com/is/image/category/1559-MAIN-dog-dehydrated-food._AC_SX190_SY150_V1519244737_.jpg" class="petImage">
+										</span>
+				 						<p>FREEZE-DRIED & DEHYDRATED FOOD</p>
+				 					</a>
 								</li>
 							</ul>
 						</div>
@@ -1365,11 +1394,15 @@
 			speed : 500, // 애니메이션 속도
 			pause : 10000, // 애니메이션 유지시간 5초
 			mode : 'horizontal', // 슬라이드모드 = fade, horizontal, vertical 있다.
-			moveSlides : 1,
+			moveSlides : 5,
 			//minSlides : 5, // 슬라이드 최소 노출 개수
-			maxSlides : 6, // 슬라이드 최대 노출 개수
+			maxSlides : 5, // 슬라이드 최대 노출 개수
 			slideWidth : 200,
-			pager : false
+			pager : false,
+			infiniteLoop : false,
+// 			hideControlOnEnd  : true,
+			responsive : true
+			
 		});
 	});
 

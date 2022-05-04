@@ -40,20 +40,23 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int login(MemberVo memberVo) throws Exception {
+	public List<MemberVo> login(MemberVo memberVo) throws Exception {
+		 
+		return memberdao.login(memberVo);
 		
-		System.out.println("service");
-		
-		int status = 0;
-		
-		if(memberdao.login(memberVo).size() > 0 ) {
-			status = 200;
-			memberdao.login(memberVo);
-		}else {
-			status = 400;
-		}
-		return status;
-	}
+//		System.out.println("service");
+//		
+//		int status = 0;
+//		
+//		if(memberdao.login(memberVo).size() > 0 ) {
+//			status = 200;
+//			memberdao.login(memberVo);
+//		}else {
+//			status = 400;
+//		}
+//		return status;
+//	}
 	
+	}
 	
 }

@@ -1,0 +1,1158 @@
+/* @media (min-width: 768px) and (max-width: 1249px) { */
+	.dept__banner {
+    background: #ffcc42 url(//cms-www.chewy.com/contentAsset/raw-data/99f3690f-ca5f-4101-b752-5e003522958e/mediumImage/43246945-9af5-4c92-9051-e80618536394) no-repeat 50%;
+	}	
+	
+/* } */
+	
+.dept__banner {
+    position: relative;
+    margin: 0 0 20px;
+    height: 310px;
+}
+
+
+.dept__banner__title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+@media (min-width: 970px) and (max-width: 1249px) {
+	.container {
+	    padding: 0 20px;
+	}
+}
+
+.container {
+    min-width: 750px;
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+    *zoom: 1;
+    transition: width .2s ease-out;
+}
+
+
+.dept__banner h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: left;
+    line-height: .85em;
+    text-transform: lowercase;
+    color: #fff;
+}
+
+@media (min-width: 1250px) and (max-width: 1399px) {
+	.container {
+	    padding: 0 40px;
+	}
+}
+
+.dept-sliders {
+    width: 100%;
+    float: left;
+}
+
+@media (min-width: 970px) {
+	.dept-slider {
+	    margin: 0 0 0 260px;
+	}
+}
+
+@media (min-width: 970px) {
+	.dept-slider__inner {
+	    padding: 15px 25px;
+	}
+}
+
+.dept-slider__inner {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 0 #ddd;
+    overflow: hidden;
+    margin: 0 0 20px;
+    position: relative;
+}
+
+.dept-slider header {
+    padding: 10px 25px 10px 0;
+    margin: 0 0 25px;
+}
+
+@media (min-width: 970px) {
+	
+	.dept-slider h2 {
+	    font-size: 3.5rem;
+	}
+}
+
+.dept-slider h2 {
+    padding-top: 0;
+    margin: 0;
+}
+@media (min-width: 40em) {
+	
+	h2 {
+	    font-size: 3rem;
+	    line-height: 1.2;
+	    margin-top: -0.3em;
+	    margin-bottom: 0.6666666667em;
+	    padding-top: 1.2em;
+	    font-weight: 300;
+	    color: #333;
+	    border: none;
+	}
+}
+
+@media (min-width: 970px) {
+	.dept-slider h2 {
+	    font-size: 3.5rem;
+	}
+}
+
+.dept-slider h2 {
+    padding-top: 0;
+    margin: 0;
+}
+
+@media (min-width: 40em) {
+	h2 {
+	    font-size: 3rem;
+	    line-height: 1.2;
+	    margin-top: -0.3em;
+	    margin-bottom: 0.6666666667em;
+	    padding-top: 1.2em;
+	    font-weight: 300;
+	    color: #333;
+	    border: none;
+	}
+	
+}
+
+@media (min-width: 970px) {
+	
+	.dept-slider h2 span {
+	    margin: 0 0 0 15px;
+	    padding: 0 15px;
+	}
+}
+.dept-slider h2 span {
+    color: #0e70be;
+    font-size: .4em;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 1px solid #ddd;
+    background: url(/assets/img/icons/arrow-right-blue.svg) no-repeat 100%;
+    background-size: 6px 10px;
+}
+
+@media (min-width: 970px) {
+	
+	.dept-slider .bx-controls-direction {
+	    right: 10px;
+	}
+	
+}
+
+.dept-slider .bx-controls-direction {
+    position: absolute;
+    top: 20px;
+}
+
+.dept-slider .bx-controls-direction .bx-next {
+    float: right;
+}
+
+.bx-controls-direction .bx-next {
+    background-image: url(	https://www.chewy.com/assets/img/icons/arrow-right-blue.png);
+    background-position: 12px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+}
+.bx-controls-direction a {
+    margin: 0 3px;
+    border: 2px solid #128ced;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-indent: -9999px;
+    float: left;
+    transition: background-color .3s ease;
+
+}
+
+.dept-slider .bx-controls-direction .bx-prev {
+    float: left;
+}
+
+.bx-controls-direction .bx-prev.disabled, .bx-controls-direction .bx-prev.disabled:hover {
+    background-image: url(	https://www.chewy.com/assets/img/icons/arrow-left-ddd-grey.png);
+}
+.bx-controls-direction a.disabled {
+    border-color: #eee;
+    cursor: default;
+}
+.bx-controls-direction .bx-prev {
+    background-image: url(	https://www.chewy.com/assets/img/icons/arrow-left-blue.png);
+    background-position: 9px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+}
+
+.bx-wrapper {
+    max-width: 965px;
+    position: relative;
+    padding: 0;
+    *zoom: 1;
+    touch-action: pan-y;
+}
+
+.bx-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 242px;
+    -webkit-transform: translatez(0);
+    transform: translatez(0);
+}
+
+.bxslider js-draggable-on-desktop {
+	width: 10215%;
+    position: relative;
+    transition-duration: 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.dept-slider ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
+    display: block;
+    height: 241px;
+    *zoom: 1;
+    overflow: hidden;
+}
+
+
+.dept-slider li {
+    margin: 0;
+    width: 20%;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 241px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    white-space: normal;
+}
+
+.dept-slider .bxslider a {
+    display: block;
+}
+.dept-slider li a {
+    display: block;
+    padding: 10px;
+    min-height: 240px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+a, a:hover {
+    color: #0e70be;
+}
+
+.dept-slider__img {
+    display: block;
+    height: 150px;
+    margin: 0 0 25px;
+    position: relative;
+}
+
+.dept-slider img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dept-slider p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.11;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+@media (min-width: 40em) {
+	dl, ol, p, ul {
+	    margin-top: -0.375em;
+	    margin-bottom: 1.25em;
+	}
+}
+
+@media (min-width: 970px) {
+	.dept-slider__inner {
+	    padding: 15px 25px;
+	}
+}
+
+@media (min-width: 970px) {
+	.dept-sidebar {
+	    width: 230px;
+	}
+}
+
+.dept-sidebar {
+    float: left;
+    margin: 0 0 0 -100%;
+}
+
+.dept-sidebar>ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.9rem;
+}
+
+
+.dept-sidebar>ul>li {
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.dept-sidebar li {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (min-width: 970px) {
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+}
+
+.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+
+.dept-sidebar>ul>li>a {
+    padding: 16px 10px;
+    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
+}
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
+}
+
+a, a:hover {
+    color: #0e70be;
+}
+
+
+@media (min-width: 970px) {
+	.dept-sidebar .dept__popover {
+	    width: 600px;
+	}
+}
+.dept-sidebar .dept__popover {
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+@media (min-width: 970px){
+	
+	.dept__popover {
+	    left: 245px;
+	}
+	
+}
+.dept__popover {
+    position: absolute;
+    top: -8px;
+}
+.dept__popover {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 60%);
+    padding: 25px;
+}
+
+
+.dept-sidebar>ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
+    font-size: 1.0rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.9rem;
+}
+
+@media (min-width: 970px) {
+	
+	.dept-sidebar .dept__popover {
+	    width: 600px;
+	}
+	
+}
+.dept-sidebar .dept__popover {
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+@media (min-width: 970px) {
+	.dept__popover {
+	    left: 245px;
+	}
+}
+.dept__popover {
+    position: absolute;
+    top: -8px;
+}
+.dept__popover {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 60%);
+    padding: 25px;
+}
+
+.dept__popover h3 {
+    padding-top: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1em;
+    text-transform: lowercase;
+    color: #0e70be;
+    margin: 0 0 15px;
+}
+
+@media (min-width: 40em) {
+	h3 {
+	    font-size: 2.4rem;
+	    line-height: 1.25;
+	    margin-top: -0.2916666667em;
+	    margin-bottom: 1em;
+	    padding-top: 1.25em;
+	    font-weight: 500;
+	    color: #333;
+	    border: none;
+	}
+}
+
+.dept__popover h3 a {
+    display: inline-block;
+    color: #0e70be;
+}
+
+.dept__popover a {
+    transition: color .2s ease-out;
+}
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
+}
+a, a:hover {
+    color: #0e70be;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+
+.dept__popover__inner:after, .dept__popover__inner:before {
+    content: "";
+    display: table;
+}
+
+
+.dept__popover__content {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dept__popover ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.dept__popover li {
+    margin: 0;
+    padding: 10px 0;
+    line-height: 1.22;
+}
+
+.dept-sidebar li {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.dept__popover a {
+    transition: color .2s ease-out;
+}
+
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
+}
+
+@media (min-width: 970px) {
+	.dept-sidebar li:after {
+	    left: 237px;
+	}
+}
+
+.dept-sidebar li:after {
+    content: "";
+    display: block;
+    background: #fff;
+    -webkit-transform: translateY(-30%) rotate(45deg);
+    transform: translateY(-30%) rotate(45deg);
+    position: absolute;
+    top: 25px;
+    left: 230px;
+    width: 16px;
+    height: 16px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: -2px 2px 1px rgb(0 0 0 / 20%);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    transition: opacity .15s ease-out;
+}
+
+.dept__popover__img {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 -4px;
+}
+
+.dept__popover__img img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+fieldset, img {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dept__popover__inner:after {
+    clear: both;
+}
+.dept__popover__inner:after, .dept__popover__inner:before {
+    content: "";
+    display: table;
+}
+:after, :before {
+    box-sizing: inherit;
+}
+
+
+.dept-sidebar li.dept-sidebar--active, .dept-sidebar li:hover {
+    overflow: inherit;
+}
+
+.dept-sidebar>ul>li {
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+.dept-sidebar li {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+@media (min-width: 769px) {
+	
+	.dept-sidebar>ul>li:hover>a {
+	    color: #0e70be;
+	    background-image: url(/assets/img/icons/arrow-right-blue.svg);
+	}
+}
+
+.dept-sidebar a:hover {
+    text-decoration: none;
+}
+@media (min-width: 970px) {
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+	
+}
+.dept-sidebar>ul>li>a {
+    padding: 18px 10px;
+    background-image: url(/assets/img/icons/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
+}
+
+
+
+
+
+
+/* .dept__banner { */
+/* 	background: #ffcc42 */
+/* 		url(//cms-www.chewy.com/contentAsset/raw-data/99f3690f-ca5f-4101-b752-5e003522958e/largeImage/43246945-9af5-4c92-9051-e80618536394) */
+/* 		no-repeat 50%; */
+/* 	position: relative; */
+/* 	margin: 0 0 20px; */
+/* 	height: 310px; */
+/* } */
+
+/* .dept__banner__title { */
+/* 	position: absolute; */
+/* 	top: 50%; */
+/* 	left: 60px; */
+/* 	width: 100%; */
+/* 	-webkit-transform: translateY(-50%); */
+/* 	transform: translateY(-50%); */
+/* } */
+
+/* .dept__banner h1 { */
+/* 	font-size: 4rem; */
+/* 	font-weight: 600; */
+/* 	text-align: left; */
+/* 	line-height: .85em; */
+/* 	text-transform: lowercase; */
+/* 	color: #fff; */
+/* } */
+
+
+/* /* ---------------슬라이더 css-------------------------------- */ */
+
+/* @media (min-width: 970px) and (max-width: 1249px) { */
+
+/* 	.container { */
+/* 	    padding: 0 20px; */
+/* 	} */
+
+/* } */
+
+/* .container { */
+/*     min-width: 750px; */
+/*     max-width: 1400px; */
+/*     margin: auto; */
+/*     width: 100%; */
+/*     *zoom: 1; */
+/*     transition: width .2s ease-out; */
+/* } */
+
+
+/* * { */
+/*     box-sizing: border-box; */
+/* } */
+
+/* .dept-sliders { */
+/* 	width: 100%; */
+/*     float: left; */
+/* } */
+
+/* @media (min-width: 970px) { */
+/* 	.dept-slider { */
+/*     margin: 0 0 0 260px; */
+/* } */
+/* } */
+
+
+/* @media (min-width: 970px) { */
+/* 	.dept-slider__inner { */
+/*     padding: 15px 25px; */
+/* 	} */
+/* } */
+
+
+/* .dept-slider__inner { */
+/*     background: #fff; */
+/*     border: 1px solid #ddd; */
+/*     border-radius: 5px; */
+/*     box-shadow: 0 1px 0 0 #ddd; */
+/*     overflow: hidden; */
+/*     margin: 0 0 20px; */
+/*     position: relative; */
+/* } */
+/* .dept-slider header { */
+/*     padding: 10px 25px 10px 0; */
+/*     margin: 0 0 25px; */
+/* } */
+
+/* @media (min-width: 970px) { */
+/* 	.dept-slider h2 { */
+/*     font-size: 3.5rem; */
+/* 	} */
+/* } */
+
+
+
+/* .dept-slider h2 { */
+/*     padding-top: 0; */
+/*     margin: 0; */
+/* } */
+
+/* @media (min-width: 40em) { */
+/* 	h2 { */
+/*     font-size: 3rem; */
+/*     line-height: 1.2; */
+/*     margin-top: -0.3em; */
+/*     margin-bottom: 0.6666666667em; */
+/*     padding-top: 1.2em; */
+/*     font-weight: 300; */
+/*     color: #333; */
+/*     border: none; */
+/* 	} */
+
+/* } */
+
+
+
+/* @media (min-width: 1200px) { */
+/* 	.h2, h2 { */
+/*     font-size: 2rem; */
+/* 	} */
+	
+/* } */
+
+
+/* .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { */
+/*     margin-top: 0; */
+/*     margin-bottom: 0.5rem; */
+/*     font-weight: 500; */
+/*     line-height: 1.2; */
+/* } */
+
+/* .dept-slider h2 a { */
+/*     color: #444; */
+/*     transition: color .2s ease-out; */
+/* } */
+
+/* @media (min-width: 970px) { */
+/* 		.dept-slider__inner h2 span { */
+/*     margin: 0 0 0 15px; */
+/*     padding: 0 15px; */
+/* 	} */
+/* } */
+
+
+/* .dept-slider__inner h2 span { */
+/*     color: #0e70be; */
+/*     font-size: .4em; */
+/*     font-weight: 400; */
+/*     display: inline-block; */
+/*     vertical-align: middle; */
+/*     border-left: 1px solid #ddd; */
+/*     background: url(/assets/img/icons/arrow-right-blue.svg) no-repeat 100%; */
+/*     background-size: 6px 10px; */
+/* } */
+
+/* @media (min-width: 970px) { */
+/* 	.dept-slider .bx-controls-direction { */
+/*     right:10px; */
+/* 	} */
+/* } */
+
+
+/* .dept-slider .bx-controls-direction { */
+/*     position: absolute; */
+/*     top: 20px; */
+/* } */
+
+/* .dept-slider__inner .bx-controls-direction .bx-next { */
+/*     float: right; */
+/* } */
+/* .bx-controls-direction .bx-next { */
+/*     background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.png); */
+/*     background-position: 12px; */
+/*     background-repeat: no-repeat; */
+/*     background-size: 10px; */
+/* } */
+
+/* .bx-controls-direction a { */
+/*     margin: 0 3px; */
+/*     border: 2px solid #128ced; */
+/*     border-radius: 50%; */
+/*     width: 35px; */
+/*     height: 35px; */
+/*     display: block; */
+/*     text-indent: -9999px; */
+/*     float: left; */
+/*     transition: background-color .3s ease; */
+/* } */
+
+/* a, a:hover { */
+/*     color: #0e70be; */
+/* } */
+/* a { */
+/*     text-decoration: none; */
+/*     background-color: transparent; */
+/*     -webkit-text-decoration-skip: objects; */
+/* } */
+
+/* .dept-slider .bx-controls-direction .bx-prev { */
+/*     float: left; */
+/* } */
+/* .bx-controls-direction .bx-prev.disabled, .bx-controls-direction .bx-prev.disabled:hover { */
+/*     background-image: url(https://www.chewy.com/assets/img/icons/arrow-left-ddd-grey.png); */
+/* } */
+/* .bx-controls-direction a.disabled { */
+/*     border-color: #eee; */
+/*     cursor: default; */
+/* } */
+/* .bx-controls-direction .bx-prev { */
+/*     background-image: url(https://www.chewy.com/assets/img/icons/arrow-left-blue.png); */
+/*     background-position: 9px; */
+/*     background-repeat: no-repeat; */
+/*     background-size: 10px; */
+/* } */
+/* .bx-controls-direction a { */
+/*     margin: 0 3px; */
+/*     border: 2px solid #128ced; */
+/*     border-radius: 50%; */
+/*     width: 35px; */
+/*     height: 35px; */
+/*     display: block; */
+/*     text-indent: -9999px; */
+/*     float: left; */
+/*     transition: background-color .3s ease; */
+/* } */
+
+/* a, a:hover { */
+/*     color: #0e70be; */
+/* } */
+
+
+/* .bx-wrapper { */
+/* 	max-width: 990px; */
+/*     position: relative; */
+/*     padding: 0; */
+/* /*     *zoom: 1; */ */
+/*     touch-action: pan-y; */
+/* } */
+
+/* .bx-viewport { */
+/*     -webkit-transform: translatez(0); */
+/*     transform: translatez(0); */
+/* } */
+
+/* .dept-slider ul { */
+/*     margin-top: 0; */
+/*     margin-bottom: 0; */
+/*     padding-right: 0; */
+/*     padding-left: 0; */
+/*     list-style-type: none; */
+/*     display: block; */
+/*     height: 241px; */
+/*     *zoom: 1; */
+/*     overflow: hidden; */
+/* } */
+
+/* .dept-slider li { */
+/*     margin: 0; */
+/*     width: 20%; */
+/*     display: inline-block; */
+/*     vertical-align: middle; */
+/*     min-height: 241px; */
+/*     border-left: 1px solid transparent; */
+/*     border-right: 1px solid transparent; */
+/*     white-space: normal; */
+/* } */
+
+/* .dept-slider .bxslider a { */
+/*     display: block; */
+/* } */
+/* .dept-slider li a { */
+/*     display: block; */
+/*     padding: 10px; */
+/*     min-height: 240px; */
+/*     border-radius: 5px; */
+/*     border: 1px solid transparent; */
+/* } */
+
+/* .dept-slider__img { */
+/*     display: block; */
+/*     height: 150px; */
+/*     margin: 0 0 25px; */
+/*     position: relative; */
+/* } */
+
+/* .dept-slider img { */
+/*     display: block; */
+/*     max-height: 100%; */
+/*     max-width: 100%; */
+/*     width: auto; */
+/*     height: auto; */
+/*     margin: 0 auto; */
+/*     position: relative; */
+/*     top: 50%; */
+/*     -webkit-transform: translateY(-50%); */
+/*     transform: translateY(-50%); */
+/* } */
+
+/* .dept-slider p { */
+/*     font-size: 1.4rem; */
+/*     font-weight: 600; */
+/*     text-align: center; */
+/*     line-height: 1.11; */
+/*     color: inherit; */
+/*     text-transform: uppercase; */
+/* } */
+
+/* .dept-slider .bxslider a { */
+/*     display: block; */
+/* } */
+
+/* .bx-controls-direction .bx-prev {left: 0;} */
+/*   .bx-controls-direction .bx-next {right: 0;} */
+
+
+/* /* <!-- ------------ 사이드바 ----------------------- --> */ */
+/* @media (min-width: 970px) { */
+/* 	.dept-sidebar { */
+/* 	    width: 230px; */
+/* 	} */
+
+/* } */
+/* .dept-sidebar { */
+/*     float: left; */
+/*     margin: 0 0 0 -100%; */
+/* } */
+
+/* .dept-sidebar>ul { */
+/*     margin-top: 0; */
+/*     margin-bottom: 0; */
+/*     padding-right: 0; */
+/*     padding-left: 0; */
+/*     list-style-type: none; */
+/*     font-size: 1.1rem; */
+/*     font-weight: 400; */
+/*     text-align: left; */
+/*     line-height: 1.9rem; */
+/* } */
+/* .dept-sidebar li.dept-sidebar--active, .dept-sidebar li:hover { */
+/*     overflow: inherit; */
+/* } */
+/* .dept-sidebar li.dept-sidebar--active, .dept-sidebar li:active { */
+/*     overflow: inherit; */
+/* } */
+
+
+/* .dept-sidebar>ul>li { */
+/*     margin: 0; */
+/*     border-bottom: 1px solid #ccc; */
+/* } */
+
+/* .dept-sidebar li { */
+/*     display: block; */
+/*     overflow: hidden; */
+/*     position: relative; */
+/* } */
+
+/* @media (max-width: 1024px) { */
+/* .dept-sidebar>ul>li.dept-sidebar--active>a { */
+/*     color: #0e70be; */
+/*     background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.svg); */
+/* 	} */
+/* } */
+/* @media (min-width: 769px) { */
+/* 	.dept-sidebar>ul>li:hover>a { */
+/* 	    color: #0e70be; */
+/* 	    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.svg); */
+/* 	} */
+
+/* } */
+
+/* .dept-sidebar a:hover { */
+/*     text-decoration: none; */
+/* } */
+
+/* @media (max-width: 969px) { */
+	
+/* .dept-sidebar>ul>li>a { */
+/*     background-position: 172px; */
+/* } */
+/* .dept-sidebar>ul>li>a { */
+/*     padding: 18px 10px; */
+/*     background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg); */
+/*     background-repeat: no-repeat; */
+/*     background-size: 8px 13px; */
+/* } */
+
+/* a:hover { */
+/*     text-decoration: underline; */
+/* } */
+
+/* .dept-sidebar>ul>li { */
+/*     margin: 0; */
+/*     border-bottom: 1px solid #ccc; */
+/* } */
+/* .dept-sidebar li { */
+/*     display: block; */
+/*     overflow: hidden; */
+/*     position: relative; */
+/* } */
+
+
+/* .dept-sidebar li:after { */
+/*     content: ""; */
+/*     display: block; */
+/*     background: #fff; */
+/*     -webkit-transform: translateY(-30%) rotate(45deg); */
+/*     transform: translateY(-30%) rotate(45deg); */
+/*     position: absolute; */
+/*     top: 25px; */
+/*     left: 230px; */
+/*     width: 16px; */
+/*     height: 16px; */
+/*     border-left: 1px solid #ddd; */
+/*     border-bottom: 1px solid #ddd; */
+/*     box-shadow: -2px 2px 1px rgb(0 0 0 / 20%); */
+/*     visibility: hidden; */
+/*     opacity: 0; */
+/*     z-index: 99; */
+/*     transition: opacity .15s ease-out; */
+/* } */
+
+
+
+/* @media (min-width: 970px) { */
+/* 	.dept-sidebar>ul>li>a { */
+/* 	    background-position: 212px; */
+/* 	} */
+/* } */
+
+/* .dept-sidebar>ul>li>a { */
+/*     padding: 18px 10px; */
+/*     background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg); */
+/*     background-repeat: no-repeat; */
+/*     background-size: 8px 13px; */
+/* } */
+/* .dept-sidebar a { */
+/*     display: block; */
+/*     color: #555; */
+/*     position: relative; */
+/* } */
+
+/* a { */
+/*     text-decoration: none; */
+/*     background-color: transparent; */
+/* } */
+
+/* @media (min-width: 970px) { */
+/* 	.dept-sidebar .dept__popover { */
+/*     width: 600px; */
+/* 	} */
+/* } */
+
+
+/* .dept-sidebar .dept__popover { */
+/*     background: #fff; */
+/*     visibility: hidden; */
+/*     opacity: 0; */
+/*     transition: opacity .2s ease-out; */
+/* } */
+/* @media (min-width: 970px) { */
+/* 	.dept__popover { */
+/* 	    left: 245px; */
+/* 	} */
+/* } */
+/* .dept__popover { */
+/*     position: absolute; */
+/*     top: -8px; */
+/* } */
+/* .dept__popover { */
+/*     border-radius: 5px; */
+/*     border: 1px solid #ddd; */
+/*     box-shadow: 0 2px 5px rgb(0 0 0 / 60%); */
+/*     padding: 25px; */
+/* } */
+
+/* .dept__popover h3 { */
+/*     padding-top: 0; */
+/*     font-size: 1.5em; */
+/*     font-weight: 400; */
+/*     text-align: left; */
+/*     line-height: 1em; */
+/*     text-transform: lowercase; */
+/*     color: #0e70be; */
+/*     margin: 0 0 15px; */
+/* } */
+
+/* .dept__popover h3 a { */
+/*     display: inline-block; */
+/*     color: #0e70be; */
+/* } */
+
+/* .dept__popover a { */
+/*     transition: color .2s ease-out; */
+/* } */
+/* .dept-sidebar a { */
+/*     display: block; */
+/*     color: #555; */
+/*     position: relative; */
+/* } */
+
+/* .dept-sidebar li:after { */
+/*     content: ""; */
+/*     display: block; */
+/*     background: #fff; */
+/*     -webkit-transform: translateY(-30%) rotate(45deg); */
+/*     transform: translateY(-30%) rotate(45deg); */
+/*     position: absolute; */
+/*     top: 25px; */
+/*     left: 230px; */
+/*     width: 16px; */
+/*     height: 16px; */
+/*     border-left: 1px solid #ddd; */
+/*     border-bottom: 1px solid #ddd; */
+/*     box-shadow: -2px 2px 1px rgb(0 0 0 / 20%); */
+/*     visibility: hidden; */
+/*     opacity: 0; */
+/*     z-index: 99; */
+/*     transition: opacity .15s ease-out; */
+/* } */
+
