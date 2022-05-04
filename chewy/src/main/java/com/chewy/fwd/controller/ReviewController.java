@@ -18,7 +18,7 @@ public class ReviewController {
 	private ReviewService reviewService;
 	
 	// 리뷰 조회
-	@RequestMapping(value = "reviewList.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/reviewList.do", method = RequestMethod.GET)
 	public String review(ReviewVo reviewVo, Model model) throws Exception {
 		List<ReviewVo> review = reviewService.selectReviewList(reviewVo);
 		model.addAttribute("review", review);
@@ -43,6 +43,6 @@ public class ReviewController {
 		
 		reviewService.insertReview(reviewVo);
 		System.out.println("리뷰 등록 성공");
-		return "redirect:reviewList.do";
+		return "reviewList.do";
 	}
 }
