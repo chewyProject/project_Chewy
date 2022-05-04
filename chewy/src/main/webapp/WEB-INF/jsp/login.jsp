@@ -62,7 +62,7 @@
 							<p>Creating an account is fast, easy, and free. You'll be
 								able to manage your autoships, track your orders, write reviews,
 								and more!</p>
-							<a href="/app/register?url=%2Fapp%2Faccount" class="cw-btn cw-btn--default js-create-account">Create Account</a>
+							<a href="register.do" class="cw-btn cw-btn--default js-create-account">Create Account</a>
 						</div>
 					</div>
 

@@ -35,7 +35,7 @@ public class MemberController {
 	public String registerPage() {
 		System.out.println("회원 가입 페이지");
 
-		return "register";
+		return "account/create";
 	}
 
 	// 회원 가입 insert
