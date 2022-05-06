@@ -137,7 +137,7 @@ public class MemberController {
 			
 				List<MemberVo> memberInfo = memberService.mypageSelectOne(no);
 				model.addAttribute("info", memberInfo);
-				return "mypage";
+				return "overview";
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

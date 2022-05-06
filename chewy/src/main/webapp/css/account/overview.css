@@ -1,0 +1,42 @@
+main {
+    font-size: 10px;
+    padding-bottom: 40px;
+    display: block;
+}
+
+.account_navi {
+	z-index: 200;
+}
+
+.account_navi_wrap {
+    background: #fcfcfc;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.1;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    right: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+}
+
+.account_navi_list {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: auto;
+    min-width: 140rem;
+}
+
+.account_navi_list, .main_wrap {
+	padding: 0 60px;
+}
+
+.account_navi_list:before, .a_main:before, .overview_main .main_wrap .overview_mid:before, .overview_main .main_wrap .overview_mid:after {
+   	content: "";
+    display: table;
+}
