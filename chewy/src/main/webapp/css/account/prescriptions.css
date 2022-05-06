@@ -1,0 +1,213 @@
+main {
+    font-size: 10px;
+    padding-bottom: 40px;
+    display: block;
+}
+
+.account_navi {
+	z-index: 200;
+}
+
+.account_navi_wrap {
+    background: #fcfcfc;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.1;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    right: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+}
+
+.account_navi_list {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: auto;
+    min-width: 140rem;
+    justify-content: space-between;
+}
+
+.account_navi_list, .main_wrap {
+	padding: 0 60px;
+}
+
+.account_navi_list:before, .prescriptions_main:before, .prescriptions_main .main_wrap .prescriptions_mid:before, .prescriptions_main .main_wrap .prescriptions_mid:after {
+   	content: "";
+    display: table;
+}
+
+.prescriptions_main .main_wrap .prescriptions_mid:after {
+	clear: both;
+}
+
+.account_navi_list>li {
+    margin: 0 0.8rem 0 0;
+    display: inline-block;
+    padding: 8px 2px;
+    white-space: nowrap;
+}
+
+.account_navi_list>li>a {
+	font-size: 16px;
+	display: block;
+    color: #333;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all .2s ease-out;
+    line-height: 1;
+}
+
+.account_navi_list .prescriptions>a {
+	background: #0e70be;
+    color: #fff;
+    border-color: #0e70be;
+}
+
+.account_navi_list .other>a:hover {
+	border: 1px solid #0e70be;
+	color: #0e70be;
+}
+
+main .prescriptions_main {
+	min-width: 750px;
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+    transition: width .2s ease-out;
+    padding-top: 2rem;
+}
+
+.prescriptions_top {
+	margin-bottom: 2.4rem;
+}
+
+.prescriptions_top>a {
+	position: relative;
+    font-weight: 400;
+    text-decoration: none;
+    color: #666;
+}
+
+.prescriptions_top>a, .prescriptions_top>span {
+	font-size:12px;
+}
+
+.prescriptions_top .top_prect {
+	color: #1c49c2;
+	cursor: pointer;
+}
+
+.prescriptions_top>a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px dashed #bbb;
+    transition: border .12s ease-out;
+}
+
+.prescriptions_top>span {
+	font-weight: 500;
+    color: #000;
+}
+
+.prescriptions_top>span:before {
+	content: "/";
+	margin-right: 0.8rem;
+}
+
+.prescriptions_mid {
+	margin-bottom: 0.8rem;
+}
+
+.prescriptions_mid>h2 {
+    font-size: 3.6rem;
+    line-height: 4.5rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+    color: #333;
+    border: none;
+}
+
+.prescriptions_bottom {
+    display: flex;
+    flex-direction: row;
+    margin: 2.4rem 0px;
+}
+
+.prescriptions_bottom_wrap {
+    flex: 3 1 0%;
+}
+
+.pre_btn_wrap {
+	min-width: 32rem;
+    max-width: 100%;
+}
+
+.pre_wrap {
+	padding: 0px 9rem;
+    min-width: 320px;
+    margin: auto auto 2em;
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1024px;
+    flex-direction: column;
+}
+
+.prescriptions_bottom_wrap>img {
+	max-width: 100%;
+}
+
+.prescriptions_bottom_wrap .img_top {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+    margin-top: 0;
+    margin-bottom: 1.6rem;
+}
+
+.prescriptions_bottom_wrap .img_mid {
+    margin-top: -0.375em;
+    margin-bottom: 1.25em;
+    font-size: 1.6rem;
+}
+
+.prescriptions_bottom_wrap .img_bottom {
+	-webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
+    appearance: none;
+    background: #1c49c2;
+    border: 0;
+    border-radius: 4rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1.4rem;
+    font-weight: 700;
+    height: 4.8rem;
+    justify-content: center;
+    letter-spacing: .02em;
+    line-height: 2rem;
+    padding: 0 4rem;
+    position: relative;
+    text-decoration: none;
+    touch-action: manipulation;
+    transform: translate(0);
+    transition: background-color .1s ease-out;
+    user-select: none;
+}
