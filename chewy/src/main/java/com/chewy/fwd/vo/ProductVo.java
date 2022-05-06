@@ -142,4 +142,14 @@ public class ProductVo {
 		this.p_answer = p_answer;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductVo [p_no=" + p_no + ", bct_no=" + bct_no + ", mct_no=" + mct_no + ", sct_no=" + sct_no
+				+ ", b_no=" + b_no + ", p_name=" + p_name + ", img=" + img + ", p_price=" + p_price + ", p_total="
+				+ p_total + ", p_discount=" + p_discount + ", p_star=" + p_star + ", p_question=" + p_question
+				+ ", p_answer=" + p_answer + "]";
+	}
+	
+	
+
 }

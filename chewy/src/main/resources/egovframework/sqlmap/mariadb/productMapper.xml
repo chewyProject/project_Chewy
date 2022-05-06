@@ -7,8 +7,106 @@
 		SELECT * FROM product WHERE P_NO = #{p_no}
 	</select>
 	
-	
 	<select id="productImg" resultType="imgVo">
 		SELECT * FROM img WHERE P_NO = #{p_no}
 	</select>
+	
+<!-- 	<select id="selectProductList" resultType="com.chewy.fwd.vo.ProductVO"> -->
+<!-- 		SELECT * FROM product ORDER BY p_no -->
+<!-- 	</select> -->
+	
+	<select id="selectProduct" parameterType="productVo" resultType="productVo">
+		SELECT * FROM product WHERE p_no = #{p_no} ORDER BY p_no DESC
+	</select>
+	
+	<!-- 게시글 목록 조회 selectProductList-->
+	<select id="selectProductList" resultType="productVo">
+		SELECT * FROM product 
+		<where>
+			<if test="searchType == 'p_name' and keyword != null and keyword !=''">
+                AND p_name like CONCAT('%',#{keyword},'%')
+			</if>
+			<if test="searchType == 'p_img' and keyword != null and keyword !=''">
+				AND p_img like CONCAT('%',#{keyword},'%')
+			</if>
+<!-- 			<if test="searchType == 'productName' and keyword != null and keyword != ''"> -->
+<!-- 				AND productName list CONCAT('%', #{keyword}, '%') -->
+<!-- 			</if> -->
+		</where>
+		ORDER BY p_no DESC
+		LIMIT #{startList}, #{listSize}
+	</select>
+	
+	<!-- 게시글 갯수 -->
+	<select id="getProductListCnt" resultType="Integer">
+		SELECT count(*) as listCnt
+		FROM product
+		<where>
+			<if test="keyword != null and keyword !=''">
+				<if test="searchType =='p_name'">
+					AND p_name like CONCAT('%',#{keyword},'%')
+				</if>
+				<if test="searchType =='p_img'">
+					AND p_img like CONCAT('%',#{keyword},'%')
+				</if>
+<!-- 				<if test="searchType =='productName'">> -->
+<!-- 					AND productName like CONCAT('%', #{keyword}, '%') -->
+<!-- 				</if> -->
+			</if>		
+		</where>
+	</select>
+	
+	<insert id="insertProduct" parameterType="productVo" >
+			INSERT INTO product (p_no, bct_no, mct_no, sct_no, b_no, p_name, 
+							 p_img, p_price, p_total, p_discount, p_star, p_question, p_answer)	 
+			VALUES ((SELECT IFNULL(MAX(p_no) + 1, 1) FROM product CT), #{bct_no}, #{mct_no}, #{sct_no}, #{b_no},
+					 #{p_name}, #{p_img}, #{p_price}, #{p_total}, #{p_discount}, #{p_star}, #{p_question}, #{p_answer})
+	</insert> 
+	
+	<update id="updateProduct" parameterType="productVo">
+		UPDATE product  
+		SET bct_no = #{bct_no},
+			mct_no = #{mct_no},
+			sct_no = #{sct_no},
+			b_no = #{b_no},
+			p_name = #{p_name}, 
+			p_img = #{p_img}, 
+			p_price = #{p_price}, 
+			p_total = #{p_total},
+			p_discount = #{p_discount}, 
+			p_star = #{p_star}, 
+			p_review = #{p_question}, 
+			p_QnA = #{p_answer} 
+		WHERE p_no = #{p_no}
+	</update>
+	
+	<delete id="deleteProduct" parameterType="productVo">
+		DELETE FROM product WHERE p_no = #{p_no}
+	</delete>
+	
+	<!-- 카테고리 별 상품 찾기 -->
+<!-- 	<select id="selectCategoryList" resultType="categoryVO"> -->
+<!-- 		SELECT b.*, m.* -->
+<!-- 		FROM bcategory b RIGHT JOIN mcategory m ON b.BCT_NO = m.BCT_NO -->
+<!-- 		ORDER BY b.BCT_NO -->
+<!-- 	</select> -->
+	
+	
+	<select id="bCategoryList" resultType="categoryVo">
+		SELECT * FROM bcategory 
+	</select>
+	
+	<select id="mCategoryList" resultType="categoryVo">
+		SELECT * FROM mCategory 
+	</select> 
+<!-- 		SELECT * FROM mCategory WHERE bct_overlap LIKE CONCAT('%',#{bct_overlap},'%') -->
+
+	
+	<select id="sCategoryList" resultType="categoryVo">
+		SELECT * FROM scategory 
+	</select>
+	
+	
+	
+	
 </mapper>

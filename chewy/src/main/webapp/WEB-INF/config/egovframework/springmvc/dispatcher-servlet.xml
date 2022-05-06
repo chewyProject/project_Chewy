@@ -59,6 +59,23 @@
         </property>
     </bean>
 	<!-- /For Pagination Tag -->
+	
+	<!-- 파일업도르 관련 설정(multipartResolver 등록) -->
+	<!-- 명칭 multipartResolver 이름 대소문자 일치하게 작성 Resolver 명칭이 있는 객체명은 대체로 정해져있음 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10000000"></property>
+		<!-- <property name="maxInMemorySize" value="100000000" /> -->
+	</bean>
+	
+	<!-- json 설정 -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0" />
+	</bean>
+	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<property name="contentType" value="application/json;charset=UTF-8"> </property>
+	</bean>
+	
 
     <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>
 </beans>
