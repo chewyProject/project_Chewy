@@ -3,8 +3,23 @@ main {
     padding-bottom: 40px;
     display: block;
 }
+li{
+	display: list-item;
+    text-align: -webkit-match-parent;
+}
 
-main .overview_main {
+.overview_main * {
+	box-sizing: border-box;
+}
+.overview_summary{
+	text-transform: none;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0 15px;
+}
+
+.overview_main {
 	min-width: 750px;
     max-width: 1400px;
     margin: auto;
@@ -12,12 +27,111 @@ main .overview_main {
     transition: width .2s ease-out;
     padding-top: 2rem;
 }
+.overview_mid{
+	padding: 0 45px 0 15px;
+	float: left;
+    clear: none;
+    width: 66.66667%;
+    margin-left: 0;
+    margin-right: 0;
+} 
+
+.first_wapper{
+	border: 1px solid #ddd;
+}
+
+.list_click{
+	margin: 0;
+    padding: 0;
+}
+.list_click > li {
+	margin: 0;
+    padding: 0;
+}
+.aTaglink{
+	display: flex;
+    align-items: center;
+    box-shadow: none;
+    margin-bottom: 1.2rem;
+    border-color: #ccc;
+    box-shadow: 0 0 1px 0 #ccc;
+}
+.overview_mid > header > h2{
+	padding: 0rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+.overview_icon-wrapper{
+	background-color: #dbebf9;
+    border-radius: 50%;
+    padding: 0.6rem;
+}
+
+.list_icon{
+	display: inline-block;
+    align-items: baseline;
+    font: inherit;
+    list-style: none;
+    text-align: left;
+}
+
+.icon_image{
+	width: 2.4rem;
+    height: 2.4rem;
+    line-height: .4rem;
+	cursor: pointer;
+	font: inherit;
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    height: auto;
+
+}
+.aTaglink::after{
+	position: absolute;
+    top: 50%;
+    right: 1.6rem;
+    margin-top: -0.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url("../../images/account/nextbutton.svg");
+    background-size: 1.6rem;
+    content: "";
+    
+}
+
+.aTaglink{
+	text-decoration: none; 
+}
+
+.icon_image > svg{
+	display: inline-block;
+    fill: currentColor;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.overview_title_label{
+    margin-left: 1.6rem;
+    margin-bottom: 0rem;
+    font-family: Poppins,Noto Sans,Franklin Gothic Medium,Tahoma,sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+    line-height: 2rem;
+    margin-bottom: 1.6rem;
+    margin-top: 0;
+    
+}
+
 
 .account_navi {
 	z-index: 200;
 }
 .overview_top > h1{
-	font-size: 3.5rem;
+	font-size: 3.6rem;
+    line-height: 1.1111111111;
 	padding: 0 15px;
     margin: 0 0 30px;
 }
