@@ -279,11 +279,9 @@
 		 			console.log(" code : " + request.status + " message : " + request.responseText + " error : " + error);
 	 	 			alert("code : " + request.status + " message : " + request.responseText + " error " + error);
 		 		}
-				
 		 	});
 			
 		});
-			
 		
 		let regex = new RegExp("(.*?)\.(jpg|png)$");
 		let maxSize = 1048576; // 1MB

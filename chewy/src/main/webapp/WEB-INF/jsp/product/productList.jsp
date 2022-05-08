@@ -42,7 +42,7 @@
 						<td class="category">${product.sct_no }</td>
 <!-- 						</select> -->
 						<td>${product.b_no }</td>
-						<td><a href="product.do?p_no=${product.p_no }">${product.p_name }</a>
+						<td><a href="productDetail.do?p_no=${product.p_no }">${product.p_name }</a>
 						</td>
 						<td>${product.img }</td>
 						<td>${product.p_price }</td>
