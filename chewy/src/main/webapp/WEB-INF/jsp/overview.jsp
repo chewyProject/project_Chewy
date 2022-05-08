@@ -17,7 +17,7 @@
 			<div class="account_navi_wrap">
 				<ul class="account_navi_list">
 					<li class="overview other" onclick="location.href='/mypage.do'"><a>Overview</a></li>
-					<li class="orders other"><a>Orders</a></li>
+					<li class="orders other" onclick="location.href='/orders.jsp'"><a>Orders</a></li>
 					<li class="autoship"><a>Autoship</a></li>
 					<li class="mypets other"><a>My Pets</a></li>
 					<li class="favorites other"><a>Favorites</a></li>
@@ -94,7 +94,33 @@
 					<header>
 						<h2>My Pets</h2>
 					</header>
-					
+						<div class="account-area account-area--ready">
+							<div class="pet-cards">
+								<div class="my-pets-empty cw-row cw-card cw-padding--none">
+									<div class="my-pets-empty__image">
+									<span class="overview_pet"></span>
+									</div>
+									<div class="my-pets-empty__item">
+										<div class="my-pets-empty__content">
+											<h5 class="kib-typography-h5 my-pets-empty__title">Create
+												Your Pet's Profile</h5>
+											<p class="kib-typography-body2 my-pets-empty__body">From
+												the chill weirdos to the total goofballs, every pet is
+												unique. Tell us about yours, and we'll create a go-to space
+												just for them.</p>
+											<button class="kib-button-default kib-button-default--full">
+												<!---->
+												<span class="kib-button-default__label"> Start with
+													the Basics </span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="cw-row">
+									<!---->
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				
