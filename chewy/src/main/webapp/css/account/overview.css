@@ -132,7 +132,7 @@ li{
 
 .overview_wrap{
 	display: grid;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-rows: 0fr 1fr 1fr;
 }
 .overview_bottom > header > h2{
 	padding: 0rem;
@@ -145,7 +145,7 @@ li{
     float: left;
     clear: none;
     width: 99.66667%;
-    
+    margin-top: 3rem;
     margin-left: 0;
     margin-right: 0;
 }
@@ -235,3 +235,27 @@ li{
 	border: 1px solid #0e70be;
 	color: #0e70be;
 }
+
+.overview_pet{
+	background: url("../../images/account/pet.png");
+    
+}
+
+
+.my-pets-empty {
+    height: 26rem;
+    width: 100%;
+    margin: 0 auto;
+    white-space: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
