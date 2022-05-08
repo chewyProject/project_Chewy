@@ -1,7 +1,9 @@
 package com.chewy.fwd.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,7 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.UUID;
 
@@ -44,6 +47,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.chewy.fwd.service.ProductService;
@@ -70,7 +75,7 @@ public class ProductController {
 		
 		product.get(0).setImg(productService.productImg(product.get(0).getP_no()));
 		
-		model.addAttribute("productInfo", product);
+		model.addAttribute("productInfo",  product);
 		
 		return "/product/detail";
 	}
@@ -152,7 +157,7 @@ public class ProductController {
 	
 	
 	// 상품상세조회뷰(get) 클라이언트 입장
-		@RequestMapping(value="/productDeatil.do", method = RequestMethod.GET)
+		@RequestMapping(value="/productDetail.do", method = RequestMethod.GET)
 		public String productView(ProductVo productVo, Model model) throws Exception {
 			System.out.println("상세상품뷰");
 			System.out.println("상세상품 뷰 productVo : " + productVo); // <- vo에 null값 
@@ -160,7 +165,7 @@ public class ProductController {
 			System.out.println("상세상품 뷰 ProductVo : " + pvo); // <- vo에 값 저장
 			
 			model.addAttribute("product", pvo); // 모델 객체 사용 -> view로 전달
-			return "product/productDeatil";
+			return "product/productDetail";
 		}
 		
 		// 상품수정화면조회(get)
@@ -220,7 +225,8 @@ public class ProductController {
 //		@ResponseBody
 //		public void uploadAjaxActionPOST(MultipartFile[] uploadFile) {
 //		public ResponseEntity<List<ProductVo>> uploadAjaxActionPOST(MultipartFile[] uploadFile) {
-		public ModelAndView uploadAjaxActionPOST(MultipartFile[] uploadFile) {
+		public ModelAndView uploadAjaxActionPOST(MultipartFile[] uploadFile, ImgVo imgVo) {
+			
 			
 			
 //			// 이미지 파일 체크
@@ -268,20 +274,8 @@ public class ProductController {
 				// 이미지 정보 객체
 				ProductVo vo = new ProductVo();
 				
-				List<ImgVo> ivo = new ArrayList<>();
-				
-				//ImgVo ivo = new ImgVo();
-				
-				
 				// 파일이름
 				String uploadFileName = multipartFile.getOriginalFilename();
-//				vo.setP_img(uploadFileName);
-				
-//				ivo.setI_first(uploadFileName);
-//			
-//				vo.setImg(ivo.setI_first(uploadFileName));
-//			
-//				vo.setImg(null)
 				
 				// uuid 적용 파일 이름   /  uuid란 범용 고유 식별자
 				String uuid = UUID.randomUUID().toString();
@@ -324,8 +318,8 @@ public class ProductController {
 					BufferedImage bo_image = ImageIO.read(saveFile);  //buffered original image
 //					vo.setP_img(datePath.toString() + "/s_" + uploadFileName);
 					
+//					vo.setImg(datePath.toString() + "/s_" + uploadFileName);
 					
-//					vo.setImg(null)
 					
 					
 					// 비율

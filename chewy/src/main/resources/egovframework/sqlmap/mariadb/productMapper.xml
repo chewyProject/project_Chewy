@@ -75,8 +75,8 @@
 			p_total = #{p_total},
 			p_discount = #{p_discount}, 
 			p_star = #{p_star}, 
-			p_review = #{p_question}, 
-			p_QnA = #{p_answer} 
+			p_question = #{p_question}, 
+			p_answer = #{p_answer} 
 		WHERE p_no = #{p_no}
 	</update>
 	
