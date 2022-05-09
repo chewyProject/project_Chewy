@@ -10,4 +10,6 @@ public interface CartMapper {
 	public List<CartVo> memberCheck(CartVo cartVo) throws Exception;
 	
 	public List<ProductVo> selectCartList(CartVo cartVo) throws Exception;
+	
+	public void itemDelete(int p_no) throws Exception;
 }

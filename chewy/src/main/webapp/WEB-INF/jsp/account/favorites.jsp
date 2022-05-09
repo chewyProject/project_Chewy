@@ -17,17 +17,17 @@
 		<div class="account_navi">
 			<div class="account_navi_wrap">
 				<ul class="account_navi_list">
-					<li class="overview other"><a>Overview</a></li>
-					<li class="orders other"><a>Orders</a></li>
-					<li class="autoship other"><a>Autoship</a></li>
-					<li class="mypets other"><a>My Pets</a></li>
-					<li class="favorites"><a>Favorites</a></li>
-					<li class="buy other"><a>Buy Again</a></li>
-					<li class="gift other"><a>Gift Cards</a></li>
-					<li class="prescriptions other"><a>Prescriptions</a></li>
-					<li class="health other"><a>My Pet Health</a></li>
-					<li class="vet other"><a>My Vet Clinics</a></li>
-					<li class="rescue other"><a>My Rescues</a></li>
+					<li class="overview other" onclick="location.href='/mypage.do'"><a>Overview</a></li>
+					<li class="orders other"><a href="orders.do">Orders</a></li>
+					<li class="autoship other"><a href="autoship.do">Autoship</a></li>
+					<li class="mypets other"><a href="pet.do">My Pets</a></li>
+					<li class="favorites"><a href="favorite.do">Favorites</a></li>
+					<li class="buy other"><a href="buy.do">Buy Again</a></li>
+					<li class="gift other"><a href="gift.do">Gift Cards</a></li>
+					<li class="prescriptions other"><a href="prescription.do">Prescriptions</a></li>
+					<li class="health other"><a href="petHealth.do">My Pet Health</a></li>
+					<li class="vet other"><a href="vet.do">My Vet Clinics</a></li>
+					<li class="rescue other"><a href="rescue.do">My Rescues</a></li>
 				</ul>
 			</div>
 		</div>
@@ -55,5 +55,7 @@
 
 	<%@include file="../footer/footerMain.jsp" %>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/account.js"></script>
 </body>
 </html>

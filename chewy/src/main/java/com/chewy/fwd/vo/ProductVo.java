@@ -1,7 +1,5 @@
 package com.chewy.fwd.vo;
 
-import java.util.List;
-
 public class ProductVo {
 
 	private int p_no;
@@ -10,8 +8,8 @@ public class ProductVo {
 	private int sct_no;
 	private int b_no;
 	private String p_name;
-	private List<ImgVo> img;
-	private int p_price;
+	private String p_img;
+	private float p_price;
 	private int p_total;
 	private int p_discount;
 	private float p_star;
@@ -21,7 +19,7 @@ public class ProductVo {
 	public ProductVo() {
 	}
 
-	public ProductVo(int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, List<ImgVo> img, int p_price,
+	public ProductVo(int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, String p_img, float p_price,
 			int p_total, int p_discount, float p_star, String p_question, String p_answer) {
 		this.p_no = p_no;
 		this.bct_no = bct_no;
@@ -29,7 +27,7 @@ public class ProductVo {
 		this.sct_no = sct_no;
 		this.b_no = b_no;
 		this.p_name = p_name;
-		this.img = img;
+		this.p_img = p_img;
 		this.p_price = p_price;
 		this.p_total = p_total;
 		this.p_discount = p_discount;
@@ -86,19 +84,19 @@ public class ProductVo {
 		this.p_name = p_name;
 	}
 
-	public List<ImgVo> getImg() {
-		return img;
+	public String getImg() {
+		return p_img;
 	}
 
-	public void setImg(List<ImgVo> img) {
-		this.img = img;
+	public void setImg(String img) {
+		this.p_img = img;
 	}
 
-	public int getP_price() {
+	public float getP_price() {
 		return p_price;
 	}
 
-	public void setP_price(int p_price) {
+	public void setP_price(float p_price) {
 		this.p_price = p_price;
 	}
 
@@ -145,7 +143,7 @@ public class ProductVo {
 	@Override
 	public String toString() {
 		return "ProductVo [p_no=" + p_no + ", bct_no=" + bct_no + ", mct_no=" + mct_no + ", sct_no=" + sct_no
-				+ ", b_no=" + b_no + ", p_name=" + p_name + ", img=" + img + ", p_price=" + p_price + ", p_total="
+				+ ", b_no=" + b_no + ", p_name=" + p_name + ", img=" + p_img + ", p_price=" + p_price + ", p_total="
 				+ p_total + ", p_discount=" + p_discount + ", p_star=" + p_star + ", p_question=" + p_question
 				+ ", p_answer=" + p_answer + "]";
 	}

@@ -26,6 +26,12 @@ public class CartDaoImpl implements CartDao{
 	public void selectCartList(List<CartVo> cartVo) throws Exception {
 		CartMapper mapper = sqlSession.getMapper(CartMapper.class);
 	}
+
+	@Override
+	public void itemDelete(int p_no) throws Exception {
+		CartMapper mapper = sqlSession.getMapper(CartMapper.class);
+		mapper.itemDelete(p_no);
+	}
 	
 	
 }

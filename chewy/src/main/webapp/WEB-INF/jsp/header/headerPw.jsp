@@ -4,7 +4,7 @@
 	<div class="header_container">
 		<div class="container">
 			<h1 class="header_logo">
-				<a class="logo"></a>
+				<a class="logo" href="main.do"></a>
 			</h1>
 			<ul class="checkout">
 				<li class="checkout_chat">

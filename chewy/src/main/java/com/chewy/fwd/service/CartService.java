@@ -12,4 +12,6 @@ public interface CartService {
 	public List<CartVo> saveMemeberInfo(CartVo cartVo) throws Exception;
 	
 	public List<ProductVo> selectCartList(int p_no) throws Exception;
+	
+	public void itemDelete(int p_no) throws Exception;
 }

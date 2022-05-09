@@ -223,7 +223,7 @@ li{
     line-height: 1;
 }
 
-.account_navi_list .autoship>a {
+.account_navi_list .overview>a {
 	background: #0e70be;
     color: #fff;
     border-color: #0e70be;

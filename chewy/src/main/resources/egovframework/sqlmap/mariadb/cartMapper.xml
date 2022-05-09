@@ -10,4 +10,8 @@
 	<select id="selectCartList" resultType="productVo">
 		SELECT * FROM product WHERE P_NO = #{p_no}
 	</select>
+	
+	<delete id="itemDelete">
+		DELETE FROM cart WHERE P_NO = #{p_no}
+	</delete>
 </mapper>

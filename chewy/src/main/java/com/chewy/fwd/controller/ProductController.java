@@ -73,7 +73,7 @@ public class ProductController {
 	public String detailProduct(ProductVo productVo, Model model) throws Exception{
 		List<ProductVo> product = productService.productInfo(productVo);
 		
-		product.get(0).setImg(productService.productImg(product.get(0).getP_no()));
+//		product.get(0).setImg(productService.productImg(product.get(0).getP_no()));
 		
 		model.addAttribute("productInfo",  product);
 		

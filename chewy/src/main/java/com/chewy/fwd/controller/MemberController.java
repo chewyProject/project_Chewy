@@ -47,7 +47,7 @@ public class MemberController {
 		memberService.insertRegister(memberVo);
 		System.out.println(memberVo.getM_password());
 
-		return "redirect:test.do";
+		return "redirect:login.do";
 	}
 
 	// 이메일 확인
@@ -120,12 +120,26 @@ public class MemberController {
 	         model.addAttribute("login", login);
 	         session.setAttribute("memberVo", login.get(0).getM_no());
 	         System.out.println("로그인 성공");
-	         return "redirect:main_final.jsp";
+	         return "redirect:main.do";
 	      } else {
 	         System.out.println("로그인실패");
-	         return "redirect:loginnk";
+	         return "redirect:login.do";
 	      }
 	}
+	
+	@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
+		public String logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		return "redirect:main.do";
+	}
+	
+	@RequestMapping(value = "mypage.do", method = RequestMethod.GET)
+	public String mypage() {
+		return "overview";
+	}
+	
 	// 마이페이지
 	@RequestMapping(value = "mypage.do", method = RequestMethod.POST)
 	public String mypage(HttpServletRequest req, Model model) throws Exception{
@@ -266,6 +280,55 @@ public class MemberController {
 		return "address";
 	}
 	
+	@RequestMapping(value="orders.do", method = RequestMethod.GET)
+	public String order() {
+		return "/account/orders";
+	}
+
+	@RequestMapping(value="autoship.do", method = RequestMethod.GET)
+	public String autoship() {
+		return "/account/autoship";
+	}
+	
+	@RequestMapping(value="pet.do", method = RequestMethod.GET)
+	public String pet() {
+		return "/account/myPet";
+	}
+	
+	@RequestMapping(value="favorite.do", method = RequestMethod.GET)
+	public String favorite() {
+		return "/account/favorites";
+	}
+	
+	@RequestMapping(value="buy.do", method = RequestMethod.GET)
+	public String buy() {
+		return "/account/buyAgain";
+	}
+	
+	@RequestMapping(value="gift.do", method = RequestMethod.GET)
+	public String gift() {
+		return "/account/giftCard";
+	}
+
+	@RequestMapping(value="prescription.do", method = RequestMethod.GET)
+	public String pre() {
+		return "/account/prescriptions";
+	}
+	
+	@RequestMapping(value="petHealth.do", method = RequestMethod.GET)
+	public String petHealth() {
+		return "/account/petHealth";
+	}
+	
+	@RequestMapping(value="vet.do", method = RequestMethod.GET)
+	public String vet() {
+		return "/account/vet";
+	}
+	
+	@RequestMapping(value="rescue.do", method = RequestMethod.GET)
+	public String rescue() {
+		return "/account/rescue";
+	}
 	
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)
 //	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
