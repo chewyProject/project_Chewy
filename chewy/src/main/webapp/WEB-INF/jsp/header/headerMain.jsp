@@ -193,7 +193,7 @@
 												<div class="center_brand">
 													<h2>
 													popular brands
-													<a>Shop All</a>
+													<a id="popularDog" onclick="popular()">Shop All</a>
 													</h2>
 													<div class="center_brand_wrap">
 														<div class=brand_img_wrap">
