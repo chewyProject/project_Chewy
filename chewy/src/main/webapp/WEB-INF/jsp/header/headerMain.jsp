@@ -11,14 +11,16 @@
 				</h1>
 				<div class="header_search">
 					<div class="header_search_wrap">
-						<input type="text" placeholder="Search" class="header_search_bar">
-						<button class="header_search_btn">
-							<span>
-								<span role="presentation" class="icon_img"> 
-									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.76 13.1l6.9 6.9A1.17 1.17 0 1 1 20 21.66l-6.9-6.9a7.03 7.03 0 1 1 1.66-1.66zm-5.73.62a4.69 4.69 0 1 0 0-9.38 4.69 4.69 0 0 0 0 9.38z"></path></svg>
+						<form class="search_form" action="search.do">
+							<input type="text" placeholder="Search" class="header_search_bar">
+							<button type="submit" class="header_search_btn">
+								<span>
+									<span role="presentation" class="icon_img"> 
+										<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.76 13.1l6.9 6.9A1.17 1.17 0 1 1 20 21.66l-6.9-6.9a7.03 7.03 0 1 1 1.66-1.66zm-5.73.62a4.69 4.69 0 1 0 0-9.38 4.69 4.69 0 0 0 0 9.38z"></path></svg>
+									</span>
 								</span>
-							</span>
-						</button>
+							</button>
+						</form>
 					</div>
 				</div>
 				<div class="header_navi">
@@ -137,77 +139,77 @@
 								<div class="shop_down">
 									<div class="shop_down_wrap">
 										<ul class="shop_down_list">
-											<li><button><a>dog</a></button></li>
-											<li><button><a>cat</a></button></li>
-											<li><button><a>fish</a></button></li>
-											<li><button><a>bird</a></button></li>
-											<li><button><a>small pet</a></button></li>
-											<li><button><a>reptile</a></button></li>
-											<li><button><a>farm animal</a></button></li>
-											<li><button><a>horse</a></button></li>
-											<li><button><a>pharmacy</a></button></li>
-											<li><button><a>pet parents</a></button></li>
+											<li><button class="shop_listbtn" value="1"><a>dog</a></button></li>
+											<li><button class="shop_listbtn" value="2"><a>cat</a></button></li>
+											<li><button class="shop_listbtn" value="3"><a>fish</a></button></li>
+											<li><button class="shop_listbtn" value="4"><a>bird</a></button></li>
+											<li><button class="shop_listbtn" value="5"><a>small pet</a></button></li>
+											<li><button class="shop_listbtn" value="6"><a>reptile</a></button></li>
+											<li><button class="shop_listbtn" value="7"><a>farm animal</a></button></li>
+											<li><button class="shop_listbtn" value="8"><a>horse</a></button></li>
+											<li><button class="shop_listbtn" value="9"><a>pharmacy</a></button></li>
+											<li><button class="shop_listbtn" value="10"><a>pet parents</a></button></li>
 										</ul>
 										<div class="shop_down_rlist">
 											<div class="shop_down_center">
 												<div class="center_detail">
 													<div class="center_detail_left">
 														<h2><a>food</a></h2>
-														<ul>
-															<li><a>Dry Food</a></li>
-															<li><a>Wet Food</a></li>
-															<li><a>Veterinary Diets</a></li>
-															<li><a>Premium Food</a></li>
-															<li><a>Fresh & Prepared Meals</a></li>
+														<ul class="foodUl">
+															<li class="foodLi"><a class="food0">Dry Food</a></li>
+															<li class="foodLi"><a class="food1">Wet Food</a></li>
+															<li class="foodLi horse"><a class="food2">Veterinary Diets</a></li>
+															<li class="foodLi horse"><a class="food3">Premium Food</a></li>
+															<li class="foodLi horse"><a class="food4">Fresh & Prepared Meals</a></li>
+															<li class="foodLi horse"><a class="food5 farm"></a></li>
+															<li class="foodLi horse"><a class="food6 farm"></a></li>
 														</ul>
 													</div>
 													<div class="center_detail_center">
 														<h2><a>treats</a></h2>
-														<ul>
-															<li><a>Soft & Chewy Treats</a></li>
-															<li><a>Dental Treats</a></li>
-															<li><a>Biscuits, Cookies & Crunchy Treats</a></li>
-															<li><a>Bones & Natural Chews</a></li>
-															<li><a>Bully Sticks</a></li>
+														<ul class="treatsUl">
+															<li class="treatsLi"><a class="treats0">Soft & Chewy Treats</a></li>
+															<li class="treatsLi"><a class="treats1">Dental Treats</a></li>
+															<li class="treatsLi"><a class="treats2">Biscuits, Cookies & Crunchy Treats</a></li>
+															<li class="treatsLi smallpet"><a class="treats3">Bones & Natural Chews</a></li>
+															<li class="treatsLi smallpet"><a class="treats4">Bully Sticks</a></li>
 														</ul>
 													</div>
 													<div class="center_detail_right">
 														<h2><a>supplies</a></h2>
-														<ul>
-															<li><a>Toys</a></li>
-															<li><a>Healthcare</a></li>
-															<li><a>Vitamins & Supplements</a></li>
-															<li><a>Cleaning & Potty</a></li>
-															<li><a>Crates, Pens & Gates</a></li>
-															<li><a>Beds</a></li>
-															<li><a>Leashes, Collars & Harnesses</a></li>
-															<li><a>Bowls & Feeders</a></li>
-															<li><a>Grroming</a></li>
-															<li><a>Flea & Tick</a></li>
-															<li><a>Clothing & Accessories</a></li>
+														<ul class="suppliesUl">
+															<li class="suppliesLi"><a class="supplies0">Toys</a></li>
+															<li class="suppliesLi"><a class="supplies1">Healthcare</a></li>
+															<li class="suppliesLi"><a class="supplies2">Vitamins & Supplements</a></li>
+															<li class="suppliesLi"><a class="supplies3">Cleaning & Potty</a></li>
+															<li class="suppliesLi"><a class="supplies4">Crates, Pens & Gates</a></li>
+															<li class="suppliesLi"><a class="supplies5">Beds</a></li>
+															<li class="suppliesLi petP"><a class="supplies6">Leashes, Collars & Harnesses</a></li>
+															<li class="suppliesLi reptile petP"><a class="supplies7">Bowls & Feeders</a></li>
+															<li class="suppliesLi reptile petP"><a class="supplies8">Grooming</a></li>
+															<li class="suppliesLi reptile petP"><a class="supplies9">Flea & Tick</a></li>
 														</ul>
-													</div>
-													<div class="none">
 													</div>
 												</div>
 												<div class="center_brand">
 													<h2>
 													popular brands
-													<a id="popularDog" onclick="popular()">Shop All</a>
+													<a id="popularDog" href="">Shop All</a>
 													</h2>
 													<div class="center_brand_wrap">
-														<div class=brand_img_wrap">
-															<a></a>
-															<a></a>
-															<a></a>
-															<a></a>
-															<a></a>
-															<a></a>
+														<div class="brand_img_wrap">
+															<a class="brand_img0"><img src="../../images/brand/disney.png"></a>
+															<a class="brand_img1"><img src="../../images/brand/blue buffalo.png"></a>
+															<a class="brand_img2"><img src="../../images/brand/Stella & Chewy's.png"></a>
+															<a class="brand_img3"><img src="../../images/brand/Greenies.jpg"></a>
+															<a class="brand_img4"><img src="../../images/brand/wellness.png"></a>
+															<a class="brand_img5"><img src="../../images/brand/Merrick.png"></a>
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="shop_down_right">
+												<img class="shop_down_ad" src="../../images/dog/dogAD.jpg">
 											</div>
 										</div>
 									</div>

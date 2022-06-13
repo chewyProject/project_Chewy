@@ -73,18 +73,4 @@ public class TestController {
 		return "addBrand";
 	}
 	
-	@RequestMapping(value="popularBrand.do", method = RequestMethod.GET)
-	public String popularBrand(Model model, HttpServletRequest req) {
-		
-		BrandVo brandVo = null;
-		int ct = Integer.parseInt(req.getParameter("ct"));
-		
-		try {
-			model.addAttribute("popular", testService.popular(ct));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return "popularBrand";
-	}
 }

@@ -78,6 +78,17 @@ p {
 	display: flex;
 }
 
+.search_form {
+    display: flex;
+    padding: 0.8rem;
+    border: none;
+    flex: 1;
+    height: 4.3rem;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    color: #333;
+}
+
 .header_search_bar {
 	padding: 0.8rem;
 	border: none;
@@ -481,7 +492,7 @@ p {
 	background-color: #fff;
 }
 
-.category_wrap>ul>li .shop_down .shop_down_wrap>ul>li>button {
+.shop_down_list>li>button {
 	color: #4D4D4D;
 	position: relative;
 	width: 100%;
@@ -503,6 +514,7 @@ p {
 
 .category_wrap>ul>li .shop_down .shop_down_wrap>ul>li>button>a {
 	font-size: 2rem;
+	color: #4D4D4D;
 }
 	
 .category_wrap>ul>li:hover .shop_down, .category_wrap>ul>li:hover .giveback_drop {
@@ -531,17 +543,20 @@ p {
 	padding: 2.4rem;
     display: grid;
     grid-template-columns: 6fr 3fr;
-    width: max-content;
+    width: min-content;
 }
 
 .shop_down_center {
     display: grid;
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: 3fr 2fr;
 }
 
 .center_detail {
-	display: grid;
-	grid-template-columns: 30% 40% 30%;
+	display: flex;
+}
+
+.center_detail_left, .center_detail_center {
+	width: max-content;
 }
 
 .center_detail_left, .center_detail_center, .center_detail_right {
@@ -576,12 +591,29 @@ p {
     line-height: 20px;
 }
 
+.foouUl {
+	flex-basis: 17.6rem;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.center_detail_right {
+	flex-grow: 2;
+    flex-basis: 17.6rem;
+}
+
 .center_detail_right>ul {
-	display: flex;
 	align-content: flex-start;
 	flex-direction: column;
 	flex-wrap: wrap;
 	overflow: auto;
+}
+
+.suppliesUl {
+	-webkit-columns: 2;
+    column-count: 2;
+    margin-top: 0;
+    padding-left: 0;
 }
 
 .center_brand>h2 {
@@ -594,6 +626,23 @@ p {
 .brand_img_wrap {
 	margin-left: -1.4rem;
 	padding: 0 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 700px;
+}
+
+.brand_img_wrap>a {
+    padding: 0 4px;
+    margin: 0;
+    float: left;
+    clear: none;
+    width: fit-content;
+    text-align: center;
+}
+
+.brand_img_wrap>a>img {
+	width: 100%;
+	padding: 1rem;
 }
 
 .list_wrap div {
