@@ -62,32 +62,6 @@ public class ProductController {
 		return "product/product";
 	}
 	
-<<<<<<< HEAD
-	@RequestMapping(value ="detail.do", method=RequestMethod.GET)
-	public String detail() {
-=======
-	@RequestMapping(value="detail.do", method = RequestMethod.GET)
-	public String detailProduct(ProductVo productVo, Model model) throws Exception{
-		List<ProductVo> product = productService.productInfo(productVo);
-		
-//		product.get(0).setImg(productService.productImg(product.get(0).getP_no()));
->>>>>>> 6c0acf80d60ccdcf9ecd4e4eb10843f1e9016b84
-		
-		return "/product/detail";
-	}
-	
-	@RequestMapping(value ="detail.do", method=RequestMethod.POST)
-	public String detail(ProductVo productVo) {
-		
-		try {
-			productService.addProduct(productVo);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return "/product/detail";
-	}
 	
 //  글목록,페이징, 검색
 	@RequestMapping(value ="productList.do")
