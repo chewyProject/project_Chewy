@@ -10,6 +10,7 @@ public class CategoryVo {
 	private String mct_name;
 	private int sct_no;
 	private String sct_name;
+	private int size;
 	
 	
 	public CategoryVo() {
@@ -119,6 +120,16 @@ public class CategoryVo {
 
 	public void setSct_name(String sct_name) {
 		this.sct_name = sct_name;
+	}
+
+
+	public int getSize() {
+		return size;
+	}
+
+
+	public void setSize(int size) {
+		this.size = size;
 	}
 
 
