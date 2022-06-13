@@ -2008,7 +2008,7 @@ $(function() {
 		moveSlides : 4,
 		maxSlides : 4,
 		infiniteLoop : false,
-		hideControlOnEnd  : true,
+// 		hideControlOnEnd  : true,
 		responsive : true
 		
 	});

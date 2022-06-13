@@ -1,6 +1,7 @@
 package com.chewy.fwd.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,12 +30,16 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Override
 	public List<ProductVo> selectProductList(Search search) throws Exception {
+		System.out.println("serviceImpl selectProductList");
 		return productDao.selectProductList(search);
 	}
 
 	@Override
 	public void insertProduct(ProductVo productVo) throws Exception {
-		 productDao.insertProduct(productVo);
+		System.out.println("productServiceImpl");
+		
+		productDao.insertProduct(productVo);
+		 
 	}
 
 	@Override
@@ -63,14 +68,89 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public List<CategoryVo> mCategoryList() throws Exception {
-		return productDao.mCategoryList();
+	public List<CategoryVo> mCategoryList(Map<String, String> map) throws Exception {
+		return productDao.mCategoryList(map);
 	}
 
 	@Override
-	public List<CategoryVo> sCategoryList() throws Exception {
-		return productDao.sCategoryList();
+	public List<CategoryVo> sCategoryList(Map<String, String> map) throws Exception {
+		return productDao.sCategoryList(map);
 	}
+
+	
+	
+	@Override
+	public void addProduct(ProductVo productVo) throws Exception {
+		productDao.addProduct(productVo);
+	}
+
+	@Override
+	public List<CategoryVo> cateCountList(CategoryVo categoryVo) throws Exception {
+		return productDao.cateCountList(categoryVo);
+	}
+
+	@Override
+	public List<CategoryVo> selectBCateList() throws Exception {
+		return productDao.selectBCateList();
+	}
+	
+	@Override
+	public List<CategoryVo> selectMCateList() throws Exception {
+		return productDao.selectMCateList();
+	}
+
+	@Override
+	public List<CategoryVo> selectSCateList() throws Exception {
+		return productDao.selectSCateList();
+	}
+
+	@Override
+	public int sortByCnt(Search search) throws Exception {
+		return productDao.sortByCnt(search);
+	}
+
+	@Override
+	public List<ProductVo> sortBy(Map<String, Object> map) throws Exception {
+		System.out.println("serviceImpl sortBy");
+		return productDao.sortBy(map);
+	}
+
+	@Override
+	public List<ProductVo> selectBrandList() throws Exception {
+		return productDao.selectBrandList();
+	}
+
+	@Override
+	public List<ProductVo> selectColCateList(Map<String, Object> map) throws Exception {
+		
+		return productDao.selectColCateList(map);
+	}
+
+	@Override
+	public List<ProductVo> selectColMDetailList(Map<String, Object> map) throws Exception {
+		return productDao.selectColMDetailList(map);
+	}
+
+	@Override
+	public List<ProductVo> selectColSDetailList(Map<String, Object> map) throws Exception {
+		return productDao.selectColSDetailList(map);
+	}
+
+	@Override
+	public int colProductCnt(Map<String, Object> map) throws Exception {
+		return productDao.colProductCnt(map);
+	}
+
+	@Override
+	public int colSProductCnt(Map<String, Object> map) throws Exception {
+		return productDao.colSProductCnt(map);
+	}
+	
+
+//	@Override
+//	public List<CategoryVo> selectCateList(Map<String, String> map) throws Exception {
+//		return productDao.selectCateList(map);
+//	}
 	
 	
 	

@@ -1,6 +1,7 @@
 package com.chewy.fwd.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,8 @@ public class ProductDaoImpl implements ProductDao{
 
 	@Override
 	public void insertProduct(ProductVo productVo) throws Exception {
+		System.out.println("insert productDaoImpl");
+		
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 		 mapper.insertProduct(productVo);
 		
@@ -77,17 +80,172 @@ public class ProductDaoImpl implements ProductDao{
 	}
 
 	@Override
-	public List<CategoryVo> mCategoryList() throws Exception {
+	public List<CategoryVo> mCategoryList(Map<String, String> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
-		return mapper.mCategoryList();
+		
+		System.out.println("daoImpl mCategory");
+//		String CateCount = CateCount(ct);
+//		System.out.println("CateCount : " + CateCount);
+		
+//		System.out.println("mapper.mCategoryList(CateCount) : " + mapper.mCategoryList(CateCount));
+		
+//		return mapper.mCategoryList(CateCount);
+		
+		return mapper.mCategoryList(map);
 	}
 
 	@Override
-	public List<CategoryVo> sCategoryList() throws Exception {
+	public List<CategoryVo> sCategoryList(Map<String, String> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
-		return mapper.sCategoryList();
+		System.out.println("daoImpl sCategory");
+		
+		return mapper.sCategoryList(map);
+	}
+
+	
+	
+	@Override
+	public void addProduct(ProductVo productVo) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		mapper.addProduct(productVo);
+		
 	}
 	
+	@Override
+	public List<CategoryVo> cateCountList(CategoryVo categoryVo) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		
+		
+		//categoryVo.setCate(CateCount(categoryVo.getBct_no()));
+		
+		
+		List<CategoryVo> ctList = mapper.cateCountList(categoryVo);
+		
+		return ctList;
+	}
+	
+	
+	public String CateCount(int ct)  {
+		String cate = null;
+		
+		switch (ct) {
+
+		case 1:
+			cate = "dog";
+			
+			break;
+			
+		case 2:
+			cate = "cat";
+			break;
+			
+		case 3:
+			cate = "fish";
+			break;
+		case 4:
+			cate = "bird";
+			break;
+		case 5:
+			cate = "smallPet";
+			break;
+		case 6:
+			cate = "reptile";
+			break;
+		case 7:
+			cate = "farm_Animal";
+			break;	
+		case 8:
+			cate = "horse";
+			break;
+		case 9:
+			cate = "pharmacy";
+			break;
+		case 10:
+			cate = "pet_Parents";
+			break;
+			
+		}
+		
+		return cate;
+		
+		
+	}
+	
+	@Override
+	public List<CategoryVo> selectBCateList() throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectBCateList();	}
+	
+
+	@Override
+	public List<CategoryVo> selectMCateList() throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectMCateList();
+	}
+
+	@Override
+	public List<CategoryVo> selectSCateList() throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectSCateList();
+	}
+
+	@Override
+	public int sortByCnt(Search search) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		System.out.println("daoImpl sortBy");
+		return mapper.sortByCnt(search);
+	}
+
+	@Override
+	public List<ProductVo> sortBy(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		System.out.println("DaoImpl sortBy");
+		return mapper.sortBy(map);
+	}
+
+	@Override
+	public List<ProductVo> selectBrandList() throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectBrandList();
+	}
+
+	@Override
+	public List<ProductVo> selectColCateList(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectColCateList(map);
+	}
+
+	@Override
+	public List<ProductVo> selectColMDetailList(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectColMDetailList(map);
+	}
+	
+	@Override
+	public List<ProductVo> selectColSDetailList(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectColSDetailList(map);
+	}
+
+	@Override
+	public int colProductCnt(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.colProductCnt(map);
+	}
+
+	@Override
+	public int colSProductCnt(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.colSProductCnt(map);
+	}
+
+//	@Override
+//	public List<CategoryVo> selectCateList(Map<String, String> map) throws Exception {
+//		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+//		return mapper.selectCateList(map);
+//	}
+
+
 	
 	
 }

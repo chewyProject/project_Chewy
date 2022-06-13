@@ -37,7 +37,7 @@
 				</div>
 				<div class="product_label">
 					<label for="label">상품이미지</label>
-					<input type="text" id="label" class="form-control" name="p_img" value="${product.img }">
+					<input type="text" id="label" class="form-control" name="p_img" value="${product.p_img }">
 				</div>
 				<div class="product_label">
 					<label for="label">상품가격</label>

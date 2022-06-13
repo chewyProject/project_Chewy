@@ -10,6 +10,7 @@
 <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <link rel="stylesheet" href="css/product/productList.css" />
+<script type="text/javascript" src="./js/product/productList.js"></script>
 </head>
 <body>
 	<h1 class="title">상품 전체리스트</h1>
@@ -44,10 +45,12 @@
 						<td>${product.b_no }</td>
 						<td><a href="productDetail.do?p_no=${product.p_no }">${product.p_name }</a>
 						</td>
-						<td>${product.img }</td>
-						<td>${product.p_price }</td>
-						<td>${product.p_total }</td>
-						<td>${product.p_discount }</td>
+						<td>${product.p_img }</td>
+<%-- 						<td><img src= "/upload/${product.p_img }" width="80" height="80"> --%>
+						</td>
+						<td>${product.p_price }원</td>
+						<td>${product.p_total }개</td>
+						<td>${product.p_discount }%</td>
 						<td>${product.p_star }</td>
 						<td>${product.p_question }</td>
 						<td>${product.p_answer }</td>
@@ -82,7 +85,7 @@
 			
 			 <c:if test="${pagination.next}">
 				<li class="page-item">
-					<a class="page-link" href="#" onclick="fn_next('${pagination.page}', '${pagination.range}', '${pagination.rangeSize }'
+					<a class="page-link" href="#" onclick="fn_next('${pagination.range}', '${pagination.range}', '${pagination.rangeSize }'
 					, '${pagination.listSize }', '${search.searchType }', '${search.keyword }')">다음
 					</a>
 				</li>
@@ -100,7 +103,7 @@
 		<div class="w100" style="padding-right: 10px">
 			<select class="form-control form-control-sm" name="searchType" id="searchType">
 				<option value="p_name">이름</option>
-				<option value="img">이미지</option>
+				<option value="p_img">이미지</option>
 <!-- 				<option value="p_name">이름</option> -->
 			</select>
 		</div>
@@ -113,78 +116,33 @@
 			<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
 		</div>	
 		<!-- search end !!! -->
+
+		
+		<!--  페이지 목록 갯수 -->
+		<div class="form-group row justify-content-center">
+		<p>게시판 목록 갯수</p>
+		<div class="w100" style="padding-right: 10px">
+			<select class="form-control form-control-sm" name="searchType"
+				id="listSize" onchange="page(1)">
+				<option value="10"
+					<c:if test="${pagination.getListSize() == 10 }">selected="selected"</c:if>>10개</option>
+				<option value="15"
+					<c:if test="${pagination.getListSize() == 15 }">selected="selected"</c:if>>15개</option>
+				<option value="20"
+					<c:if test="${pagination.getListSize() == 20 }">selected="selected"</c:if>>20개</option>
+			</select>
+		</div>
+
+		</div>
+
 		
 		<a href="insertProduct.do">등록</a>
 		<a href="main.jsp">뒤로가기</a>
-		
 	</div> 	
+	
  	
  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </body>
- <script type="text/javascript">
-	
-	// 이전 버튼 이벤트
-	// 5개의 인자값을 가지고 이동 testList.do
-	// 무조건 이전페이지 범위의 가장 앞 페이지로 이동
-	function fn_prev(page, range, rangeSize, listSize, searchType, keyword) {
-		var page = ((range -2) * rangeSize) + 1;		
-		var range = range - 1;
-		
-		var url = "/chewy/productList.do";
-			url += "?page=" + page;
-			url += "&range=" + range;
-			url += "&listSize" + listSize;
-			url += "&searchType" + searchType;
-			url += "&keyword" + keyword;
-			location.href = url;
-
-	}
-
-	// 페이지 번호 클릭
-	function fn_pagination(page, range, rangeSize, listSize, searchType, keyword) {
-		
-		var url = "/chewy/productList.do";
-			url += "?page=" + page;
-			url += "&range=" + range;
-			url += "&listSize" + listSize;
-			url += "&searchType" + searchType;
-			url += "&keyword" + keyword;
-			location.href = url;
-	}
-
-	// 다음 버튼 이벤트
-	// 다음 페이지 범위의 가장 앞 페이지로 이동
-	function fn_next(page, range, rangeSize, listSize, searchType, keyword) {
-		
-		var page = parseInt((range * rangeSize)) + 1
-		var range = parseInt(range) + 1;
-		
-		var url = "/chewy/productList.do";
-			url += "?page=" + page;
-			url += "&range=" + range;
-			url += "&listSize" + listSize;
-			url += "&searchType" + searchType;
-			url += "&keyword" + keyword;
-			location.href = url;
-			
-	}
-	
-	// 검색 이벤트
-	$(document).on('click', '#btnSearch', function(e) {
-		e.preventDefault();
-		var url = "/chewy/productList.do";
-		url += "?searchType=" + $('#searchType').val();
-		url += "&keyword=" + $('#keyword').val();
-		
-		location.href = url;
-		
-		console.log(url);
-	});
-		
-	
-	
-	
-</script>
 </html> 

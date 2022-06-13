@@ -1,20 +1,5 @@
 package com.chewy.fwd.controller;
 
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.collections.map.HashedMap;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.chewy.fwd.service.ProductService;
-import com.chewy.fwd.vo.CategoryVo;
-import com.chewy.fwd.vo.ImgVo;
-import com.chewy.fwd.vo.ProductVo;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -23,12 +8,15 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -37,22 +25,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.chewy.fwd.dao.ProductDao;
 import com.chewy.fwd.service.ProductService;
+import com.chewy.fwd.vo.CategoryVo;
+import com.chewy.fwd.vo.Pagination;
+import com.chewy.fwd.vo.ProductVo;
 import com.chewy.fwd.vo.Search;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import net.coobird.thumbnailator.Thumbnails;
 import net.sf.json.JSONArray;
@@ -63,19 +55,28 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
+	private ProductDao productDao;
 	
 	@RequestMapping(value="product.do", method = RequestMethod.GET)
 	public String product() {
 		return "product/product";
 	}
 	
-	@RequestMapping(value="detail.do", method = RequestMethod.GET)
-	public String detailProduct(ProductVo productVo, Model model) throws Exception{
-		List<ProductVo> product = productService.productInfo(productVo);
+	@RequestMapping(value ="detail.do", method=RequestMethod.GET)
+	public String detail() {
 		
-		product.get(0).setImg(productService.productImg(product.get(0).getP_no()));
+		return "/product/detail";
+	}
+	
+	@RequestMapping(value ="detail.do", method=RequestMethod.POST)
+	public String detail(ProductVo productVo) {
 		
-		model.addAttribute("productInfo",  product);
+		try {
+			productService.addProduct(productVo);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return "/product/detail";
 	}
@@ -115,22 +116,20 @@ public class ProductController {
 	@RequestMapping(value="/insertProduct.do", method = RequestMethod.GET)
 //	public String insertProductView(@ModelAttribute("product") ProductVo productVo) throws Exception {
 	// @ModelAttribute("product")를 붙이니까 오류가 난다.
-	public String insertProductView(Model model) throws Exception {
+	public String insertProductView(Model model, CategoryVo categoryVo, HttpServletRequest req) throws Exception {
 		System.out.println("상품등록뷰");
 		
-		List<CategoryVo> bcate = null;
-		List<CategoryVo> mcate = null;
-		List<CategoryVo> scate = null;
+		List<CategoryVo> bcate = productService.bCategoryList();
 		
-		bcate = productService.bCategoryList();
-		mcate = productService.mCategoryList();
-		scate = productService.sCategoryList();
-		
-		model.addAttribute("bcate", JSONArray.fromObject(bcate));	
-		model.addAttribute("mcate", JSONArray.fromObject(mcate));
-		model.addAttribute("scate", JSONArray.fromObject(scate));
+		System.out.println("bcate : " + bcate);
 
-		System.out.println("bcate : " + bcate + " mcate : " + mcate + " scate : " + scate);
+		
+		model.addAttribute("bcate", JSONArray.fromObject(bcate));
+//		System.out.println("model.addAttribute(\"bcate\", JSONArray.fromObject(bcate)) : " + model.addAttribute("bcate", JSONArray.fromObject(bcate)));
+//		model.addAttribute("mcate", JSONArray.fromObject(mcate));
+//		model.addAttribute("scate", JSONArray.fromObject(scate));
+		
+//		System.out.println("bcate : " + bcate + " mcate : " + mcate + " scate : " + scate);
 		
 		// vo값 들어왔는지 확인할 때 jsp 파일안 input태그에 name값이 입력되어있지않으면 매핑이 안된다.
 		
@@ -141,17 +140,27 @@ public class ProductController {
 		return "product/insertProduct";
 	}
 	
+	
+	// -----------------------------------------------------------------------
+	
 	// 상품등록(post)
 	@RequestMapping(value="/insertProduct.do", method = RequestMethod.POST)
-	public String insertProduct(ProductVo productVo) throws Exception {
+	public String insertProduct(ProductVo productVo, Model model, CategoryVo categoryVO, @RequestBody String name) throws Exception {
 		System.out.println("상품등록 post 성공");
+			
 		productService.insertProduct(productVo);
 		System.out.println("ProductVo : " + productVo);
+		 
+//		Model cateCount = model.addAttribute("cateCount", productService.cateCountList(categoryVO));
 		
+//		System.out.println("cateCount : " + cateCount);
 		
 		System.out.println("상품등록성공");
 		return "redirect:productList.do";
 	}
+	
+	
+	
 	
 //	----------------------------------------------------------------------------------
 	
@@ -224,10 +233,8 @@ public class ProductController {
 		@PostMapping(value = "/uploadAjaxAction.do", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 //		@ResponseBody
 //		public void uploadAjaxActionPOST(MultipartFile[] uploadFile) {
-//		public ResponseEntity<List<ProductVo>> uploadAjaxActionPOST(MultipartFile[] uploadFile) {
-		public ModelAndView uploadAjaxActionPOST(MultipartFile[] uploadFile, ImgVo imgVo) {
-			
-			
+//		public ResponseEntity<List<ProductVO>> uploadAjaxActionPOST(MultipartFile[] uploadFile) {
+		public ModelAndView uploadAjaxActionPOST(MultipartFile[] uploadFile, @ModelAttribute("ProductVo") ProductVo productVO) {
 			
 //			// 이미지 파일 체크
 //			for (MultipartFile multipartFile : uploadFile) {
@@ -265,18 +272,25 @@ public class ProductController {
 			}
 			
 			List<ProductVo> list = new ArrayList<ProductVo>();
-			
 			System.out.println("list : " + list);
 			
+			String uploadFileName = "";
+			
+			// 이미지 정보 객체
+			ProductVo vo = new ProductVo();
+			
+			int count = 0 ;
+			StringBuilder sb = new StringBuilder();
 			
 			for (MultipartFile multipartFile : uploadFile ) {
 				
-				// 이미지 정보 객체
-				ProductVo vo = new ProductVo();
+			
 				
 				// 파일이름
-				String uploadFileName = multipartFile.getOriginalFilename();
+				uploadFileName = multipartFile.getOriginalFilename();
+//				vo.setP_img(uploadFileName);
 				
+
 				// uuid 적용 파일 이름   /  uuid란 범용 고유 식별자
 				String uuid = UUID.randomUUID().toString();
 				
@@ -284,7 +298,16 @@ public class ProductController {
 				
 				// 파일 위치, 파일 이름을 합친 File 객체
 				File saveFile = new File(uploadPath, uploadFileName);
-				 
+				
+				if (count == 0) {
+//					sb.append(uploadFileName);
+					sb.append(datePath.toString() + "/s_" + uploadFileName);
+				} else {
+//					sb.append("," + uploadFileName);
+					sb.append("," + datePath.toString() + "/s_" + uploadFileName);
+				}
+				count ++;
+				
 				// 파일 저장
 				try {
 					multipartFile.transferTo(saveFile);
@@ -318,8 +341,6 @@ public class ProductController {
 					BufferedImage bo_image = ImageIO.read(saveFile);  //buffered original image
 //					vo.setP_img(datePath.toString() + "/s_" + uploadFileName);
 					
-//					vo.setImg(datePath.toString() + "/s_" + uploadFileName);
-					
 					
 					
 					// 비율
@@ -336,8 +357,17 @@ public class ProductController {
 				} catch (IllegalStateException | IOException e) {
 					e.printStackTrace();
 				}
+				
 				list.add(vo);
+				
 			} // for
+			
+//			vo.setP_img(datePath.toString() + "/s_" + sb.toString());
+			vo.setP_img(sb.toString());
+			
+			System.out.println("sb: " + sb.toString());
+			System.out.println("uploadFileName : " + uploadFileName);
+			System.out.println("list : " + list);
 			
 			ResponseEntity<List<ProductVo>> result = new ResponseEntity<List<ProductVo>>(list, HttpStatus.OK);
 			
@@ -410,16 +440,425 @@ public class ProductController {
 			return mv;
 		}
 		
+	// ---------------------------------------------------------
+	// 카테고리
+		
+		// 중카테고리 
+		@RequestMapping(value = "/selectMCateList.do", method = RequestMethod.GET)
+			public String selectMCateList(Model model , CategoryVo categoryVo
+					,@RequestParam(required = false, defaultValue = "1") int page
+					, @RequestParam(required = false, defaultValue = "1") int range
+					, @ModelAttribute("search") Search search
+					) throws Exception {	
+			
+			System.out.println("selectMCateList Controller");
+//			
+			List<CategoryVo> mList = productService.selectMCateList();
+			List<ProductVo> brandList = productService.selectBrandList();
+			
+			System.out.println("brandList : " +  brandList);
+			System.out.println("mList : " +  mList);
+			
+			model.addAttribute("mList", mList);
+			model.addAttribute("brandList", brandList);
+			
+			System.out.println("확인");
+			
+			// 전체 개시글 갯수
+			int listCnt = productService.getProductListCnt(search);
+			
+			// 검색 후 페이지
+			search.pageInfo(page, range, listCnt);
+			
+			//페이징
+			model.addAttribute("pagination", search);
+			
+			System.out.println("search : " + search);
+			
+			// 게시글 화면 출력
+			List<ProductVo> pList = productService.selectProductList(search);
+			
+			model.addAttribute("pList", pList);  // 
+		
+			System.out.println("pList : " + pList);	
+			
+			return "product/dog";
+			
+		}
+		
+		@RequestMapping(value = "selectMColCateList.do", method = RequestMethod.GET)
+		public String selectDogCateList(Model model, ProductVo productVo
+				,@RequestParam(required = false, defaultValue = "1") int page
+				, @RequestParam(required = false, defaultValue = "1") int range
+				, @ModelAttribute("search") Search search
+//				, @RequestParam String name, @RequestParam int no)
+				, @RequestParam int mno
+				)
+				throws Exception {
+			System.out.println("ColCateList 컨트롤러");
+			
+			Map<String, Object> map = new HashMap();
+//			map.put("name", name);
+			map.put("mno", mno);
+			
+			System.out.println("map : " + map);
+			
+			List<CategoryVo> mList = productService.selectMCateList();  // 강아지 중카테고리 컬럼(19개)
+			List<ProductVo> list = productService.selectColCateList(map); // 사이드바 카테고리 숫자 
+//			List<CategoryVo> sList = productService.selectSCateList();
+			List<ProductVo> brandList = productService.selectBrandList(); // 브랜드 갯수
+			
+			
+			model.addAttribute("mList", mList);
+			model.addAttribute("list", list);
+//			model.addAttribute("sList", sList);
+			model.addAttribute("brandList", brandList);
+			
+			System.out.println("list : " + list);
+			System.out.println("mList : " + mList);
+			
+			// 전체 개시글 갯수
+			int listCnt = productService.colProductCnt(map);
+			
+			Pagination paging = new Pagination();
+			
+			paging.pageInfo(page, range, listCnt);
+			
+			map.put("startList", paging.getStartList());
+			map.put("listSize", paging.getListSize());
+			
+			//페이징
+			model.addAttribute("pagination", paging);
+			model.addAttribute("mno", mno);
+			
+			System.out.println("paging : " + paging);
+			
+			// 게시글 화면 출력
+			
+//			List<ProductVo> pList = productService.selectColDetailList(search);
+			
+			List<ProductVo> pList = productService.selectColMDetailList(map); // 중분류 카테고리 별 리스트
+			
+			model.addAttribute("pList", pList);  // 
+		
+			System.out.println("pList : " + pList);	
+			
+			return "product/colCateList";
+		}
 		
 		
+		@RequestMapping(value = "selectSColCateList.do", method = RequestMethod.GET)
+		public String selectColDetailCateList(Model model, ProductVo productVo
+				,@RequestParam(required = false, defaultValue = "1") int page
+				, @RequestParam(required = false, defaultValue = "1") int range
+				, @ModelAttribute("search") Search search
+				, @RequestParam int mno
+				, @RequestParam int sno
+				) throws Exception  {
+			
+			System.out.println("selectSColCateList 컨트롤러");
+			
+			Map<String, Object> map = new HashMap();
+			map.put("mno", mno);
+			map.put("sno", sno);
+			
+			System.out.println("map : " + map);
+			
+			List<CategoryVo> mList = productService.selectMCateList(); 
+			List<CategoryVo> sList = productService.selectSCateList();
+			List<ProductVo> brandList = productService.selectBrandList();
+			
+			
+			System.out.println("mList : " + mList);
+			System.out.println("sList: " + sList);
+			
+			
+			
+			model.addAttribute("mList", mList);
+			model.addAttribute("sList", sList);
+			model.addAttribute("brandList", brandList);
+			
+			
+			// 전체 개시글 갯수
+			int listCnt = productService.colSProductCnt(map);
+			
+			Pagination paging = new Pagination();
+			
+			paging.pageInfo(page, range, listCnt);
+			map.put("startList", paging.getStartList());
+			map.put("listSize", paging.getListSize());
+			
+			//페이징
+			model.addAttribute("pagination", paging);
+			model.addAttribute("mno", mno);
+			model.addAttribute("sno", sno);
+			
+			System.out.println("paging : " + paging);
+			
+			List<ProductVo> pList = productService.selectColSDetailList(map);
+			System.out.println("pList: " + pList);
+			
+			model.addAttribute("pList", pList);
+			
+			
+			return "product/colSCateList";
+		}
+		
+		
+		// 소카테고리
+		@RequestMapping(value = "/selectSCateList.do", method = RequestMethod.GET)
+		public String selectSCateList(Model model, CategoryVo categoryVo
+				,@RequestParam(required = false, defaultValue = "1") int page
+				, @RequestParam(required = false, defaultValue = "1") int range
+				, @RequestParam(required = false, defaultValue = "p_name") String searchType
+				, @RequestParam(required = false) String keyword
+				, @ModelAttribute("search") Search search) throws Exception {
+
+			System.out.println("detailCateList 성공");
+			
+//			List<CategoryVo> bList = productService.selectBCateList();
+//			List<CategoryVo> mList = productService.selectMCateList();
+			List<CategoryVo> sList = productService.selectSCateList();
+			List<ProductVo> brandList = productService.selectBrandList();
+			
+//			model.addAttribute("bList", bList);
+//			model.addAttribute("mList", mList);
+			model.addAttribute("sList", sList);
+			model.addAttribute("brandList", brandList);
+			
+//			System.out.println("bList : " + bList);
+//			System.out.println("mList : " +  mList);
+			System.out.println("sList : " + sList);
+			System.out.println("brandList : " + brandList);
+				
+				// 검색
+				model.addAttribute("search", search);
+				search.setSearchType(searchType);
+				search.setKeyword(keyword);
+				
+				// 전체 개시글 갯수
+				int listCnt = productService.getProductListCnt(search);
+				
+				// 검색 후 페이지
+				search.pageInfo(page, range, listCnt);
+				
+				//페이징
+				model.addAttribute("pagination", search);
+				
+				System.out.println("search : " + search);
+				
+				// 게시글 화면 출력
+				
+				List<ProductVo> pList = productService.selectProductList(search);
+				
+				model.addAttribute("pList", pList);  // 
+			
+				System.out.println("pList : " + pList);	
+			
+			
+			return "product/dog_food";
+			
+		}
+			
+		@RequestMapping(value = "/mCateList.do", method = RequestMethod.GET)
+		public ModelAndView mCateList(@RequestParam String name) throws Exception {
+			
+			System.out.println("라라라");
+			ModelAndView mv = new ModelAndView();
+			System.out.println("name: " + name);
+			
+//			ObjectMapper mapper = new ObjectMapper();
+//			Map<String, String> map = mapper.readValue(name, Map.class);
+			Map<String, String> map = new HashedMap();
+			map.put("name", name);
+			
+			System.out.println("map : " + map);
+			List<CategoryVo> mCate = productService.mCategoryList(map);
+			
+			System.out.println("mCate : " + mCate);
+			
+			mv.setViewName("jsonView");
+			
+			mv.addObject("cate", mCate);
+			
+			System.out.println("mv : " + mv);
+			
+			return mv;
+		}
+		
+		@RequestMapping(value = "/sCateList.do", method = RequestMethod.GET)
+		public ModelAndView sCateList(@RequestParam String name, @RequestParam String mctName) throws Exception {
+			
+			ModelAndView mv = new ModelAndView();
+			System.out.println("name: " + name);
+			System.out.println("mctName : " + mctName);
+			
+//			ObjectMapper mapper = new ObjectMapper();
+//			Map<String, String> map = mapper.readValue(name, Map.class);
+			
+			mctName = mctName.replace("&amp;", "&");
+			
+			Map<String, String> map = new HashMap();
+			map.put("name", name);
+			map.put("mctName", mctName);
+			
+			System.out.println("map : " + map);
+			List<CategoryVo> sCate = productService.sCategoryList(map);
+			
+			System.out.println("sCate : " + sCate);
+			
+			mv.setViewName("jsonView");
+			
+			mv.addObject("cate", sCate);
+			
+			System.out.println("mv : " + mv);
+			
+			return mv;
+		}
+		
+		
+//		@ResponseBody
+		@RequestMapping(value = "/sortBy.do", method = RequestMethod.GET)
+		public ModelAndView sortBy(Model model, ProductVo productVo
+				, @RequestParam String col
+				, @RequestParam(required = false, defaultValue = "1") int page
+				, @RequestParam(required = false, defaultValue = "1") int range
+//				, @RequestParam(required = false, defaultValue = "p_name") String searchType
+				, @RequestParam(required = false) String keyword
+				, @ModelAttribute("search") Search search) throws Exception {
+//			)  throws Exception {
+			
+//			public ModelAndView sortBy(Model model, ProductVo productVO) throws Exception {
+			
+			System.out.println("sort 분류");
+			ModelAndView mv = new ModelAndView();
+			
+			System.out.println("col : " + col);
+			Map<String, Object> map = new HashMap();
+			map.put("col", col);
+			map.put("startList", search.getStartList());
+			map.put("listSize", search.getListSize());
+			
+			System.out.println("map : " + map);
+			
+//			System.out.println("mv: " + mv);
+			
+			// 전체 개시글 갯수
+			int listCnt = productService.sortByCnt(search);
+			
+			System.out.println("listCnt : "  + listCnt);
+			
+			// 검색 후 페이지  // pageInfo 있어야 페이징정보를 알 수 있다.
+			search.pageInfo(page, range, listCnt);
+			
+			//페이징
+			model.addAttribute("pagination", search);
+			
+			System.out.println("search : " + search);
+			
+			// 게시글 화면 출력
+			
+			List<ProductVo> sortList = productService.sortBy(map);
+//			List<ProductVo> sortList = productService.selectProductList(search);
+			
+			System.out.println("sortList: " + sortList);
+			
+			model.addAttribute("sortList", sortList);
+			
+			
+			mv.setViewName("jsonView");
+			
+			mv.addObject("sortList", sortList);
+			
+			System.out.println("mv22 : " + mv);
+			
+			
+			return mv;
+			
+			
+		}
+			
+			
+			
+//		@RequestMapping(value = "/selectSCateList.do", method = RequestMethod.GET)
+//		public String selectSCateList(Model model, CategoryVo categoryVo) throws Exception {
+//			
+//			System.out.println("selectScateList Controller");
+//			
+//			List<CategoryVo> sCate = productService.selectSCateList();
+//			System.out.println("sCate : " + sCate);
+//			
+//			return "dog_food.jsp";
+//		}
+		
 		
 	
 	
+	// ----------------------------------------------
 	
-	
-	
-	
-	
+
+//	// 상품등록화면조회(get)
+//	@RequestMapping(value="/insertProduct.do", method = RequestMethod.GET)
+////	public String insertProductView(@ModelAttribute("product") ProductVo productVo) throws Exception {
+//	// @ModelAttribute("product")를 붙이니까 오류가 난다.
+//	public String insertProductView(Model model, CategoryVo categoryVo, HttpServletRequest req) throws Exception {
+//		System.out.println("상품등록뷰");
+//		
+//		List<CategoryVo> bcate = productService.bCategoryList();
+//		
+//		System.out.println("bcate : " + bcate);
+//
+//		try {
+//			if(req.getParameter("ct") == null) {
+//				
+////				model.addAttribute("ct", "대분류");
+//				model.addAttribute("bcate", bcate);
+//				
+//				System.out.println("ct: " +model.addAttribute("bcate", bcate));
+//				
+//				return "product/insertProduct";
+//				
+//			} else {
+//				
+//				model.addAttribute("bcate", bcate);
+//				
+//				int ct = Integer.parseInt(req.getParameter("ct"));
+//				
+//				System.out.println("ct: " + ct);
+////				List<CategoryVo> mcate = productService.mCategoryList(ct);
+//				
+//				
+////				model.addAttribute("mcate", mcate);
+////				System.out.println("model.addAttribute(\"mcate\", mcate) : " + model.addAttribute("mcate", mcate));
+//				
+////				model.addAttribute("ct", productDao.mCategoryList(ct));
+////				System.out.println("model.addAttribute(\"ct\", productDao.mCategoryList(ct)) :  " + model.addAttribute("ct", productDao.mCategoryList(ct)));
+//				
+//				return  "product/insertProduct";
+//				
+//			}
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//		List<CategoryVo> bcatee = null;
+//		
+//		model.addAttribute("bcatee", JSONArray.fromObject(bcate));	
+////		model.addAttribute("mcate", JSONArray.fromObject(mcate));
+////		model.addAttribute("scate", JSONArray.fromObject(scate));
+//		
+////		System.out.println("bcate : " + bcate + " mcate : " + mcate + " scate : " + scate);
+//		
+//		// vo값 들어왔는지 확인할 때 jsp 파일안 input태그에 name값이 입력되어있지않으면 매핑이 안된다.
+//		
+////		productService.insertProduct(productVo);
+////		System.out.println("productService: " + productService);
+////		System.out.println("insertProduct(ProductVo) 값 설정 후");
+//		
+//		return "product/insertProduct";
+//	}
+//	
 	
 	
 
