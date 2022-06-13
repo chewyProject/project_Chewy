@@ -10,4 +10,6 @@ public interface CartDao {
 	public List<CartVo> memberCheck(CartVo cartVo) throws Exception;
 	
 	public void selectCartList(List<CartVo> cartVo) throws Exception;
+	
+	public void itemDelete(int p_no) throws Exception;
 }

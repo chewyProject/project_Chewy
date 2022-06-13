@@ -62,8 +62,16 @@ public class ProductController {
 		return "product/product";
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value ="detail.do", method=RequestMethod.GET)
 	public String detail() {
+=======
+	@RequestMapping(value="detail.do", method = RequestMethod.GET)
+	public String detailProduct(ProductVo productVo, Model model) throws Exception{
+		List<ProductVo> product = productService.productInfo(productVo);
+		
+//		product.get(0).setImg(productService.productImg(product.get(0).getP_no()));
+>>>>>>> 6c0acf80d60ccdcf9ecd4e4eb10843f1e9016b84
 		
 		return "/product/detail";
 	}

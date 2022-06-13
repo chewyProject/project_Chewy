@@ -10,5 +10,6 @@
 		<typeAlias alias="productVo" type="com.chewy.fwd.vo.ProductVo"/>
 		<typeAlias alias="imgVo" type="com.chewy.fwd.vo.ImgVo"/>
 		<typeAlias alias="categoryVo" type="com.chewy.fwd.vo.CategoryVo"/>
+		<typeAlias alias="BrandVo" type="com.chewy.fwd.vo.BrandVo"/>
     </typeAliases>
 </configuration>

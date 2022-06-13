@@ -43,4 +43,10 @@ public class CartServiceImpl implements CartService {
 		return productDao.productInfo(p_no);
 	}
 
+	@Override
+	public void itemDelete(int p_no) throws Exception {
+		
+		cartDao.itemDelete(p_no);
+	}
+
 }

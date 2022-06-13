@@ -21,6 +21,8 @@ p {
 }
 
 .header_container {
+	position: relative;
+	z-index: 90000;
 	background-color: #1c49c2;
 	height: 15rem;
 	font-family: sans-serif;
@@ -31,6 +33,7 @@ p {
 	height: inherit;
 	position: relative;
 	color: #fff;
+	z-index: 90001;
 }
 
 .header_container header {
@@ -44,6 +47,7 @@ p {
 }
 
 .header_top {
+	align-items: center;
 	position: relative;
 	justify-content: space-between;
 	flex: 1;
@@ -52,7 +56,6 @@ p {
 }
 
 .header_row {
-	margin-top: 2.4rem;
 	height: 5.4rem;
 }
 
@@ -82,6 +85,11 @@ p {
 	height: 4.3rem;
 	border-radius: 4px;
 	font-size: 1.6rem;
+	color: #333;
+}
+
+.header_search_wrap>button {
+	cursor: default;
 }
 
 .header_navi_help .list_wrap {
@@ -104,6 +112,7 @@ p {
 .header_navi {
 	display: flex;
 	justify-content: space-between;
+	height: 100%;
 }
 
 .header_navi .header_navi_list, .navi_help_bottom>li, .category_main_menu, 
@@ -144,7 +153,7 @@ p {
 
 .header_navi>ul>li .list_wrap .navi_help_drop {
 	position: absolute;
-    transform: translate3d(-201px, 48px, 0px);
+    transform: translate3d(-20rem, 6rem, 0px);
     top: 0px;
     left: 0px;
     will-change: transform;	
@@ -210,6 +219,10 @@ p {
 	border-left: 1px solid #ddd;
 }
 
+.navi_help_mid .help_mid_right>p {
+	margin: 1.6rem 0;
+}
+
 .navi_help_bottom {
 	display: flex;
 }
@@ -235,7 +248,7 @@ p {
 .header_navi>ul>li .navi_account_drop {
 	display: none;
     position: absolute;
-    transform: translate3d(-64px, 48px, 0px);
+    transform: translate3d(-7.8rem, 6rem, 0px);
     top: 0px;
     left: 0px;
     will-change: transform;
@@ -289,6 +302,22 @@ p {
 	text-decoration: underline;
 }
 
+.logout_wrap {
+	display: none;
+    padding: 1.6rem;
+    border-top: 1px solid #ddd;
+    text-align: left;
+    color: #333;
+}
+
+.logout_wrap>a {
+    color: #1c49c2;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+}
+
 .header_navi>ul>li .navi_account_drop .account_signin .account_signin_btn {
 	background-color: #ef6c00;
     color: #fff;
@@ -321,7 +350,7 @@ p {
 .header_navi>ul>li .cart_drop_wrap {
 	display: none;
 	position: absolute;
-    transform: translate3d(-163px, 48px, 0px);
+    transform: translate3d(-22.1rem, 6rem, 0px);
     top: 0px;
     left: 0px;
     will-change: transform;
@@ -372,6 +401,7 @@ p {
 	font-size: 1.6rem;
 	font-weight: 600;
 	line-height: 2rem;
+	color: #fff;
 } 
 
 .navi_btn {
@@ -424,7 +454,7 @@ p {
 .category_wrap>ul>li .shop_down {
 	display: none;
 	position: absolute;
-    transform: translate3d(0px, 54px, 0px);
+    transform: translate3d(0px, 4.4rem, 0px);
     top: 0px;
     left: 0px;
     will-change: transform;
@@ -571,6 +601,10 @@ p {
 	font-size: 1.6rem;
 }
 
+.pharmacy_wrap, .menu_ct_wrap {
+	padding-left: 6.4px;
+}
+
 .pharmacy_btn, .giveback_btn {
 	height: 100%;
 	width: 2.8rem;
@@ -597,7 +631,7 @@ p {
     max-width: 22.4rem;
     text-align: left;
     position: absolute;
-    transform: translate3d(0px, 54px, 0px);
+    transform: translate3d(0px, 4.4rem, 0px);
     left: 0px;
     will-change: transform;
     display: none;
@@ -711,7 +745,7 @@ p {
 .giveback_drop {
 	display: none;
     position: absolute;
-    transform: translate3d(10px, 70px, 0px);
+    transform: translate3d(1.5rem, 6rem, 0px);
     top: 0px;
     left: 0px;
     will-change: transform;
@@ -723,6 +757,7 @@ p {
     margin: -1.6rem;
     width: max-content;
     border: 1px solid #ddd;
+    background: #fff;
 }
 
 .giveback_drop>ul>li {
@@ -771,4 +806,80 @@ p {
 
 .account_signin>a:hover, ul>li:hover, button, .header_header_logo {
 	cursor: pointer;
+}
+
+.autoship_ad_btn {
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    appearance: none;
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    border-bottom: 0.1rem solid #ddd;
+}
+
+.autoship_ad_btn, .autoship_ad_btn>span, .ad_right {
+	color: #121212;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.autoship_ad_btn>span {
+    white-space: nowrap;
+}
+
+.ad_mid {
+	width: 12rem;
+    height: 2.4rem;
+    margin-left: 1.6rem;
+    margin-right: 0.8rem;
+}
+
+.ad_mid>img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    max-width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ad_right {
+    margin-left: 0;
+    padding-left: 0.8rem;
+    position: relative;
+}
+
+.ad_right:before {
+	position: absolute;
+    top: 50%;
+    left: 0;
+    height: 3.2rem;
+    margin-top: -1.4rem;
+    border-left: 1px solid #ddd;
+    content: "";
+    vertical-align: middle;
+}
+
+.ad_top {
+    font-size: 14px;
+    line-height: 20px;
+    color: #1c49c2;
+    font-weight: 700;
+}
+
+.ad_bottom {
+    margin-top: -2px;
+    margin-bottom: 2px;
+    font-size: 8px;
+    line-height: 14px;
+    font-weight: 400;
+    color: #4d4d4d;
+    white-space: nowrap;
 }

@@ -1,8 +1,11 @@
 package com.chewy.fwd.vo;
 
+<<<<<<< HEAD
 import java.util.Date;
 import java.util.List;
 
+=======
+>>>>>>> 6c0acf80d60ccdcf9ecd4e4eb10843f1e9016b84
 public class ProductVo {
 	private int cnt;
 	private int p_no;
@@ -27,11 +30,16 @@ public class ProductVo {
 	public ProductVo() {
 	}
 
+<<<<<<< HEAD
 	public ProductVo(int cnt, int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, String p_img,
 			float p_price, int p_total, int p_discount, float p_star, String p_question, String p_answer,
 			String p_shipping, String p_addtext, Date p_date, String b_name) {
 		super();
 		this.cnt = cnt;
+=======
+	public ProductVo(int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, String p_img, float p_price,
+			int p_total, int p_discount, float p_star, String p_question, String p_answer) {
+>>>>>>> 6c0acf80d60ccdcf9ecd4e4eb10843f1e9016b84
 		this.p_no = p_no;
 		this.bct_no = bct_no;
 		this.mct_no = mct_no;
@@ -107,12 +115,21 @@ public class ProductVo {
 		this.p_name = p_name;
 	}
 
+<<<<<<< HEAD
 	public String getP_img() {
 		return p_img;
 	}
 
 	public void setP_img(String p_img) {
 		this.p_img = p_img;
+=======
+	public String getImg() {
+		return p_img;
+	}
+
+	public void setImg(String img) {
+		this.p_img = img;
+>>>>>>> 6c0acf80d60ccdcf9ecd4e4eb10843f1e9016b84
 	}
 
 	public float getP_price() {
@@ -197,11 +214,18 @@ public class ProductVo {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "ProductVo [cnt=" + cnt + ", p_no=" + p_no + ", bct_no=" + bct_no + ", mct_no=" + mct_no + ", sct_no="
 				+ sct_no + ", b_no=" + b_no + ", p_name=" + p_name + ", p_img=" + p_img + ", p_price=" + p_price
 				+ ", p_total=" + p_total + ", p_discount=" + p_discount + ", p_star=" + p_star + ", p_question="
 				+ p_question + ", p_answer=" + p_answer + ", p_shipping=" + p_shipping + ", p_addtext=" + p_addtext
 				+ ", p_date=" + p_date + ", b_name=" + b_name + "]";
+=======
+		return "ProductVo [p_no=" + p_no + ", bct_no=" + bct_no + ", mct_no=" + mct_no + ", sct_no=" + sct_no
+				+ ", b_no=" + b_no + ", p_name=" + p_name + ", img=" + p_img + ", p_price=" + p_price + ", p_total="
+				+ p_total + ", p_discount=" + p_discount + ", p_star=" + p_star + ", p_question=" + p_question
+				+ ", p_answer=" + p_answer + "]";
+>>>>>>> 6c0acf80d60ccdcf9ecd4e4eb10843f1e9016b84
 	}
 
 

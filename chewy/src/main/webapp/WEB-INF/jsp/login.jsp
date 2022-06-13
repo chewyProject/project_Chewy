@@ -48,7 +48,7 @@
 										</div>
 									</li>
 									<li>
-										<a id="forgotPassword" href="/app/resetpassword/start" class="js-forgot-password">Forgot your password?</a>
+										<a id="forgotPassword" href="email.do" class="js-forgot-password">Forgot your password?</a>
 									</li>
 								</ol>
 <!-- 								<input type="hidden" name="_eventName" value="submit"> -->
@@ -65,7 +65,7 @@
 							<p>Creating an account is fast, easy, and free. You'll be
 								able to manage your autoships, track your orders, write reviews,
 								and more!</p>
-							<a href="/app/register?url=%2Fapp%2Faccount" class="cw-btn cw-btn--default js-create-account">Create Account</a>
+							<a href="register.do" class="cw-btn cw-btn--default js-create-account">Create Account</a>
 						</div>
 					</div>
 

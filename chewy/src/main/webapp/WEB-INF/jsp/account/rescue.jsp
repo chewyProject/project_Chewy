@@ -119,6 +119,6 @@
 	</main>
 
 	<%@include file="../footer/footerMain.jsp" %>
-
+	
 </body>
 </html>

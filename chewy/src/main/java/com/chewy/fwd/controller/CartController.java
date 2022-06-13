@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.chewy.fwd.service.CartService;
 import com.chewy.fwd.vo.CartVo;
+import com.chewy.fwd.vo.ProductVo;
 
 @Controller
 public class CartController {
@@ -25,7 +26,14 @@ public class CartController {
 		List<CartVo> cartList = null;
 		
 		HttpSession session = req.getSession();
-		int number = (int) session.getAttribute("m_no");
+		int number = 0;
+		
+		if(session.getAttribute("memberVo") != null) {
+			number = (int) session.getAttribute("memberVo");
+		} else {
+			number = 0;
+		}
+		
 		cartVo.setM_no(number);	// cartVo 회원 번호에 세션이 있는 값을 저장
 		
 		try {
@@ -37,9 +45,9 @@ public class CartController {
 				for(int i=0; i<cartList.size(); i++) {
 					cartList.get(i).setProductVo(cartService.selectCartList(cartList.get(i).getP_no()));
 					
-					System.out.println(cartList.get(i).getProductVo().get(0).getP_name());
 				}
 				
+				model.addAttribute("size", cartList.size());
 				model.addAttribute("list", cartList);
 				
 //				for(int i=0; i<cartList.size(); i++) {
@@ -57,4 +65,14 @@ public class CartController {
 		return "/cart/cart";
 	}
 	
+	// 카트 상품 삭제
+	@RequestMapping(value="delete.do", method = RequestMethod.GET)
+	public String cartDelete(ProductVo productVo) throws Exception{
+		
+		cartService.itemDelete(productVo.getP_no());
+		
+		System.out.println("delete");
+		
+		return "redirect:cart.do";
+	}
 }
