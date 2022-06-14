@@ -149,7 +149,7 @@
     display: inline-block;
     vertical-align: middle;
     border-left: 1px solid #ddd;
-    background: url(/assets/img/icons/arrow-right-blue.svg) no-repeat 100%;
+    background: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.svg) no-repeat 100%;
     background-size: 6px 10px;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .bx-controls-direction .bx-next {
-    background-image: url(	https://www.chewy.com/assets/img/icons/arrow-right-blue.png);
+    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.png);
     background-position: 12px;
     background-repeat: no-repeat;
     background-size: 10px;
@@ -536,6 +536,8 @@ a {
     position: relative;
 }
 
+
+
 @media (min-width: 970px) {
 	.dept-sidebar li:after {
 	    left: 237px;
@@ -562,8 +564,19 @@ a {
     transition: opacity .15s ease-out;
 }
 
+.dept-sidebar--active .dept__popover:before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 100%;
+}
+
+
 .dept__popover__img {
-    width: 60%;
+    width: 50%;
     display: inline-block;
     vertical-align: top;
     margin: 0 0 0 -4px;
@@ -597,6 +610,12 @@ fieldset, img {
     overflow: inherit;
 }
 
+.dept-sidebar li.dept-sidebar--active .dept__popover, .dept-sidebar li:hover .dept__popover {
+    visibility: visible;
+    opacity: 1;
+    z-index: 98;
+}
+
 .dept-sidebar>ul>li {
     margin: 0;
     border-bottom: 1px solid #ccc;
@@ -608,13 +627,11 @@ fieldset, img {
 }
 
 
-
-
 @media (min-width: 769px) {
 	
 	.dept-sidebar>ul>li:hover>a {
 	    color: #0e70be;
-	    background-image: url(/assets/img/icons/arrow-right-blue.svg);
+	    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
 	}
 }
 
@@ -626,12 +643,6 @@ fieldset, img {
 	    background-position: 212px;
 	}
 	
-}
-.dept-sidebar>ul>li>a {
-    padding: 18px 10px;
-    background-image: url(/assets/img/icons/arrow-right-grey.svg);
-    background-repeat: no-repeat;
-    background-size: 8px 13px;
 }
 
 .bx-wrapper .bx-controls-direction a {
@@ -647,3 +658,106 @@ fieldset, img {
 
 
 
+
+.show-more--description.description-bottom {
+    padding: 50px 0 0;
+    border-top: 1px solid #ddd;
+}
+.show-more--description {
+    margin: 0.8rem 0;
+}
+.show-more--description {
+    margin: 0.8rem .98%;
+    padding: 20px;
+    position: relative;
+}
+
+
+.show-more--description h2, .show-more--description h3 {
+    padding-top: 0;
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin: 0 0 10px;
+}
+
+.show-more--description .show-more-wrapper {
+    height: 106px;
+    transition: all .3s ease-out;
+    overflow: hidden;
+}
+
+.show-more--description p, .show-more--description p a {
+    color: #555;
+}
+.show-more--description p {
+    font-size: 1.1rem;
+    font-weight: 200;
+    line-height: 1.6em;
+    text-align: left;
+    text-transform: none;
+}
+
+.show-more--description .overlay {
+    height: 55px;
+    width: 100%;
+    background: linear-gradient(180deg,rgba(252,251,252,0),#fcfbfc);
+    position: absolute;
+    bottom: 47px;
+}
+
+
+.show-more--description .show-more {
+    font-size: 16px;
+    text-decoration: none;
+    display: table;
+    margin-top: 22px;
+}
+
+.show-more--description a {
+    text-decoration: underline;
+}
+
+
+.show-more {
+    margin-bottom: 2rem;
+}
+a, a:hover {
+    color: #0e70be;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+
+.show-more--description .show-more img {
+    width: 25px;
+    height: 26px;
+    margin-right: 6px;
+    -webkit-transform: none;
+    transform: none;
+}
+
+.show-more--description .show-more img, .show-more--description .show-more span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.dept-slider img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.show-more--description .show-more img, .show-more--description .show-more span {
+    display: table-cell;
+    vertical-align: middle;
+}

@@ -1,14 +1,12 @@
-	.dept__banner {
-    background: #ffcc42 url(//cms-www.chewy.com/contentAsset/raw-data/99f3690f-ca5f-4101-b752-5e003522958e/mediumImage/43246945-9af5-4c92-9051-e80618536394) no-repeat 50%;
-	}	
-	
-	
+.dept__banner {
+  background: #ffcc42 url(//cms-www.chewy.com/contentAsset/raw-data/99f3690f-ca5f-4101-b752-5e003522958e/mediumImage/43246945-9af5-4c92-9051-e80618536394) no-repeat 50%;
+}
+
 .dept__banner {
     position: relative;
     margin: 0 0 20px;
     height: 310px;
 }
-
 
 .dept__banner__title {
     position: absolute;
@@ -17,16 +15,15 @@
     width: 100%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-}
-
-
+}   
+    
 @media (min-width: 970px) and (max-width: 1249px) {
 	.container {
 	    padding: 0 20px;
 	}
+    
 }
-
-.container {
+.container_banner {
     min-width: 750px;
     max-width: 1400px;
     margin: auto;
@@ -35,9 +32,8 @@
     transition: width .2s ease-out;
 }
 
-
 .dept__banner h1 {
-    font-size: 4rem;
+    font-size: 7rem;
     font-weight: 600;
     text-align: left;
     line-height: .85em;
@@ -45,101 +41,25 @@
     color: #fff;
 }
 
-@media (min-width: 1250px) and (max-width: 1399px) {
-	.container {
-	    padding: 0 40px;
-	}
-}
+/* @media (min-width: 970px) { */
+/* 	.dept-slider__inner { */
+/* 	    padding: 15px 25px; */
+/* 	} */
+/* } */
 
-.dept-sliders {
-    width: 100%;
-    float: left;
-}
-
-@media (min-width: 970px) {
-	.dept-slider {
-	    margin: 0 0 0 260px;
-	}
-}
-
-@media (min-width: 970px) {
-	.dept-slider__inner {
-	    padding: 15px 25px;
-	}
-}
-
-.dept-slider__inner {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 1px 0 0 #ddd;
-    overflow: hidden;
-    margin: 0 0 20px;
-    position: relative;
+.dept-slider {
+	border: 1px solid #ddd;
+	padding: 2rem;
+	height: 35rem;
+	box-shadow: 0 1px 0 0 #ddd;
+	
 }
 
 .dept-slider header {
-    padding: 10px 25px 10px 0;
-    margin: 0 0 25px;
+/*     padding: 10px 25px 10px 0; */
+/*     margin: 0 0 25px; */
 }
 
-@media (min-width: 970px) {
-	
-	.dept-slider h2 {
-	    font-size: 3.5rem;
-	}
-}
-
-.dept-slider h2 {
-    padding-top: 0;
-    margin: 0;
-}
-@media (min-width: 40em) {
-	
-	h2 {
-	    font-size: 3rem;
-	    line-height: 1.2;
-	    margin-top: -0.3em;
-	    margin-bottom: 0.6666666667em;
-	    padding-top: 1.2em;
-	    font-weight: 300;
-	    color: #333;
-	    border: none;
-	}
-}
-
-@media (min-width: 970px) {
-	.dept-slider h2 {
-	    font-size: 3.5rem;
-	}
-}
-
-.dept-slider h2 {
-    padding-top: 0;
-    margin: 0;
-}
-
-@media (min-width: 40em) {
-	h2 {
-	    font-size: 3rem;
-	    line-height: 1.2;
-	    margin-top: -0.3em;
-	    margin-bottom: 0.6666666667em;
-	    padding-top: 1.2em;
-	    font-weight: 300;
-	    color: #333;
-	    border: none;
-	}
-	
-}
-
-@media (min-width: 970px) {
-	
-	.dept-slider h2 span {
-	    margin: 0 0 0 15px;
-	    padding: 0 15px;
-	}
-}
 .dept-slider h2 span {
     color: #0e70be;
     font-size: .4em;
@@ -151,128 +71,63 @@
     background-size: 6px 10px;
 }
 
-@media (min-width: 970px) {
-	
-	.dept-slider .bx-controls-direction {
-	    right: 10px;
+@media (min-width: 40em) {
+	h2 {
+	    font-size: 3rem;
+	    line-height: 1.2;
+	    margin-top: -0.3em;
+	    margin-bottom: 0.6666666667em;
+	    padding-top: 1.0em;
+	    font-weight: 300;
+	    color: #333;
+	    border: none;
 	}
+}
 	
-}
-
-.dept-slider .bx-controls-direction {
-    position: absolute;
-    top: 20px;
-}
-
-.dept-slider .bx-controls-direction .bx-next {
-    float: right;
-}
-
-.bx-controls-direction .bx-next {
-    background-image: url(	https://www.chewy.com/assets/img/icons/arrow-right-blue.png);
-    background-position: 12px;
-    background-repeat: no-repeat;
-    background-size: 10px;
-}
-.bx-controls-direction a {
-    margin: 0 3px;
-    border: 2px solid #128ced;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    display: block;
-    text-indent: -9999px;
-    float: left;
-    transition: background-color .3s ease;
-
-}
-
-.dept-slider .bx-controls-direction .bx-prev {
-    float: left;
-}
-
-.bx-controls-direction .bx-prev.disabled, .bx-controls-direction .bx-prev.disabled:hover {
-    background-image: url(	https://www.chewy.com/assets/img/icons/arrow-left-ddd-grey.png);
-}
-.bx-controls-direction a.disabled {
-    border-color: #eee;
-    cursor: default;
-}
-.bx-controls-direction .bx-prev {
-    background-image: url(	https://www.chewy.com/assets/img/icons/arrow-left-blue.png);
-    background-position: 9px;
-    background-repeat: no-repeat;
-    background-size: 10px;
-}
-
-.bx-wrapper {
-    max-width: 965px;
-    position: relative;
-    padding: 0;
-    *zoom: 1;
-    touch-action: pan-y;
-}
-
-.bx-viewport {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    height: 242px;
-    -webkit-transform: translatez(0);
-    transform: translatez(0);
-}
-
-.bxslider js-draggable-on-desktop {
-	width: 10215%;
-    position: relative;
-    transition-duration: 0s;
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.dept-slider ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-right: 0;
-    padding-left: 0;
-    list-style-type: none;
-    display: block;
-    height: 241px;
-    *zoom: 1;
-    overflow: hidden;
+.dept-slider h2 a {
+    color: #444;
+    transition: color .2s ease-out;
 }
 
 
-.dept-slider li {
-    margin: 0;
-    width: 20%;
-    display: inline-block;
-    vertical-align: middle;
-    min-height: 241px;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    white-space: normal;
+/* .dept-slider__inner { */
+/*     background: #fff; */
+/*     border: 1px solid #ddd; */
+/*     border-radius: 5px; */
+/*     box-shadow: 0 1px 0 0 #ddd; */
+/*     overflow: hidden; */
+/*     margin: 0 0 20px; */
+/*     position: relative; */
+/* } */
+
+
+@media (min-width: 1025px) {
+	.dept-slider li a:hover {
+	    box-shadow: 0 1px 0 #ccc;
+	    border-color: #ccc;
+	}
 }
 
 .dept-slider .bxslider a {
     display: block;
 }
+
+.bxslider img {
+	width: 80px;
+	height: 80px;
+	margin: 0;
+}
+
+
+.dept-slider a:hover {
+    text-decoration: none;
+}
 .dept-slider li a {
     display: block;
     padding: 10px;
-    min-height: 240px;
+/*     min-height: 240px; */
     border-radius: 5px;
     border: 1px solid transparent;
-}
-
-a, a:hover {
-    color: #0e70be;
-}
-
-.dept-slider__img {
-    display: block;
-    height: 150px;
-    margin: 0 0 25px;
-    position: relative;
 }
 
 .dept-slider img {
@@ -284,30 +139,101 @@ a, a:hover {
     margin: 0 auto;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+/*     -webkit-transform: translateY(-50%); */
+/*     transform: translateY(-50%); */
+}
+
+@media (min-width: 970px) {
+	.dept-slider h2 span {
+	    margin: 0 0 0 15px;
+	    padding: 0 15px;
+	}
+}
+
+.dept-slider h2 a:hover {
+    color: #0e70be;
+}
+
+.dept-slider h2 span {
+    color: #0e70be;
+    font-size: .4em;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 1px solid #ddd;
+    background: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.svg) no-repeat 100%;
+    background-size: 6px 10px;
 }
 
 .dept-slider p {
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     font-weight: 600;
     text-align: center;
     line-height: 1.11;
     color: inherit;
     text-transform: uppercase;
+    margin: 1rem;
 }
 
-@media (min-width: 40em) {
-	dl, ol, p, ul {
-	    margin-top: -0.375em;
-	    margin-bottom: 1.25em;
-	}
+.bx-wrapper {
+	box-shadow: 0 0 0 #fff;
+	border: none;
+	 
+}
+.controls .bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: -25%;
+    margin-top: -16px;
+    outline: 0;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+.controls .bx-wrapper .bx-next {
+    right: -5rem;
+/*     background: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.png) no-repeat -43px -32px; */
+}
+
+.controls .bx-wrapper .bx-prev {
+   left: 83rem;
+/*     background: url(https://www.chewy.com/assets/img/icons/arrow-left-ddd-grey.png) no-repeat 0 -32px; */
+}
+
+
+/* --------------------------  사이드바 --------------------------------------*/
+
+.dept-sidebar>ul>li>a {
+    padding: 16px 10px;
+    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
 }
 
 @media (min-width: 970px) {
-	.dept-slider__inner {
-	    padding: 15px 25px;
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
 	}
+}
+.dept-sidebar>ul>li>a {
+    padding: 16px 10px;
+    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
+}
+
+.dept-sidebar>ul>li>a {
+    background-position: 212px;
+}
+@media (min-width: 970px) {
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+}
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
 }
 
 @media (min-width: 970px) {
@@ -318,7 +244,7 @@ a, a:hover {
 
 .dept-sidebar {
     float: left;
-    margin: 0 0 0 -100%;
+    margin: 0 0 0 25%;
 }
 
 .dept-sidebar>ul {
@@ -327,7 +253,7 @@ a, a:hover {
     padding-right: 0;
     padding-left: 0;
     list-style-type: none;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 400;
     text-align: left;
     line-height: 1.9rem;
@@ -401,18 +327,6 @@ a, a:hover {
     padding: 25px;
 }
 
-
-.dept-sidebar>ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-right: 0;
-    padding-left: 0;
-    list-style-type: none;
-    font-size: 1.0rem;
-    font-weight: 400;
-    text-align: left;
-    line-height: 1.9rem;
-}
 
 @media (min-width: 970px) {
 	
@@ -532,6 +446,8 @@ a {
     position: relative;
 }
 
+
+
 @media (min-width: 970px) {
 	.dept-sidebar li:after {
 	    left: 237px;
@@ -558,8 +474,19 @@ a {
     transition: opacity .15s ease-out;
 }
 
+.dept-sidebar--active .dept__popover:before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 100%;
+}
+
+
 .dept__popover__img {
-    width: 60%;
+    width: 50%;
     display: inline-block;
     vertical-align: top;
     margin: 0 0 0 -4px;
@@ -593,6 +520,12 @@ fieldset, img {
     overflow: inherit;
 }
 
+.dept-sidebar li.dept-sidebar--active .dept__popover, .dept-sidebar li:hover .dept__popover {
+    visibility: visible;
+    opacity: 1;
+    z-index: 98;
+}
+
 .dept-sidebar>ul>li {
     margin: 0;
     border-bottom: 1px solid #ccc;
@@ -604,13 +537,11 @@ fieldset, img {
 }
 
 
-
-
 @media (min-width: 769px) {
 	
 	.dept-sidebar>ul>li:hover>a {
 	    color: #0e70be;
-	    background-image: url(/assets/img/icons/arrow-right-blue.svg);
+	    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
 	}
 }
 
@@ -623,9 +554,16 @@ fieldset, img {
 	}
 	
 }
-.dept-sidebar>ul>li>a {
-    padding: 18px 10px;
-    background-image: url(/assets/img/icons/arrow-right-grey.svg);
-    background-repeat: no-repeat;
-    background-size: 8px 13px;
+
+.bx-wrapper .bx-controls-direction a {
+    /* position: absolute; */
+    top: 50%;
+    margin-top: -140px;
+    outline: 0;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px;
+    z-index: 9999;
 }
+
+

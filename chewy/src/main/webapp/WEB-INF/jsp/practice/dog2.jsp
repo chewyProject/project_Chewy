@@ -34,6 +34,61 @@
 		<div class="dept-sliders">
 			<div class="dept-slider">
 			
+					<section class="dept-slider__inner">
+						<div class="slider">
+							<header class="section-heading">	
+								 <h2>
+	                      			<a href="/b/food-332">
+	                        			Food<span>Shop All</span>
+	                      			</a>
+	                    		</h2>
+							</header>
+							<ul class="bxslider_four row">
+								<li class="col">
+									<a href="https://www.chewy.com/b/dog-288">
+										<span class="dept-slider__img">
+							 				<img src="images/dog/food/dry_food.jpg" class="petImage">
+										</span>
+							 			<p>DRY FOOD</p>
+						 			</a>
+								 </li>
+								 <li>
+									<a href="https://www.chewy.com/b/cat-325">
+										<span class="dept-slider__img">
+											<img src="images/dog/food/wet_food.jpg" class="petImage">
+										</span>
+										<p>WET FOOD</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.chewy.com/b/small-pet-977">
+										<span class="dept-slider__img">
+					 						<img src="images/dog/food/veterinary_diet.jpg" class="petImage">
+										</span>
+					 					<p>Veterinary Diets</p>
+				 					</a>
+								</li>
+								<li>
+									<a href="https://www.chewy.com/b/bird-941">
+										<span class="dept-slider__img">
+					 						<img src="images/dog/food/premium_food.jpg" class="petImage">
+										</span>
+					 					<p>PREMIUM FOOD</p>
+				 					</a>
+								</li>
+								<li>				
+									<a href="https://www.chewy.com/b/fish-885">
+										<span class="dept-slider__img">
+					 						<img src="images/dog/food/fresh&prepared_food.jpg" class="petImage">
+										</span>
+					 					<p>FRESH & PREPARED MEALS</p>
+				 					</a>
+								</li>
+							</ul>
+						</div>
+					</section>
+					
+			
 			
 					<section class="dept-slider__inner">
 						<div class="slider">
@@ -134,7 +189,7 @@
 							<header class="section-heading">	
 								 <h2>
 	                      			<a href="/b/food-332">
-	                        			TREATS<span>Shop All</span>
+	                        			Treats<span>Shop All</span>
 	                      			</a>
 	                    		</h2>
 							</header>
@@ -236,7 +291,7 @@
 							<header class="section-heading">	
 								 <h2>
 	                      			<a href="/b/food-332">
-	                        			TOYS<span>Shop All</span>
+	                        			Toys<span>Shop All</span>
 	                      			</a>
 	                    		</h2>
 							</header>
@@ -300,12 +355,28 @@
 							</ul>
 						</div>
 					</section>
-				
+					
+					<div class="description-bottom show-more--description">
+						<h2>Dog Supplies</h2>
+							<div class="show-more-wrapper" id="show-more-wrapper" style="height: 106px;">
+								<p>As a furry pup lover, there’s no way you can measure the amount of fulfillment and satisfaction you get from your cuddly companion. Dogs improve our moods, encourage healthy behaviors, help us recover from illness and keep us safe. For all our dogs do for us, it’s only natural we take good care of our four-legged friends. The Chewy Dog Shop has all the dog supplies your pup needs. You’ll find quality dog supplies including the <a href="https://www.chewy.com/b/food-332">best dog food</a>, <a href="https://www.chewy.com/b/toys-315">dog toys</a>, <a href="https://www.chewy.com/b/vitamins-minerals-1572">dog vitamins</a> and <a href="https://www.chewy.com/b/vitamins-supplements-374">dog supplements</a> from trusted brands. Whether it’s helping find the right <a href="https://www.chewy.com/b/dry-food-294">dog kibble</a> or <a href="https://www.chewy.com/b/wet-food-293">canned dog food</a> for your pet’s nutritional needs, or dog supplements to correct deficiencies, Chewy is here for you and your furry friend through all the stages of her life. Chewy’s dog supplies help you care for your pet with pet products to meet her every need because your pup’s needs will change as she ages from playful pup to sleepy senior.</p>
+								<p>Dog food and treats are essential dog supplies. When it comes to shopping for the best dog food, get help deciding between crunchy kibble and canned varieties with reviews from other pet parents. Have a pet with special nutritional needs? Chewy carries dog food specially formulated for pets with dog food sensitivities and allergies. Find <a href="https://www.chewy.com/b/treats-335">tasty dog treats</a> to reward your dog for good behavior. We have a wide variety of delicious snacks packed with healthy ingredients for your caring canine. <a href="https://www.chewy.com/b/raw-food-8424">Raw dog food</a> can give your dog a shinier coat, healthier skin, cleaner teeth and give your pup more energy.</p>
+								<p>Playtime is an important part of your dog’s development and happiness. Play also gives your dog the exercise she needs to stay healthy and avoid joint issues later in life. Make play more fun with the right dog toy for your energetic pup. Choose between <a href="https://www.chewy.com/b/balls-2329">dog balls</a>, <a href="https://www.chewy.com/b/plush-toys-320">plush toys</a>, <a href="https://www.chewy.com/b/interactive-toys-319">interactive dog toys</a>, <a href="https://www.chewy.com/b/puzzle-toys-games-2335">dog puzzles</a>, <a href="https://www.chewy.com/b/chew-toys-316">chew toys</a> and more from quality brands you know and love, like <a href="https://www.chewy.com/s?page=1&amp;rh=brand_facet%3AUSA+Bones+%26+Chews">USA Bones &amp; Chews</a> and <a href="https://www.chewy.com/s?page=1&amp;rh=brand_facet%3AKONG">KONG</a>. <a href="https://www.chewy.com/b/dental-healthcare-372">Dog dental care</a> is another vital part of your dog’s overall health. Take care of those canine teeth with dog dental care products like <a href="https://www.chewy.com/s?page=1&amp;rh=brand_facet%3AGreenies%2Cc%3A372">Greenies dog dental chews</a>. <a href="https://www.chewy.com/b/dental-chews-1463">Dog dental chews</a> and regular brushing can help protect your dog’s dental health in between professional cleanings.</p>
+								<p><a href="https://www.chewy.com/b/beds-365">Beds for dogs</a> are important to make sure your pup has a comfortable place to sleep. No matter what you need to make life better for your dog, Chewy has dog supplies from trusted brands your pup will love.</p>
+								<p>Popular Dog Products: <a href="https://www.chewy.com/b/dog-houses-2044">Dog Houses</a>, <a href="https://www.chewy.com/b/beds-mats-365">Dog Beds</a>, <a href="https://www.chewy.com/b/carriers-366">Dog Kennels</a>, <a href="https://www.chewy.com/b/crates-accessories-369">Dog Crates</a>, <a href="https://www.chewy.com/b/costumes-1963">Dog Costumes</a>, <a href="https://www.chewy.com/b/doors-accessories-370">Doggie Doors</a>, <a href="https://www.chewy.com/b/car-seats-2413">Dog Car Seats</a>, <a href="https://www.chewy.com/b/collars-385">Dog Flea Collars</a>, <a href="https://www.chewy.com/b/id-tags-accessories-348">Dog ID Tags</a>, <a href="https://www.chewy.com/b/gates-1465">Dog Gates</a>, <a href="https://www.chewy.com/f/puppy-food_c332_f5v9065">Puppy Food</a></p>
+
+							</div>
+           					<div class="overlay" id="overlay"></div>
+								<a class="show-more js-show-more" href="#" id="bt1" onclick="show_hide('overlay')"  >
+									<img src="https://www.chewy.com/assets/img/icons/plus-icon.svg" alt="Chewy.com"><span>Show More</span>
+								</a>
+<!-- 								<a class="show-more js-show-more" href="#" onclick="show_hide('overlay', 'none')" vaaue="hide"> -->
+<!-- 				                    <img src="	https://www.chewy.com/assets/img/icons/minus-icon.svg" alt="Chewy.com"><span>Hide</span> -->
+<!-- 				                </a> -->
+								
+					</div>
 			</div>
 		</div>
-		
-		
-		
 		
 		<aside class="dept-sidebar">
             <ul>
@@ -316,7 +387,7 @@
                     <div class="dept__popover__inner">
                       <div class="dept__popover__content">
                         <ul>
-                          <li>
+                          <li >
                               <a href="/b/dry-food-294">Dry Food</a>
                             </li>
                           <li>
@@ -1157,13 +1228,11 @@
                 </li>
               </ul>
           </aside>
-		
 	</div>
 	
 	
 
-<!-- 	<script src="https://www.chewy.com/assets/js/vendor/jquery/jquery.bxslider.4.2.12-ch.2.3.min.js"></script> -->
-	<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- 	<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!-- 	<script src="/assets/js/vendor/jquery/jquery.bxslider.4.2.12-ch.2.3.min.js"></script> -->
 <script>
@@ -1200,8 +1269,102 @@
 			responsive : true
 			
 		});
+		
+		
+// 		$('a').on('click', function(e){
+// 			e.preventDefault();
+// 		});
+		
+		document.getElementById('bt1').value='show-more';
 	});
 
+	$(".dept-sidebar li").mouseover(function(){
+ 		$(".dept-sidebar li").removeClass("dept-sidebar--active");
+		$(this).addClass("dept-sidebar--active");
+		
+		$(".dept-sidebar--active .dept__popover").css({
+			"visibility" : "visible",
+			"opacity" : "1"
+		});
+		
+		$(this).removeClass("dept-sidebar--active");
+		
+	});
+		
+	
+	
+	
+// 	$('.js-show-more').click(function(){
+// 		$('.show-more-wrapper').css({
+// 			"height" : "660px"
+// 		});
+		
+// 		$('.overlay').css({
+// 			'display' : 'none'
+// 		});
+		
+
+// 		$('.js-show-more').click(function(){
+// 			$('.show-more-wrapper').css({
+// 				"height" : "107px"
+// 			});
+			
+// 			$('.overlay').css({
+// 				'display' : 'block'
+// 			});
+			
+// 		});
+// 	});
+	
+// 	var a;
+// 	function show_hide() {
+// 		if (a ==1 ) {
+// 			document.getElementById('show-more-wrapper').style.height='600px';
+// 			document.getElementById('overlay').style.display='none';
+// 			return a = 0;
+// 		} else {
+// 			document.getElementById('show-more-wrapper').style.height='108px';
+// 			document.getElementById('overlay').style.display='block';
+// 			return a = 1;
+// 		}
+// 	}
+	
+	
+// 	function show_hide(id, visibility) {
+// 		document.getElementById('overlay').style.display=visibility ;
+// 	}
+	
+// 	function show_hide(id) {
+// 		if (document.getElementById('bt1').value=='hide') {
+// 			document.getElementById(id).style.display='none';
+// 			document.getElementById('show-more-wrapper').style.height='107px';
+// 			document.getElementById('bt1').value='show-more' ;
+// 		} else {
+// 			document.getElementById(id).style.display='block';
+// 			document.getElementById('show-more-wrapper').style.height='600px';
+// // 			document.getElementById('bt1').value='hide';
+// 		}
+// 	}
+	
+	function show_hide(id) {
+		console.log("document.getElementById('bt1').value : " + document.getElementById('bt1').value)
+		
+		if (document.getElementById('bt1').value=='show-more') {
+			document.getElementById('show-more-wrapper').style.height='950px';
+			document.getElementById(id).style.display='block';
+			document.getElementById('bt1').value='hide';
+// 			document.querySelectorAll('.overlay').style.background='linear-gradient(180deg,rgba(252,251,252,0),#fcfbfc)';
+			document.querySelector('.show-more--description, .overlay').style.background='linear-gradient(180deg,rgba(252,251,252,0),#fcfbfc)';
+			
+		} else {
+			document.getElementById(id).style.display='none';
+			document.getElementById('show-more-wrapper').style.height='107px';
+			document.getElementById('bt1').value='show-more' ;
+		}
+		return false;
+	}
+	
+	
 	
 </script>
 </body>

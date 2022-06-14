@@ -1,7 +1,10 @@
 package com.chewy.fwd.vo;
 
-public class ProductVo {
+import java.util.Date;
+import java.util.List;
 
+public class ProductVo {
+	private int cnt;
 	private int p_no;
 	private int bct_no;
 	private int mct_no;
@@ -15,12 +18,20 @@ public class ProductVo {
 	private float p_star;
 	private String p_question;
 	private String p_answer;
-
+	private String p_shipping;
+	private String p_addtext;
+	private Date p_date;
+	
+	private String b_name;
+	
 	public ProductVo() {
 	}
 
-	public ProductVo(int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, String p_img, float p_price,
-			int p_total, int p_discount, float p_star, String p_question, String p_answer) {
+	public ProductVo(int cnt, int p_no, int bct_no, int mct_no, int sct_no, int b_no, String p_name, String p_img,
+			float p_price, int p_total, int p_discount, float p_star, String p_question, String p_answer,
+			String p_shipping, String p_addtext, Date p_date, String b_name) {
+		super();
+		this.cnt = cnt;
 		this.p_no = p_no;
 		this.bct_no = bct_no;
 		this.mct_no = mct_no;
@@ -34,6 +45,18 @@ public class ProductVo {
 		this.p_star = p_star;
 		this.p_question = p_question;
 		this.p_answer = p_answer;
+		this.p_shipping = p_shipping;
+		this.p_addtext = p_addtext;
+		this.p_date = p_date;
+		this.b_name = b_name;
+	}
+
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
 	}
 
 	public int getP_no() {
@@ -84,12 +107,12 @@ public class ProductVo {
 		this.p_name = p_name;
 	}
 
-	public String getImg() {
+	public String getP_img() {
 		return p_img;
 	}
 
-	public void setImg(String img) {
-		this.p_img = img;
+	public void setP_img(String p_img) {
+		this.p_img = p_img;
 	}
 
 	public float getP_price() {
@@ -140,13 +163,49 @@ public class ProductVo {
 		this.p_answer = p_answer;
 	}
 
+	public String getP_shipping() {
+		return p_shipping;
+	}
+
+	public void setP_shipping(String p_shipping) {
+		this.p_shipping = p_shipping;
+	}
+
+	public String getP_addtext() {
+		return p_addtext;
+	}
+
+	public void setP_addtext(String p_addtext) {
+		this.p_addtext = p_addtext;
+	}
+
+	public Date getP_date() {
+		return p_date;
+	}
+
+	public void setP_date(Date p_date) {
+		this.p_date = p_date;
+	}
+
+	public String getB_name() {
+		return b_name;
+	}
+
+	public void setB_name(String b_name) {
+		this.b_name = b_name;
+	}
+
 	@Override
 	public String toString() {
-		return "ProductVo [p_no=" + p_no + ", bct_no=" + bct_no + ", mct_no=" + mct_no + ", sct_no=" + sct_no
-				+ ", b_no=" + b_no + ", p_name=" + p_name + ", img=" + p_img + ", p_price=" + p_price + ", p_total="
-				+ p_total + ", p_discount=" + p_discount + ", p_star=" + p_star + ", p_question=" + p_question
-				+ ", p_answer=" + p_answer + "]";
+		return "ProductVo [cnt=" + cnt + ", p_no=" + p_no + ", bct_no=" + bct_no + ", mct_no=" + mct_no + ", sct_no="
+				+ sct_no + ", b_no=" + b_no + ", p_name=" + p_name + ", p_img=" + p_img + ", p_price=" + p_price
+				+ ", p_total=" + p_total + ", p_discount=" + p_discount + ", p_star=" + p_star + ", p_question="
+				+ p_question + ", p_answer=" + p_answer + ", p_shipping=" + p_shipping + ", p_addtext=" + p_addtext
+				+ ", p_date=" + p_date + ", b_name=" + b_name + "]";
 	}
-	
 
+
+	
+	
+	
 }
