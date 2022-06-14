@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="header/headerMain.jsp" %>
+<%@include file="../header/headerMain.jsp" %>
 
 	<main class="main">
 		<div class="account_navi">
@@ -94,30 +94,19 @@
 					<header>
 						<h2>My Pets</h2>
 					</header>
-						<div class="account-area account-area--ready">
-							<div class="pet-cards">
-								<div class="my-pets-empty cw-row cw-card cw-padding--none">
-									<div class="my-pets-empty__image">
-									<span class="overview_pet"></span>
+						<div class="mypets_main">
+							<div class="mypets_left"></div>
+							<div class="mypets_right">
+								<div class="right_wrap">
+									<h5 class="mypet_h5">Create Your Pet's Profile</h5>
+									<p class="mypet_font">From the chill weirdos to the total goofballs, every pet
+										is unique. Tell us about yours, and we'll create a go-to space
+										just for them.</p>
+									<div class="pet_btn_wrap">
+										<button onclick="location.href='mypetInsert.do'">
+											<span>Start with the Basics</span>
+										</button>
 									</div>
-									<div class="my-pets-empty__item">
-										<div class="my-pets-empty__content">
-											<h5 class="kib-typography-h5 my-pets-empty__title">Create
-												Your Pet's Profile</h5>
-											<p class="kib-typography-body2 my-pets-empty__body">From
-												the chill weirdos to the total goofballs, every pet is
-												unique. Tell us about yours, and we'll create a go-to space
-												just for them.</p>
-											<button class="kib-button-default kib-button-default--full">
-												<!---->
-												<span class="kib-button-default__label"> Start with
-													the Basics </span>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="cw-row">
-									<!---->
 								</div>
 							</div>
 						</div>
@@ -146,7 +135,7 @@
 		</div>
 	</main>
 
-	<%@include file="footer/footerMain.jsp" %>
+	<%@include file="../footer/footerMain.jsp" %>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/account.js"></script>

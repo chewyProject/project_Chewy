@@ -14,7 +14,6 @@ public interface MemberDao {
 	
 	// 마이페이지
 	public List<MemberVo> mypageSelectOne(int m_no) throws Exception;
-	
 
 	public List<MemberVo> selectEmail(MemberVo memberVo) throws Exception;
 
