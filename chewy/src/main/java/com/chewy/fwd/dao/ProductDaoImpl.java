@@ -208,6 +208,22 @@ public class ProductDaoImpl implements ProductDao{
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 		return mapper.selectBrandList();
 	}
+	
+	@Override
+	public List<ProductVo> selectMBrandList(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectMBrandList(map);
+	}
+	
+	@Override
+	public List<ProductVo> selectSBrandList(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectSBrandList(map);
+	}
+	
+	
+	
+	
 
 	@Override
 	public List<ProductVo> selectColCateList(Map<String, Object> map) throws Exception {
@@ -215,6 +231,12 @@ public class ProductDaoImpl implements ProductDao{
 		return mapper.selectColCateList(map);
 	}
 
+	@Override
+	public List<ProductVo> selectColBDetailList(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.selectColBDetailList(map);
+	}
+	
 	@Override
 	public List<ProductVo> selectColMDetailList(Map<String, Object> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
@@ -228,6 +250,13 @@ public class ProductDaoImpl implements ProductDao{
 	}
 
 	@Override
+	public int colBProductCnt(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.colBProductCnt(map);
+	}
+	
+	
+	@Override
 	public int colProductCnt(Map<String, Object> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 		return mapper.colProductCnt(map);
@@ -237,6 +266,12 @@ public class ProductDaoImpl implements ProductDao{
 	public int colSProductCnt(Map<String, Object> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 		return mapper.colSProductCnt(map);
+	}
+
+	@Override
+	public List<ProductVo> checkbox(Map<String, Object> map) throws Exception {
+		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+		return mapper.checkbox(map);
 	}
 
 //	@Override

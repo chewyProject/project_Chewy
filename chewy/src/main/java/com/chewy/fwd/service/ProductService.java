@@ -36,12 +36,21 @@ public interface ProductService {
 	public int sortByCnt(Search search) throws Exception;
 	
 	public List<ProductVo> selectBrandList() throws Exception;
+	public List<ProductVo> selectMBrandList(Map<String, Object> map) throws Exception;
+	public List<ProductVo> selectSBrandList(Map<String, Object> map) throws Exception;
+	
+	
 	public List<ProductVo> selectColCateList(Map<String, Object> map) throws Exception;
+	
+	
+	public List<ProductVo> selectColBDetailList(Map<String, Object> map) throws Exception;
 	public List<ProductVo> selectColMDetailList(Map<String, Object> map) throws Exception;
 	public List<ProductVo> selectColSDetailList(Map<String, Object> map) throws Exception;
 	
+	public int colBProductCnt(Map<String, Object> map) throws Exception;
 	public int colProductCnt(Map<String, Object> map) throws Exception;
 	public int colSProductCnt(Map<String, Object> map) throws Exception;
+	public List<ProductVo> checkbox(Map<String, Object> map) throws Exception;
 
 	
 	//	public List<CategoryVo> selectCateList(Map<String, String> map) throws Exception;

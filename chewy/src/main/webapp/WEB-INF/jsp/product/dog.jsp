@@ -41,7 +41,7 @@
 			  		<c:forEach items="${mList }" var="cate">
 				  		<div class="categoryEntry">
 				  			<a class="categoryEntry_label" href="selectMColCateList.do?mno=${cate.mct_no}">${cate.mct_name }</a>
-				  			<a class="categoryEntry_count" href="#"> (${cate.cnt })</a>
+				  			<a class="categoryEntry_count" href="selectMColCateList.do?mno=${cate.mct_no}"> (${cate.cnt })</a>
 				  		</div>
 			  		</c:forEach>
 			  	</div>
@@ -87,7 +87,7 @@
 									</span>
 									<label for="checkbox-3" class="checkbox_label" >
 										<div class="FacetEntry_facetEntryContainer">
-											<a href class="FacetEntry_facetLabel">${brandList.b_name }</a>
+											<a href class="FacetEntry_facetLabel" id="${brandList.b_no }">${brandList.b_name }</a>
 											<div class="FacetEntry_facetCount_facet-count">(${brandList.cnt }) </div>
 										</div>
 									</label> 
@@ -95,7 +95,7 @@
 							</div>
 						</c:forEach>
 					</div>
-					<button class="FacetEntries_seeMore" onclick="seeMore()"> + ${fn:length(brandList) } more</button>
+					<button class="FacetEntries_seeMore" onclick="seeMore()"> <c:if test="${fn:length(brandList) > 7 } "></c:if> + ${fn:length(brandList) - 7 } more </button>
 				</div>
 				
 <!-- 				<input type="checkbox"> 가나다라마	 -->
@@ -346,20 +346,20 @@
 				</div>
 				
 				<div class="SelectedFacets">
-					<span role="button" class="SelectedFacets_chip chip-input chip-input--enabled">
-						<span class="chip-input_remove">By Chewy
-							<span class="chip-input_icon-container">
-								<svg class="chip-input__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><desc>Close an interactive element.</desc><path fill="currentColor" d="M21.56 2.46c-.6-.6-1.55-.6-2.14 0L12 9.86 4.58 2.44a1.51 1.51 0 10-2.14 2.14L9.86 12l-7.42 7.42a1.51 1.51 0 102.14 2.14L12 14.14l7.42 7.42a1.51 1.51 0 102.14-2.14L14.14 12l7.42-7.42c.57-.57.57-1.54 0-2.12z"></path></svg>
-							</span>
-						</span>
-					</span>
+<!-- 					<span role="button" class="SelectedFacets_chip chip-input chip-input--enabled">By Chewy -->
+<!-- 						<span class="chip-input_remove"> -->
+<!-- 							<span class="chip-input_icon-container"> -->
+<!-- 								<svg class="chip-input_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><desc>Close an interactive element.</desc><path fill="currentColor" d="M21.56 2.46c-.6-.6-1.55-.6-2.14 0L12 9.86 4.58 2.44a1.51 1.51 0 10-2.14 2.14L9.86 12l-7.42 7.42a1.51 1.51 0 102.14 2.14L12 14.14l7.42 7.42a1.51 1.51 0 102.14-2.14L14.14 12l7.42-7.42c.57-.57.57-1.54 0-2.12z"></path></svg> -->
+<!-- 							</span> -->
+<!-- 						</span> -->
+<!-- 					</span> -->
 				</div>
 				
 					<div class="bxslider-content carousel_wrapper"> <!-- bx슬라이더 자리 -->
 		 				<ul class="bxslider carousel_content">
 		 					<c:forEach items="${mList }" var="bxList">
 			 					<li class="carousel_item">
-			 						<a class="paragraph" href="#">
+			 						<a class="paragraph" href="selectMColCateList.do?mno=${bxList.mct_no}">
 			 							<img src="${bxList.m_img }" alt="${bxList.mct_name }">
 			 							<div class="carousel_text">${bxList.mct_name }
 			 							</div>
@@ -405,7 +405,7 @@
 						<c:forEach items="${pList }" var="product">
 							 <div class="card col-sm-3 productCard">
 							    <div class="card_canvas-margin">	
-							 	   <div class="product-card_canvas">
+									<div class="product-card_canvas">
 									    <a href="#">
 										    <img class="card-img-top" src="${product.p_img }" alt="Card image">
 									    </a>
@@ -508,7 +508,8 @@
 			pager : false,
 			infiniteLoop : false,
 			slideWidth : 80,
-			slideMargin : 45
+			slideMargin : 45,
+			touchEnabled : (navigator.maxTouchPoints > 0) // 크롬에서 a태그 안먹힐 때 사용 
 			
 		  });
 		  
@@ -608,13 +609,8 @@
 		
 	}
 	
-
-	
-	
-	
 	function sortBy() {
 		var select = document.getElementById('input-select-1');
-		
 		
 // 		console.log("select : " + select);
 		var selectOptions = select.options[select.selectedIndex].text;
@@ -750,6 +746,8 @@
 		})
 	}
 	
+	
+// -------------------------------------------------------------------------------------	
 	function seeMore() {
 		alert ("씨 모어~~");
 		
@@ -770,24 +768,219 @@
 		console.log("text : ", text);
 	}
 
-		
+// -------------------------------------------------------------------------------------
+ 
 	$(document).ready(function(){
+		var bno = [];
+		
+		<c:forEach items="${brandList}" var="brandList"> 
+	// 		console.log("brandList.b_no : " , ${brandList.b_no});
+			bno.push('${brandList.b_no}');
+// 			bno.push[${brandList.b_no}, "${brandList.b_name}"];
+// 			bno.push("${brandList.b_name}");
+		</c:forEach>
+		
+		console.log("bno : ", bno);
+		console.log("bno[0] : ", bno[0]);
+		
 		 $('input[type="checkbox"]').click(function(){
-	            if($(this).prop("checked") == true){
+				
+	            if($(this).prop("checked") == true) {
 					alert("체크체크");
+	            	console.log("this :  " , this);
+	            	var children = $('.checkbox_field').find('a');
+	            	console.log("children[2] : ", children[2]);
+	            	console.log("children[2].id : ", children[2].id);
+	            	
+	            	console.log("bno[$(this).index()] : ", bno[$(this).index()]); 
+	            	
+					fetch('http://localhost:8080/chewy/checkbox.do?bno=' + 2, {
+						method : 'get',
+					})
+					.then((response) => response.json())
+					.then((data) => {
+						console.log("data : " , data);
+						
+						let dataList = data.bList;
+						
+						let dispHtml = "";
+						let num = 0;					
+						$.each(dataList, function(index, value) {
+							
+							dispHtml += "<div class='card col-sm-3 productCard'>";
+							dispHtml += 	"<div class='card_canvas-margin'>";
+							dispHtml += 		"<div class='product-card_canvas'>";
+							dispHtml += 			"<a href='#'>";
+							dispHtml += 				"<img class='card-img-top' src= "+ dataList[index].p_img  + ">";
+							dispHtml += 			"</a>";
+							dispHtml += 		"<div class='product-card_overlay'></div>";
+							dispHtml += "	</div>";
+							dispHtml += "</div>";
+							dispHtml += "<div class='card-body product-card__content'>";
+							dispHtml += 	"<p class='card-message product-message'>More Choices Available</p>";
+							dispHtml += 	"<a class='product-title' href='#'>";
+							dispHtml +=			"<strong class='card-title'>" + dataList[index].b_no + "</strong>" + dataList[index].p_name;
+							dispHtml +=		"</a>";
+							dispHtml +=		"<div class='product-pricing'>";
+							dispHtml += 		"<div class='product-pricing-row'>";
+							dispHtml += 			"<div class='product-price product-price--md'>";
+							dispHtml += 			"$" + dataList[index].p_price;
+							dispHtml += 				"<span role='text' class='product-price_label'>chewy price </span>";
+							dispHtml += 			"</div>";
+							dispHtml += 		"</div>";
+							dispHtml += 		"<div class='product-pricing_row'>";
+							dispHtml += 			"<div class='product-price product-price--md'>";
+							dispHtml += 		"$" + (Math.round(dataList[index].p_price * 95 ) / 100).toFixed(2);
+//	 						// 여기 0.95 곱샘 fmt 값 넣기
+							dispHtml += 				"<span role='text' class='product-price_label'>Autoship Price</span>";
+							dispHtml += 			"</div>";
+							dispHtml += 				"<span class='product-pricing_append-content'>";
+							dispHtml += 					"<svg class='product-pricing__autoship-icon' aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g fill-rule='evenodd'><path fill='#18499B' d='M19.24 4.26L17.3 6.74c-2.7-2.1-8.4-5.06-13.93 1.07-.45.5-.89 1.06-1.32 1.69L2 9.57h.01a11.5 11.5 0 016.46-1.48c2.83.18 4.05.86 5.8 2.54l-1.94 2.51s4.1 1.8 8.84-.25l-1.93-8.63z'></path><path fill=''#F27123' d='M3.94 20.27l1.92-2.47c2.7 2.09 8.4 5.06 13.93-1.08.45-.5.89-1.05 1.32-1.68l.06-.07h-.01a11.5 11.5 0 01-6.46 1.47c-2.83-.17-4.05-.85-5.8-2.54l1.94-2.5s-4.1-1.8-8.84.25l1.94 8.62z'></path></g></svg>";
+							dispHtml += 					"<span aria-hidden='true' class='product-pricing_autoship-text'>AutoShip</span>";
+							dispHtml += 				"</span>";
+							dispHtml += "		</div>";
+							dispHtml += "</div>";
+							dispHtml += "<p class='product-message product-message-promotion'>";
+							dispHtml += 	dataList[index].p_addtext;
+							dispHtml += "</p>";
+							dispHtml += "<p class='product-message'>";
+							dispHtml += 	dataList[index].p_shipping;
+							dispHtml += "</p>";
+							dispHtml += "</div>";
+							dispHtml += "</div>";
+							
+							$('.cardList').html(dispHtml);
+						})
+						
+					})
+					
+					let dispHtml = "";
+					dispHtml += "<span role='button' class='SelectedFacets_chip chip-input chip-input--enabled'>브랜드명 ";
+					dispHtml += 	"<span class='chip-input_remove' onclick='cancelButton()'>";
+					dispHtml += 		"<span class='chip-input_icon-container'>";
+					dispHtml += 			"<svg class='chip-input__icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><title>Close</title><desc>Close an interactive element.</desc><path fill='currentColor' d='M21.56 2.46c-.6-.6-1.55-.6-2.14 0L12 9.86 4.58 2.44a1.51 1.51 0 10-2.14 2.14L9.86 12l-7.42 7.42a1.51 1.51 0 102.14 2.14L12 14.14l7.42 7.42a1.51 1.51 0 102.14-2.14L14.14 12l7.42-7.42c.57-.57.57-1.54 0-2.12z'></path></svg>";
+					dispHtml += 		"</span>";
+					dispHtml += 	"</span>";
+					dispHtml += "</span>";
+					
+					$('.SelectedFacets').html(dispHtml);
 	            }
+	            
 	            else if($(this).prop("checked") == false){
-					alert("체크헤제");	            
+					alert("체크헤제");	
+					let dispHtml = "";
+					
+					dispHtml += "<c:forEach items='${pList }' var='product'>";
+					dispHtml += 	"<div class='card col-sm-3 productCard'>";
+					dispHtml +=			"<div class='card_canvas-margin'>";
+					dispHtml +=				"<div class='product-card_canvas'>";
+					dispHtml +=					"<a href='#'>";
+					dispHtml +=						"<img class='card-img-top' src='${product.p_img }' alt='Card image'>";
+					dispHtml +=					"</a>";
+					dispHtml +=					"<div class='product-card_overlay'></div>";
+					dispHtml +=				"</div>";
+					dispHtml +=			"</div>";
+					dispHtml +=			"<div class='card-body product-card__content'>";
+					dispHtml +=				"<p class='card-message product-message'>More Choices Available</p>";
+					dispHtml += 			"<a class='product-title' href='#'>";
+					dispHtml +=					"<strong class='card-title'>${product.b_name }</strong> ${product.p_name }";
+					dispHtml +=				"</a>";
+					dispHtml += 			"<div class='product-pricing'>";
+					dispHtml +=					"<div class='prudcut-pricing_row'>";
+					dispHtml +=						"<div class='product-price product-price--md'>";
+					dispHtml +=							"$${product.p_price }";
+					dispHtml +=							"<span role='text' class='product-price_label'>chewy price</span>";
+					dispHtml += 					"</div>";
+					dispHtml += 				"</div>";
+					dispHtml += 				"<div class='prudcut-pricing_row'>";
+					dispHtml += 					"<div class='product-price product-price--md'>";
+					dispHtml += 						"$<fmt:formatNumber value='${product.p_price * 0.95 }' pattern='#.##' /> &nbsp;";
+					dispHtml += 						"<span role='text' class='product-price_label'>Autoship Price</span>";
+					dispHtml += 					"</div>";
+					dispHtml += 					"<span class='product-pricing_append-content'>";
+					dispHtml += 						"<svg class='product-pricing__autoship-icon' aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g fill-rule='evenodd'><path fill='#18499B' d='M19.24 4.26L17.3 6.74c-2.7-2.1-8.4-5.06-13.93 1.07-.45.5-.89 1.06-1.32 1.69L2 9.57h.01a11.5 11.5 0 016.46-1.48c2.83.18 4.05.86 5.8 2.54l-1.94 2.51s4.1 1.8 8.84-.25l-1.93-8.63z'></path><path fill='#F27123' d='M3.94 20.27l1.92-2.47c2.7 2.09 8.4 5.06 13.93-1.08.45-.5.89-1.05 1.32-1.68l.06-.07h-.01a11.5 11.5 0 01-6.46 1.47c-2.83-.17-4.05-.85-5.8-2.54l1.94-2.5s-4.1-1.8-8.84.25l1.94 8.62z'></path></g></svg>";
+					dispHtml += 						"<span aria-hidden='true' class='product-pricing_autoship-text'>AutoShip</span>";
+					dispHtml += 					"</span>";
+					dispHtml += 				"</div>";
+					dispHtml += 			"</div>";
+					dispHtml += 			"<p class='product-message product-message-promotion'>";
+					dispHtml += 				"${product.p_addtext }";
+					dispHtml +=				"</p>";
+					dispHtml += 			"<p class='product-message'>";
+					dispHtml += 				"${product.p_shipping }";
+					dispHtml +=				"</p>";
+					dispHtml += 		"</div>";
+					dispHtml += 	"</div>";
+					dispHtml += "</c:forEach>";
+					
+					$('.cardList').html(dispHtml);
+		            
+					$('.SelectedFacets').empty();
 	            }
+	            
+	            
 	        });
 	});		
+// -----------------------------------------------------------------------------------------	
+	function cancelButton() {
+		alert("캔슬~~");
+		$('.SelectedFacets').empty();
+		
+		let dispHtml = "";
+		
+		dispHtml += "<c:forEach items='${pList }' var='product'>";
+		dispHtml += 	"<div class='card col-sm-3 productCard'>";
+		dispHtml +=			"<div class='card_canvas-margin'>";
+		dispHtml +=				"<div class='product-card_canvas'>";
+		dispHtml +=					"<a href='#'>";
+		dispHtml +=						"<img class='card-img-top' src='${product.p_img }' alt='Card image'>";
+		dispHtml +=					"</a>";
+		dispHtml +=					"<div class='product-card_overlay'></div>";
+		dispHtml +=				"</div>";
+		dispHtml +=			"</div>";
+		dispHtml +=			"<div class='card-body product-card__content'>";
+		dispHtml +=				"<p class='card-message product-message'>More Choices Available</p>";
+		dispHtml += 			"<a class='product-title' href='#'>";
+		dispHtml +=					"<strong class='card-title'>${product.b_name }</strong> ${product.p_name }";
+		dispHtml +=				"</a>";
+		dispHtml += 			"<div class='product-pricing'>";
+		dispHtml +=					"<div class='prudcut-pricing_row'>";
+		dispHtml +=						"<div class='product-price product-price--md'>";
+		dispHtml +=							"$${product.p_price }";
+		dispHtml +=							"<span role='text' class='product-price_label'>chewy price</span>";
+		dispHtml += 					"</div>";
+		dispHtml += 				"</div>";
+		dispHtml += 				"<div class='prudcut-pricing_row'>";
+		dispHtml += 					"<div class='product-price product-price--md'>";
+		dispHtml += 						"$<fmt:formatNumber value='${product.p_price * 0.95 }' pattern='#.##' /> &nbsp;";
+		dispHtml += 						"<span role='text' class='product-price_label'>Autoship Price</span>";
+		dispHtml += 					"</div>";
+		dispHtml += 					"<span class='product-pricing_append-content'>";
+		dispHtml += 						"<svg class='product-pricing__autoship-icon' aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g fill-rule='evenodd'><path fill='#18499B' d='M19.24 4.26L17.3 6.74c-2.7-2.1-8.4-5.06-13.93 1.07-.45.5-.89 1.06-1.32 1.69L2 9.57h.01a11.5 11.5 0 016.46-1.48c2.83.18 4.05.86 5.8 2.54l-1.94 2.51s4.1 1.8 8.84-.25l-1.93-8.63z'></path><path fill='#F27123' d='M3.94 20.27l1.92-2.47c2.7 2.09 8.4 5.06 13.93-1.08.45-.5.89-1.05 1.32-1.68l.06-.07h-.01a11.5 11.5 0 01-6.46 1.47c-2.83-.17-4.05-.85-5.8-2.54l1.94-2.5s-4.1-1.8-8.84.25l1.94 8.62z'></path></g></svg>";
+		dispHtml += 						"<span aria-hidden='true' class='product-pricing_autoship-text'>AutoShip</span>";
+		dispHtml += 					"</span>";
+		dispHtml += 				"</div>";
+		dispHtml += 			"</div>";
+		dispHtml += 			"<p class='product-message product-message-promotion'>";
+		dispHtml += 				"${product.p_addtext }";
+		dispHtml +=				"</p>";
+		dispHtml += 			"<p class='product-message'>";
+		dispHtml += 				"${product.p_shipping }";
+		dispHtml +=				"</p>";
+		dispHtml += 		"</div>";
+		dispHtml += 	"</div>";
+		dispHtml += "</c:forEach>";
+		
+		$('.cardList').html(dispHtml);
+	}
 
 </script>
 
-
+     
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>
 
+ 

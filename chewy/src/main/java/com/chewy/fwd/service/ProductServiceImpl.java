@@ -119,6 +119,18 @@ public class ProductServiceImpl implements ProductService{
 	public List<ProductVo> selectBrandList() throws Exception {
 		return productDao.selectBrandList();
 	}
+	
+	@Override
+	public List<ProductVo> selectMBrandList(Map<String, Object> map) throws Exception {
+		return productDao.selectMBrandList(map);
+	}
+	
+	@Override
+	public List<ProductVo> selectSBrandList(Map<String, Object> map) throws Exception {
+		return productDao.selectSBrandList(map);
+	}
+	
+	
 
 	@Override
 	public List<ProductVo> selectColCateList(Map<String, Object> map) throws Exception {
@@ -126,6 +138,11 @@ public class ProductServiceImpl implements ProductService{
 		return productDao.selectColCateList(map);
 	}
 
+	@Override
+	public List<ProductVo> selectColBDetailList(Map<String, Object> map) throws Exception {
+		return productDao.selectColBDetailList(map);
+	}
+	
 	@Override
 	public List<ProductVo> selectColMDetailList(Map<String, Object> map) throws Exception {
 		return productDao.selectColMDetailList(map);
@@ -137,6 +154,12 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
+	public int colBProductCnt(Map<String, Object> map) throws Exception {
+		return productDao.colBProductCnt(map);
+	}
+
+	
+	@Override
 	public int colProductCnt(Map<String, Object> map) throws Exception {
 		return productDao.colProductCnt(map);
 	}
@@ -145,6 +168,13 @@ public class ProductServiceImpl implements ProductService{
 	public int colSProductCnt(Map<String, Object> map) throws Exception {
 		return productDao.colSProductCnt(map);
 	}
+
+	@Override
+	public List<ProductVo> checkbox(Map<String, Object> map) throws Exception {
+		return productDao.checkbox(map);
+	}
+
+
 	
 
 //	@Override
