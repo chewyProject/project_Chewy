@@ -1,0 +1,106 @@
+@media (min-width: 61.25em){
+.add-a-pet__page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+	}
+}
+
+.add-a-pet__page-header {
+    margin: 0 0 4.8rem;
+    padding: 0.8rem;
+    position: relative;
+    left: calc(-50vw + 50%);
+    width: 100vw;
+    height: 56px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 8%);
+}
+.add-a-pet__page-header__content {
+    margin: 0.8rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.add-a-pet__page-header__chewy-logo {
+    width: 10.2rem;
+    height: 3rem;
+    color: #1c49c2;
+    cursor: pointer;
+}
+
+.add-a-pet__navigation {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.kib-chip-action--default .kib-chip-action__icon {
+    position: relative;
+    transform: rotate(90deg);
+    width: 2rem;
+    height: 2rem;
+    color: #1c49c2;
+}
+.kib-chip-action__icon~.kib-chip-action__label:not(:empty) {
+    margin-left: 0.8rem;
+}
+
+.kib-chip-action--content-spacing {
+    padding: 0.8rem 1.2rem;
+}
+
+.kib-chip-action--default:hover {
+    box-shadow: 0 0 0.4rem rgb(0 0 0 / 8%);
+    border: none;
+    text-decoration: none;
+    color: #121212;
+}
+
+.kib-chip-action--default .kib-chip-action__icon>svg {
+    fill: #1c49c2;
+    display: inline-block;
+}
+
+.kib-chip-action--content-spacing {
+    padding: 0.8rem 1.2rem;
+}
+
+.kib-chip-action--default {
+    font-family: Work Sans,Noto Sans,Franklin Gothic Medium,Tahoma,sans-serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 400;
+    letter-spacing: -.03em;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    border-radius: 2.4rem;
+    cursor: pointer;
+    height: 3.6rem;
+    background: #eee;
+    color: #121212;
+    white-space: nowrap;
+    transition: background-color .1s ease-out;
+}
+
+
+a, a:hover {
+    color: #0e70be;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+

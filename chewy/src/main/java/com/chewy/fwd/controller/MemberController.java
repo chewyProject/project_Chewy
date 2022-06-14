@@ -137,7 +137,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "mypage.do", method = RequestMethod.GET)
 	public String mypage() {
-		return "overview";
+		return "/account/overview";
 	}
 	
 	// 마이페이지
@@ -330,6 +330,11 @@ public class MemberController {
 		return "/account/rescue";
 	}
 	
+//	@RequestMapping(value="mypetInsert.do", method = RequestMethod.GET)
+//	public String mypetInsert() {
+//		return "/account/mypetInsert";
+//	}
+//	
 //	@RequestMapping(value = "/loginnk.do", method = RequestMethod.POST)
 //	public String login(MemberVo memberVo, Model model, HttpSession session) throws Exception {
 //		System.out.println("memberService.login(MemberVo) : " + memberService.login(memberVo));

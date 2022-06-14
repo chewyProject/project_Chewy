@@ -1,10 +1,11 @@
 package com.chewy.fwd.vo;
 
 public class BrandVo {
+  
 	private int b_no;
-	   private String b_name;
-	   private String b_logo;
-	   private String bct;
+	private String b_name;
+	private String b_logo;
+	private String bct;
 
 	public BrandVo() {
 	}
