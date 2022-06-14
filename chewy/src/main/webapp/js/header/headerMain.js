@@ -1,3 +1,9 @@
+$(".shop_listbtn").on("click", function productlist() {
+	var btnvalue = $(this).val();
+	
+	location.href = "shop.do?bno=" + btnvalue;
+});
+
 $(function() {
 	
 	var value = document.getElementById('value').value;
