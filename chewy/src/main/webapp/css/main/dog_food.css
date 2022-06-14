@@ -419,7 +419,7 @@ input[type="checkbox" i] {
     top: 5px;
 }
 
-.chip-input__icon {
+.chip-input_icon {
 	position: absolute;
     top: 25%;
     left: 25%;

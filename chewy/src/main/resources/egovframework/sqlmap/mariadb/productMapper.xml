@@ -18,8 +18,8 @@
 <!-- ==================================================================== -->		
 	<!-- 게시글 목록 조회 selectProductList-->
 	<select id="selectProductList" resultType="productVo">
-		SELECT p.*, b.* FROM product p, brand b
-		WHERE p.B_NO = b.B_NO
+		SELECT p.*, b.* FROM product p, bcategory bc, brand b
+		WHERE  p.BCT_NO = bc.BCT_NO AND  p.B_NO = b.B_NO 
 		<where>
 			<if test="searchType == 'p_name' and keyword != null and keyword !=''">
                 AND p_name like CONCAT('%',#{keyword},'%')
@@ -34,7 +34,7 @@
 		ORDER BY p_no DESC
 		LIMIT #{startList}, #{listSize}
 	</select>
-
+	
 	
 	<!-- 게시글 갯수 -->
 	<select id="getProductListCnt" resultType="Integer">
@@ -107,9 +107,7 @@
 	</select>
 	
 	<select id="selectBCateList" resultType="categoryVo">
-		SELECT *
-		FROM product p, bcategory b
-		WHERE p.BCT_NO = b.BCT_NO
+		SELECT * FROM bcategory
 	</select>
 	
 	<select id="selectMCateList" resultType="categoryVo">
@@ -146,7 +144,27 @@
 		GROUP BY s.SCT_NO
 	</select>
 
+<!-- ======================  대 분 류  =============================== -->	
+	<select id="selectColBDetailList" parameterType="map" resultType="productVo">
+		SELECT *
+		FROM product p, bcategory bc, brand b
+		WHERE p.BCT_NO = bc.BCT_NO AND  p.B_NO = b.B_NO AND p.BCT_NO = ${bno}
+		LIMIT #{startList}, #{listSize}
+	</select>
+	
+	
+	<!-- 대분류 개시글 총 갯수  (카테고리 숫자)-->
+	<select id="colBProductCnt" parameterType="map" resultType="Integer">
+		SELECT COUNT(*) listCnt
+		FROM product p, bcategory b
+		WHERE p.BCT_NO = b.BCT_NO AND p.BCT_NO = ${bno}
+		GROUP BY b.BCT_NO
+		ORDER BY listCnt DESC
+	</select>	
+
+
 <!-- ======================  중 분 류  =============================== -->	
+	
 	<!-- 중분류(mCate) 카테고리  -->
 	<select id="selectColMDetailList" parameterType="map" resultType="productVo">
 		SELECT *
@@ -211,6 +229,23 @@
 		GROUP BY b.B_NO
 	</select>
 	
+	<!-- 중분류 별 브랜드 -->
+	<select id="selectMBrandList" parameterType="map" resultType="productVo">
+		SELECT COUNT(*) AS CNT, b.* FROM 
+		product p , brand b, scategory s
+		WHERE p.B_NO = b.B_NO AND p.SCT_NO = s.SCT_NO AND  s.dog = ${mno}
+		GROUP BY b.B_NO
+	</select>
+	
+	<!-- 소분류 별 브랜드 -->
+	<select id="selectSBrandList" parameterType="map" resultType="productVo">
+		SELECT COUNT(*) AS CNT, b.* FROM 
+		product p , brand b, scategory s
+		WHERE p.B_NO = b.B_NO AND p.SCT_NO = s.SCT_NO AND  p.SCT_NO = ${sno}
+		GROUP BY b.B_NO
+	</select>
+	
+	
 
 <!-- ==================================================================== -->
 	<!-- 목록조회 -->
@@ -227,9 +262,12 @@
 	</select>
 	
 <!-- ==================================================================== -->		
-	
-	
-	
+	<!-- 체크 박스 ajax -->
+	<select id="checkbox" parameterType="map" resultType="productVo">
+		SELECT * FROM
+		product p, brand b
+		WHERE p.B_NO = b.B_NO AND b.B_NO = ${bno}
+	</select>	
 	
 	
 		<!-- 카테고리 별 상품 찾기 -->

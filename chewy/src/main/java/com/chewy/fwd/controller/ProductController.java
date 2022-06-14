@@ -425,13 +425,33 @@ public class ProductController {
 	// ---------------------------------------------------------
 	// 카테고리
 		
+		@RequestMapping(value = "/selectBCateList.do", method = RequestMethod.GET)
+		public String bno(Model model, CategoryVo categoryVo) throws Exception {
+			System.out.println("selectBcateList Controller");
+			
+			List<CategoryVo> bList = productService.selectBCateList();
+			
+			model.addAttribute("bList", bList);
+			
+			System.out.println("bList : " + bList);
+			
+			return "product/bcate";
+		}
+		
+		
+		
+		
 		// 중카테고리 
 		@RequestMapping(value = "/selectMCateList.do", method = RequestMethod.GET)
 			public String selectMCateList(Model model , CategoryVo categoryVo
 					,@RequestParam(required = false, defaultValue = "1") int page
 					, @RequestParam(required = false, defaultValue = "1") int range
-					, @ModelAttribute("search") Search search
+					, @ModelAttribute("search") Search search,
+					@RequestParam String bno
 					) throws Exception {	
+			
+			Map<String, Object> map = new HashMap();
+			map.put("bno", bno);
 			
 			System.out.println("selectMCateList Controller");
 //			
@@ -447,10 +467,15 @@ public class ProductController {
 			System.out.println("확인");
 			
 			// 전체 개시글 갯수
-			int listCnt = productService.getProductListCnt(search);
+			int listCnt = productService.colBProductCnt(map);
 			
-			// 검색 후 페이지
-			search.pageInfo(page, range, listCnt);
+			Pagination paging = new Pagination();
+			
+			paging.pageInfo(page, range, listCnt);
+			map.put("startList", paging.getStartList());
+			map.put("listSize", paging.getListSize());
+			
+			System.out.println("map : " + map);
 			
 			//페이징
 			model.addAttribute("pagination", search);
@@ -458,7 +483,7 @@ public class ProductController {
 			System.out.println("search : " + search);
 			
 			// 게시글 화면 출력
-			List<ProductVo> pList = productService.selectProductList(search);
+			List<ProductVo> pList = productService.selectColBDetailList(map);
 			
 			model.addAttribute("pList", pList);  // 
 		
@@ -488,7 +513,7 @@ public class ProductController {
 			List<CategoryVo> mList = productService.selectMCateList();  // 강아지 중카테고리 컬럼(19개)
 			List<ProductVo> list = productService.selectColCateList(map); // 사이드바 카테고리 숫자 
 //			List<CategoryVo> sList = productService.selectSCateList();
-			List<ProductVo> brandList = productService.selectBrandList(); // 브랜드 갯수
+			List<ProductVo> brandList = productService.selectMBrandList(map); // 브랜드 갯수
 			
 			
 			model.addAttribute("mList", mList);
@@ -498,6 +523,9 @@ public class ProductController {
 			
 			System.out.println("list : " + list);
 			System.out.println("mList : " + mList);
+			System.out.println("brandList : " + brandList);
+			
+			
 			
 			// 전체 개시글 갯수
 			int listCnt = productService.colProductCnt(map);
@@ -548,12 +576,11 @@ public class ProductController {
 			
 			List<CategoryVo> mList = productService.selectMCateList(); 
 			List<CategoryVo> sList = productService.selectSCateList();
-			List<ProductVo> brandList = productService.selectBrandList();
+			List<ProductVo> brandList = productService.selectSBrandList(map);
 			
 			
 			System.out.println("mList : " + mList);
 			System.out.println("sList: " + sList);
-			
 			
 			
 			model.addAttribute("mList", mList);
@@ -754,14 +781,51 @@ public class ProductController {
 			
 			System.out.println("mv22 : " + mv);
 			
-			
 			return mv;
-			
 			
 		}
 			
 			
+		@RequestMapping(value = "/checkbox.do", method = RequestMethod.GET)
+		public ModelAndView Checking(Model model, ProductVo productVo	
+				, @RequestParam(required = false, defaultValue = "1") int page
+				, @RequestParam(required = false, defaultValue = "1") int range
+//				, @RequestParam(required = false, defaultValue = "p_name") String searchType
+				, @RequestParam(required = false) String keyword
+				, @RequestParam int bno
+				, @ModelAttribute("search") Search search) throws Exception {
 			
+			System.out.println("checkbox controller");
+			
+			ModelAndView mv = new ModelAndView();
+			
+			Map<String, Object> map = new HashMap();
+			map.put("bno", bno);
+			
+			System.out.println("map : "  + map);
+			
+			List<ProductVo> bList = productService.checkbox(map);
+			
+			System.out.println("bList : " + bList);
+			
+			model.addAttribute("bList", bList);
+			
+			mv.setViewName("jsonView");
+			
+			mv.addObject("bList", bList);
+			
+			return mv;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 //		@RequestMapping(value = "/selectSCateList.do", method = RequestMethod.GET)
 //		public String selectSCateList(Model model, CategoryVo categoryVo) throws Exception {
 //			

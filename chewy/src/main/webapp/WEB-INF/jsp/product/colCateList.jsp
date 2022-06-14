@@ -95,7 +95,7 @@
 							</div>
 						</c:forEach>
 					</div>
-					<button class="FacetEntries_seeMore" onclick="seeMore()"> + ${fn:length(brandList) } more</button>
+					<button class="FacetEntries_seeMore" onclick="seeMore()"> <c:if test="${fn:length(brandList) > 7 } "></c:if> + ${fn:length(brandList) - 7 } more </button>
 				</div>
 				
 				
