@@ -139,16 +139,16 @@
 								<div class="shop_down">
 									<div class="shop_down_wrap">
 										<ul class="shop_down_list">
-											<li><button class="shop_listbtn" value="1"><a>dog</a></button></li>
-											<li><button class="shop_listbtn" value="2"><a>cat</a></button></li>
-											<li><button class="shop_listbtn" value="3"><a>fish</a></button></li>
-											<li><button class="shop_listbtn" value="4"><a>bird</a></button></li>
-											<li><button class="shop_listbtn" value="5"><a>small pet</a></button></li>
-											<li><button class="shop_listbtn" value="6"><a>reptile</a></button></li>
-											<li><button class="shop_listbtn" value="7"><a>farm animal</a></button></li>
-											<li><button class="shop_listbtn" value="8"><a>horse</a></button></li>
-											<li><button class="shop_listbtn" value="9"><a>pharmacy</a></button></li>
-											<li><button class="shop_listbtn" value="10"><a>pet parents</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="1"><a>dog</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="2"><a>cat</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="3"><a>fish</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="4"><a>bird</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="5"><a>small pet</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="6"><a>reptile</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="7"><a>farm animal</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="8"><a>horse</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="9"><a>pharmacy</a></button></li>
+											<li><button class="shop_listbtn" onclick="productlist()" value="10"><a>pet parents</a></button></li>
 										</ul>
 										<div class="shop_down_rlist">
 											<div class="shop_down_center">
