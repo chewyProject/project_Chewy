@@ -439,8 +439,6 @@ public class ProductController {
 		}
 		
 		
-		
-		
 		// 중카테고리 
 		@RequestMapping(value = "/selectMCateList.do", method = RequestMethod.GET)
 			public String selectMCateList(Model model , CategoryVo categoryVo
@@ -455,12 +453,17 @@ public class ProductController {
 			
 			System.out.println("selectMCateList Controller");
 //			
-			List<CategoryVo> mList = productService.selectMCateList();
-			List<ProductVo> brandList = productService.selectBrandList();
 			
-			System.out.println("brandList : " +  brandList);
+			List<CategoryVo> bList = productService.selectBCateList();
+			List<CategoryVo> mList = productService.selectMCateList(map);
+			List<ProductVo> brandList = productService.selectBrandList(map);
+			
+			System.out.println("bList : " + bList);
 			System.out.println("mList : " +  mList);
+			System.out.println("brandList : " +  brandList);
 			
+			
+			model.addAttribute("bList", bList);
 			model.addAttribute("mList", mList);
 			model.addAttribute("brandList", brandList);
 			
@@ -468,6 +471,7 @@ public class ProductController {
 			
 			// 전체 개시글 갯수
 			int listCnt = productService.colBProductCnt(map);
+			
 			
 			Pagination paging = new Pagination();
 			
@@ -478,18 +482,19 @@ public class ProductController {
 			System.out.println("map : " + map);
 			
 			//페이징
-			model.addAttribute("pagination", search);
+			model.addAttribute("pagination", paging);
 			
-			System.out.println("search : " + search);
+			System.out.println("paging : " + paging);
 			
 			// 게시글 화면 출력
 			List<ProductVo> pList = productService.selectColBDetailList(map);
 			
 			model.addAttribute("pList", pList);  // 
-		
+			model.addAttribute("bno", bno); // 페이징 처리시 필요
 			System.out.println("pList : " + pList);	
 			
 			return "product/dog";
+			
 			
 		}
 		
@@ -498,7 +503,7 @@ public class ProductController {
 				,@RequestParam(required = false, defaultValue = "1") int page
 				, @RequestParam(required = false, defaultValue = "1") int range
 				, @ModelAttribute("search") Search search
-//				, @RequestParam String name, @RequestParam int no)
+				, @RequestParam int bno
 				, @RequestParam int mno
 				)
 				throws Exception {
@@ -506,26 +511,27 @@ public class ProductController {
 			
 			Map<String, Object> map = new HashMap();
 //			map.put("name", name);
+			map.put("bno", bno);
 			map.put("mno", mno);
 			
 			System.out.println("map : " + map);
 			
-			List<CategoryVo> mList = productService.selectMCateList();  // 강아지 중카테고리 컬럼(19개)
+			List<CategoryVo> bList = productService.selectBCateList();
+			List<CategoryVo> mList = productService.selectMCateList(map);  // 강아지 중카테고리 컬럼(19개)
 			List<ProductVo> list = productService.selectColCateList(map); // 사이드바 카테고리 숫자 
 //			List<CategoryVo> sList = productService.selectSCateList();
 			List<ProductVo> brandList = productService.selectMBrandList(map); // 브랜드 갯수
 			
-			
+			model.addAttribute("bList", bList);
 			model.addAttribute("mList", mList);
 			model.addAttribute("list", list);
 //			model.addAttribute("sList", sList);
 			model.addAttribute("brandList", brandList);
 			
+			System.out.println("bList : " + bList);
 			System.out.println("list : " + list);
 			System.out.println("mList : " + mList);
 			System.out.println("brandList : " + brandList);
-			
-			
 			
 			// 전체 개시글 갯수
 			int listCnt = productService.colProductCnt(map);
@@ -539,6 +545,10 @@ public class ProductController {
 			
 			//페이징
 			model.addAttribute("pagination", paging);
+			
+			// 대분류 / 중분류 이동 
+			
+			model.addAttribute("bno", bno); 
 			model.addAttribute("mno", mno);
 			
 			System.out.println("paging : " + paging);
@@ -562,6 +572,7 @@ public class ProductController {
 				,@RequestParam(required = false, defaultValue = "1") int page
 				, @RequestParam(required = false, defaultValue = "1") int range
 				, @ModelAttribute("search") Search search
+				, @RequestParam int bno
 				, @RequestParam int mno
 				, @RequestParam int sno
 				) throws Exception  {
@@ -569,20 +580,22 @@ public class ProductController {
 			System.out.println("selectSColCateList 컨트롤러");
 			
 			Map<String, Object> map = new HashMap();
+			map.put("bno", bno);
 			map.put("mno", mno);
 			map.put("sno", sno);
 			
 			System.out.println("map : " + map);
 			
-			List<CategoryVo> mList = productService.selectMCateList(); 
-			List<CategoryVo> sList = productService.selectSCateList();
+			List<CategoryVo> bList = productService.selectBCateList();
+			List<CategoryVo> mList = productService.selectMCateList(map); 
+			List<CategoryVo> sList = productService.selectSCateList(map);
 			List<ProductVo> brandList = productService.selectSBrandList(map);
 			
-			
+			System.out.println("bList : " + bList);
 			System.out.println("mList : " + mList);
 			System.out.println("sList: " + sList);
 			
-			
+			model.addAttribute("bList", bList);
 			model.addAttribute("mList", mList);
 			model.addAttribute("sList", sList);
 			model.addAttribute("brandList", brandList);
@@ -599,6 +612,8 @@ public class ProductController {
 			
 			//페이징
 			model.addAttribute("pagination", paging);
+			
+			model.addAttribute("bno", bno);
 			model.addAttribute("mno", mno);
 			model.addAttribute("sno", sno);
 			
@@ -625,10 +640,13 @@ public class ProductController {
 
 			System.out.println("detailCateList 성공");
 			
+			
+			Map<String, Object> map = new HashMap();
+			
 //			List<CategoryVo> bList = productService.selectBCateList();
 //			List<CategoryVo> mList = productService.selectMCateList();
-			List<CategoryVo> sList = productService.selectSCateList();
-			List<ProductVo> brandList = productService.selectBrandList();
+			List<CategoryVo> sList = productService.selectSCateList(map);
+			List<ProductVo> brandList = productService.selectBrandList(map);
 			
 //			model.addAttribute("bList", bList);
 //			model.addAttribute("mList", mList);
@@ -729,6 +747,7 @@ public class ProductController {
 //		@ResponseBody
 		@RequestMapping(value = "/sortBy.do", method = RequestMethod.GET)
 		public ModelAndView sortBy(Model model, ProductVo productVo
+				, @RequestParam int bno
 				, @RequestParam String col
 				, @RequestParam(required = false, defaultValue = "1") int page
 				, @RequestParam(required = false, defaultValue = "1") int range
@@ -744,6 +763,7 @@ public class ProductController {
 			
 			System.out.println("col : " + col);
 			Map<String, Object> map = new HashMap();
+			map.put("bno", bno);
 			map.put("col", col);
 			map.put("startList", search.getStartList());
 			map.put("listSize", search.getListSize());

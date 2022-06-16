@@ -40,8 +40,8 @@
 <%-- 			  		</sql:query> --%>
 			  		<c:forEach items="${mList }" var="cate">
 				  		<div class="categoryEntry">
-				  			<a class="categoryEntry_label" href="selectMColCateList.do?mno=${cate.mct_no}">${cate.mct_name }</a>
-				  			<a class="categoryEntry_count" href="selectMColCateList.do?mno=${cate.mct_no}"> (${cate.cnt })</a>
+				  			<a class="categoryEntry_label" href="selectMColCateList.do?bno=${cate.bct_no }&mno=${cate.mct_no}">${cate.mct_name }</a>
+				  			<a class="categoryEntry_count" href="selectMColCateList.do?bno=${cate.bct_no }&mno=${cate.mct_no}"> (${cate.cnt })</a>
 				  		</div>
 			  		</c:forEach>
 			  	</div>
@@ -80,14 +80,14 @@
 						<c:forEach items="${brandList }" var="brandList" varStatus="status">
 							<div class="FacetEntry_checkboxContainer checkbox">
 								<div class="checkbox_field">
-									<input type="checkbox" id="checkbox-3" name="chk" class="checkbox_native">
+									<input type="checkbox" id="checkbox-3" name="chk" class="checkbox_native" value="${brandList.b_no }">
 									<span class="checkbox_control" role="presentation">
 										<span class="checkbox_fill">
 										</span>
 									</span>
 									<label for="checkbox-3" class="checkbox_label" >
 										<div class="FacetEntry_facetEntryContainer">
-											<a href class="FacetEntry_facetLabel" id="${brandList.b_no }">${brandList.b_name }</a>
+											<a href class="FacetEntry_facetLabel" value="${brandList.b_no }" onclick="checkboxClick()">${brandList.b_name }</a>
 											<div class="FacetEntry_facetCount_facet-count">(${brandList.cnt }) </div>
 										</div>
 									</label> 
@@ -338,11 +338,19 @@
 <%-- 							<a href="#" class="breadcrumb-item_link"> ${bList.bct_name } </a> --%>
 <%-- 						</c:forEach>				 --%>
 <!-- 					</li> -->
-					<li class="active breadcrumb-item">Dog</li>
+					<c:forEach items="${bList }" var="bList">
+						<c:if test="${bList.bct_no eq bno }">
+							<li class="active breadcrumb-item">${bList.bct_name }</li>
+						</c:if>
+					</c:forEach>
 				</ol>
 				
 				<div class="ProductListHeader_headingDiv">
-					<h1 class="ProductListHeader_headingText">Dog Supplies</h1>
+					<c:forEach items="${bList }" var="bList">
+						<c:if test="${bList.bct_no eq bno }">
+							<h1 class="ProductListHeader_headingText">${bList.bct_name} Supplies</h1>
+						</c:if>
+					</c:forEach>
 				</div>
 				
 				<div class="SelectedFacets">
@@ -359,7 +367,7 @@
 		 				<ul class="bxslider carousel_content">
 		 					<c:forEach items="${mList }" var="bxList">
 			 					<li class="carousel_item">
-			 						<a class="paragraph" href="selectMColCateList.do?mno=${bxList.mct_no}">
+			 						<a class="paragraph" href="selectMColCateList.do?bno=${bxList.bct_no }&mno=${bxList.mct_no}">
 			 							<img src="${bxList.m_img }" alt="${bxList.mct_name }">
 			 							<div class="carousel_text">${bxList.mct_name }
 			 							</div>
@@ -376,7 +384,7 @@
 					</div>
 					
 					<div class="resultsSort">
-						<p class="resultsCount">1 - 36 of 10000 Results</p>
+						<p class="resultsCount">1 - 36 of ${fn:length(barndList) } Results</p>
 						<div class="input-select input-select-has-icon">
 							<div class="input-select-wrapper">
 								<div class="input-select-filed"">
@@ -524,7 +532,9 @@
 		var range = range - 1;
 
 		var url = "/chewy/selectMCateList.do";  // ajax로 값 넘기기
-			url += "?page=" + page;
+			
+			url += "?bno=" + ${bno};
+			url += "&page=" + page;
 			url += "&range=" + range;
 			url += "&rangeSize=" + rangeSize;
 			url += "&listSize=" + listSize;
@@ -538,7 +548,9 @@
 	function fn_pagination(page,  range, rangeSize, listSize, searchType) {	
 		
 		var url = "/chewy/selectMCateList.do";  // ajax로 값 넘기기
-			url += "?page=" + page;
+			
+			url += "?bno=" + ${bno};
+			url += "&page=" + page;
 			url += "&range=" + range;
 			url += "&rangeSize=" + rangeSize;
 			url += "&listSize=" + listSize;
@@ -555,7 +567,9 @@
 		var range = parseInt(range) + 1;
 		
 		var url = "/chewy/selectMCateList.do";  // ajax로 값 넘기기	
-			url += "?page=" + page;  // 1
+			
+			url += "?bno=" + ${bno};
+			url += "&page=" + page;  // 1
 			url += "&range=" + range;  // 1
 			url += "&rangeSize=" + rangeSize;  // 2
 			url += "&listSize=" + listSize;  // 36
@@ -619,7 +633,7 @@
 		console.log("selectOptions : " ,  selectOptions);
 		console.log("selectValues : ", selectValues);
 		
-		fetch('http://localhost:8080/chewy/sortBy.do?col=' + selectValues, {
+		fetch('http://localhost:8080/chewy/sortBy.do?bno=${bno}&col=' + selectValues, {
 			method : 'get',
 // 			body : JSON.stringify ({
 // 				name : selectOptions
@@ -651,7 +665,7 @@
 						dispHtml += "<div class='card-body product-card__content'>";
 						dispHtml += 	"<p class='card-message product-message'>More Choices Available</p>";
 						dispHtml += 	"<a class='product-title' href='#'>";
-						dispHtml +=			"<strong class='card-title'>" + dataList[index].b_no + "</strong>" + dataList[index].p_name;
+						dispHtml +=			"<strong class='card-title'>" + dataList[index].b_name + "</strong>" + dataList[index].p_name;
 						dispHtml +=		"</a>";
 						dispHtml +=		"<div class='product-pricing'>";
 						dispHtml += 		"<div class='product-pricing-row'>";
@@ -772,30 +786,26 @@
  
 	$(document).ready(function(){
 		var bno = [];
-		
-		<c:forEach items="${brandList}" var="brandList"> 
-	// 		console.log("brandList.b_no : " , ${brandList.b_no});
-			bno.push('${brandList.b_no}');
-// 			bno.push[${brandList.b_no}, "${brandList.b_name}"];
-// 			bno.push("${brandList.b_name}");
-		</c:forEach>
-		
-		console.log("bno : ", bno);
-		console.log("bno[0] : ", bno[0]);
+	
+			
 		
 		 $('input[type="checkbox"]').click(function(){
 				
 	            if($(this).prop("checked") == true) {
 					alert("체크체크");
-	            	console.log("this :  " , this);
-	            	var children = $('.checkbox_field').find('a');
-	            	console.log("children[2] : ", children[2]);
-	            	console.log("children[2].id : ", children[2].id);
 	            	
-	            	console.log("bno[$(this).index()] : ", bno[$(this).index()]); 
+// 	            	console.log("bno[$(this).index()] : ", bno[$(this).index()]);  // 계속 0번 인덱스
+					console.log("$(this) : " , $(this).val());
+// 					var children = $(this).find('.FacetEntry_facetLabel');
+// 					console.log("children : ", children);
 	            	
-					fetch('http://localhost:8080/chewy/checkbox.do?bno=' + 2, {
+	            	bno.push($(this).val());
+	            	console.log("bno : ", bno);
+	            	
+	            	
+					fetch('http://localhost:8080/chewy/checkbox.do?bno=' + bno, {
 						method : 'get',
+						
 					})
 					.then((response) => response.json())
 					.then((data) => {
@@ -819,7 +829,7 @@
 							dispHtml += "<div class='card-body product-card__content'>";
 							dispHtml += 	"<p class='card-message product-message'>More Choices Available</p>";
 							dispHtml += 	"<a class='product-title' href='#'>";
-							dispHtml +=			"<strong class='card-title'>" + dataList[index].b_no + "</strong>" + dataList[index].p_name;
+							dispHtml +=			"<strong class='card-title'>" + dataList[index].b_name + "</strong>" + dataList[index].p_name;
 							dispHtml +=		"</a>";
 							dispHtml +=		"<div class='product-pricing'>";
 							dispHtml += 		"<div class='product-pricing-row'>";
@@ -867,8 +877,13 @@
 	            }
 	            
 	            else if($(this).prop("checked") == false){
+	            	
+	            	
 					alert("체크헤제");	
 					let dispHtml = "";
+					
+					bno.pop($(this).val());
+					
 					
 					dispHtml += "<c:forEach items='${pList }' var='product'>";
 					dispHtml += 	"<div class='card col-sm-3 productCard'>";
@@ -921,6 +936,18 @@
 	            
 	        });
 	});		
+	
+	function checkboxClick() {
+		alert("클릭클릭");
+		
+		var click = document.getElementsByClassName('FacetEntry_facetLabel');
+// 		console.log("click : " , click);
+// 		alert(click);
+		
+	}
+	
+	
+	
 // -----------------------------------------------------------------------------------------	
 	function cancelButton() {
 		alert("캔슬~~");
