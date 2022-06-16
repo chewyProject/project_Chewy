@@ -537,7 +537,7 @@
 		var page = ((range -2) * rangeSize) + 1;		
 		var range = range - 1;
 
-		var url = "/chewy/selectMCateList.do";  // ajax로 값 넘기기
+		var url = "/selectMCateList.do";  // ajax로 값 넘기기
 			
 			url += "?bno=" + ${bno};
 			url += "&page=" + page;
@@ -553,7 +553,7 @@
 	// 페이지 번호 클릭
 	function fn_pagination(page,  range, rangeSize, listSize, searchType) {	
 		
-		var url = "/chewy/selectMCateList.do";  // ajax로 값 넘기기
+		var url = "/selectMCateList.do";  // ajax로 값 넘기기
 			
 			url += "?bno=" + ${bno};
 			url += "&page=" + page;
@@ -572,7 +572,7 @@
 		var page = parseInt((range * rangeSize)) + 1
 		var range = parseInt(range) + 1;
 		
-		var url = "/chewy/selectMCateList.do";  // ajax로 값 넘기기	
+		var url = "/selectMCateList.do";  // ajax로 값 넘기기	
 			
 			url += "?bno=" + ${bno};
 			url += "&page=" + page;  // 1
@@ -590,7 +590,7 @@
 		var page = ((range -2) * rangeSize) + 1;		
 		var range = range - 1;
 
-		var url = "/chewy/sortBy.do"; // ajax로 값 넘기기
+		var url = "/sortBy.do"; // ajax로 값 넘기기
 			url += "?col="  + selectValues;
 			url += "&page=" + page;
 			url += "&range=" + range;
@@ -602,7 +602,7 @@
 	
 	function sortBy_fn_pagination(selectValues, page,  range, rangeSize, listSize) {
 		
-		var url = "/chewy/selectMCateList.do";  // ajax로 값 넘기기
+		var url = "/selectMCateList.do";  // ajax로 값 넘기기
 			url += "?col="  + selectValues;
 			url += "&page=" + page;
 			url += "&range=" + range;
@@ -617,7 +617,7 @@
 		var page = parseInt((range * rangeSize)) + 1
 		var range = parseInt(range) + 1;
 		
-		var url = "/chewy/sortBy.do";  // ajax로 값 넘기기
+		var url = "/sortBy.do";  // ajax로 값 넘기기
 			url += "?col="  + selectValues;
 			url += "&page=" + page;  // 1
 			url += "&range=" + range;  // 1
@@ -639,7 +639,7 @@
 		console.log("selectOptions : " ,  selectOptions);
 		console.log("selectValues : ", selectValues);
 		
-		fetch('http://localhost:8080/chewy/sortBy.do?bno=${bno}&col=' + selectValues, {
+		fetch('http://localhost:8080/sortBy.do?bno=${bno}&col=' + selectValues, {
 			method : 'get',
 // 			body : JSON.stringify ({
 // 				name : selectOptions
@@ -809,7 +809,7 @@
 	            	console.log("bno : ", bno);
 	            	
 	            	
-					fetch('http://localhost:8080/chewy/checkbox.do?bno=' + bno, {
+					fetch('http://localhost:8080/checkbox.do?bno=' + bno, {
 						method : 'get',
 						
 					})

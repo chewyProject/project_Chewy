@@ -530,7 +530,7 @@
 		var page = ((range -2) * rangeSize) + 1;		
 		var range = range - 1;
 
-		var url = "/chewy/selectMColCateList.do";  // ajax로 값 넘기기
+		var url = "/selectMColCateList.do";  // ajax로 값 넘기기
 		
 			url += "?bno=" + ${bno};
 			url += "&mno=" + ${mno};
@@ -551,7 +551,7 @@
 // 		console.log("paging check prev : ", ${pagination});
 // 		console.log("pList : " ,${pList});
 		console.log("no : ", ${no});
-		var url = "/chewy/selectMColCateList.do";  // ajax로 값 넘기기
+		var url = "/selectMColCateList.do";  // ajax로 값 넘기기
 
 			url += "?bno=" + ${bno};
 			url += "&mno=" + ${mno};
@@ -573,7 +573,7 @@
 		var range = parseInt(range) + 1;
 		
 		
-		var url = "/chewy/selectMColCateList.do";  // ajax로 값 넘기기	
+		var url = "/selectMColCateList.do";  // ajax로 값 넘기기	
 			
 			url += "?bno=" + ${bno};
 			url += "&mno=" + ${mno};
@@ -594,7 +594,7 @@
 		var page = ((range -2) * rangeSize) + 1;		
 		var range = range - 1;
 
-		var url = "/chewy/sortBy.do"; // ajax로 값 넘기기
+		var url = "/sortBy.do"; // ajax로 값 넘기기
 			url += "?col="  + selectValues;
 			url += "&page=" + page;
 			url += "&range=" + range;
@@ -606,7 +606,7 @@
 	
 	function sortBy_fn_pagination(selectValues, page,  range, rangeSize, listSize) {
 		
-		var url = "/chewy/sortBy.do";  // ajax로 값 넘기기
+		var url = "/sortBy.do";  // ajax로 값 넘기기
 			url += "?col="  + selectValues;
 			url += "&page=" + page;
 			url += "&range=" + range;
@@ -621,7 +621,7 @@
 		var page = parseInt((range * rangeSize)) + 1
 		var range = parseInt(range) + 1;
 		
-		var url = "/chewy/sortBy.do";  // ajax로 값 넘기기
+		var url = "/sortBy.do";  // ajax로 값 넘기기
 			url += "?col="  + selectValues;
 			url += "&page=" + page;  // 1
 			url += "&range=" + range;  // 1
@@ -644,7 +644,7 @@
 		console.log("selectValues : ", selectValues);
 		
 		
-		fetch('http://localhost:8080/chewy/sortBy.do?bno=${bno}&col=' + selectValues, {
+		fetch('http://localhost:8080/sortBy.do?bno=${bno}&col=' + selectValues, {
 			method : 'get',
 // 			body : JSON.stringify ({
 // 				name : selectOptions
@@ -818,7 +818,7 @@
 	            	console.log("bno : ", bno);
 	            	
 	            	
-					fetch('http://localhost:8080/chewy/checkbox.do?bno=' + bno, {
+					fetch('http://localhost:8080/checkbox.do?bno=' + bno, {
 						method : 'get',
 						
 					})
