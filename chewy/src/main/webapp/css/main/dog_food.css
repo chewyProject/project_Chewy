@@ -8,6 +8,10 @@
     margin-bottom: 1.6rem;
 }
 
+.container-fluid {
+	margin-top: 70px;
+}
+
 .categoryEntry {
 	display: grid;
     grid-template-columns: 195px 50px;

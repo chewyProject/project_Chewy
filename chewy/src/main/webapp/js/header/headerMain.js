@@ -1,7 +1,7 @@
 $(".shop_listbtn").on("click", function productlist() {
 	var btnvalue = $(this).val();
 	
-	location.href = "shop.do?bno=" + btnvalue;
+	location.href = "selectMCateList.do?bno=" + btnvalue;
 });
 
 $(function() {

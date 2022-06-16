@@ -55,7 +55,7 @@
 	</select>
 	
 	<select id="supSelect" resultType="String">
-		SELECT mct_name FROM mcategory WHERE mct_no = (SELECT mct_no FROM sold WHERE bct_no = #{bct_no} ORDER BY sold_count DESC LIMIT #{size},1);
+		SELECT mct_name FROM mcategory WHERE mct_no = (SELECT mct_no FROM sold WHERE bct_no = #{bct_no} AND sct_no = 0 ORDER BY sold_count DESC LIMIT #{size},1);
 	</select>
 	
 	<select id="supNo" resultType="categoryVo">

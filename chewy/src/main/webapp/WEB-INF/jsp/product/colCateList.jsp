@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/header/headerMain.css">
+<link rel="stylesheet" href="../css/footer/footerMain.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -18,6 +20,7 @@
 </head>
 
 <body>
+	<%@ include file="../header/headerMain.jsp" %>
 
 	<div class="container-fluid">
 		<div class="row g-3">
@@ -490,7 +493,9 @@
 			</div>
 <!-- 			<div class="pagination2"></div> -->
 	
-			
+			<%@ include file="../footer/footerMain.jsp" %>
+	
+<script type="text/javascript" src="../js/header/headerMain.js"></script>			
 <script>
 	$(function(){
 		  $('.bxslider').bxSlider({
