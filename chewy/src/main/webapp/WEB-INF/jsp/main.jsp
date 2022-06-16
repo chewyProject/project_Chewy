@@ -1,16 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%
-	int num = 0;
-
-	if(session.getAttribute("memberVo") != null) {
-		num = 1;
-	} else {
-		num = 0;
-	}
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +21,6 @@
 <body>
 		<%@ include file="header/headerMain.jsp" %>
 		
-		<input type="hidden" id="value" value="<%= num%>">
-	
 		<div class="chewy-home-container">
 			<article class="chewy-home-contentzone">
 				<div class="container">

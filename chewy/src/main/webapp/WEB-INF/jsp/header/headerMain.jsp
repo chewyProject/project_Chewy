@@ -1,3 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+
+<%
+	int num = 0;
+
+	if(session.getAttribute("memberVo") != null) {
+		num = 1;
+	} else {
+		num = 0;
+	}
+%>
+
+<input type="hidden" id="value" value="<%= num%>">
+
 <div class="header_container">
 	<div class="header_container_wrap">
 		<header class="header_header">

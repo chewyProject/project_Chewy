@@ -22,7 +22,6 @@
 		<div id="container">
 			<div id="wrap">
 				<form method="post" action="login.do" id="form-login" class="login" name="loginForm">
-<!-- 				<form method="post" action="login.do" id="form-login" class="login" novalidate="novalidate" name="loginForm"> -->
 					<div class="signin form-fields-section kaxsdc" data-event="load">
 						<h1 style="	font-size: 2.4rem; line-height: 1.25; margin-top: -0.2916666667em; margin-bottom: 1em; padding-top: 1.25em; font-weight: 400; color: #333; border: none;">Sign in or register</h1>
 						<div id="cookie-disabled-error-message"></div>
@@ -31,8 +30,6 @@
 							<fieldset>
 								<ol class="shelterFieldList">
 									<li class="field">
-<!-- 										<label for="username" class=""></label> -->
-<!-- 										<label for="username" class="">Email Address</label> -->
 										<div class="field__wrapper" data-hj-suppress="">
 											<input size="40" name="m_email" id="m_email" type="email" class="field__input field__input--email input--email" value=""  placeholder="Email Address">
 											<span class="error"></span>
@@ -40,8 +37,6 @@
 									</li>
 
 									<li class="field">
-<!-- 										<label for="password" class=""></label> -->
-<!-- 										<label for="password" class="">Password</label> -->
 										<div class="field__wrapper" data-hj-suppress="">
 											<input size="25" name="m_password" id="m_password" type="password" class="field__input field__input--pw input--password" value= "" placeholder="Password">
 											<span class="error"></span>
@@ -51,11 +46,6 @@
 										<a id="forgotPassword" href="email.do" class="js-forgot-password">Forgot your password?</a>
 									</li>
 								</ol>
-<!-- 								<input type="hidden" name="_eventName" value="submit"> -->
-<!-- 								<input type="hidden" name="forceChallenge" value="false"> -->
-<!-- 								<input type="hidden" name="srcPageUuid" value="e99307e1d4394c5ea4eb67fa2f9c5d87"> -->
-<!-- 								<input type="hidden" name="collectBeganTimestamp" value=""> -->
-<!-- 								<input type="hidden" name="collectEndedTimestamp" value=""> -->
 								<input name="submitForm" id="form-login--submit-button" type="submit" class="cw-btn cw-btn--action input--submit js-login" value="Sign In">
 							</fieldset>
 						</div>
@@ -68,12 +58,6 @@
 							<a href="register.do" class="cw-btn cw-btn--default js-create-account">Create Account</a>
 						</div>
 					</div>
-
-<!-- 					<input name="targetUrl" type="hidden" value="/app/account"> -->
-<!-- 					<div style="display: none;"> -->
-<!-- 						<input type="hidden" name="_sourcePage" value="fEEtLIuM0jM0JSSDSr9L8Xyap6ttx7rNLRp__uMMy8iBS8v7lhkmQifNvyJPE6PpqK7nM5vwY5KR2Gq8bmaO9A4_3DDT-Jo0eC1m8a-dQuc="> -->
-<!-- 						<input type="hidden" name="__fp" value="BGDOC4i4z_esGy0zdu4YpxxqhnZgFKt14D7G5b9YG8mn6pqPcFkX2XWlisMjvPVJ"> -->
-<!-- 					</div> -->
 				</form>
 			</div>
 		</div>
@@ -138,9 +122,6 @@
 	
 
 </script>
-
-
-<!-- <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 	 <%@ include file="footer/footerPw.jsp" %>

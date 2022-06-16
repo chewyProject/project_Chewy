@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					<a>
-						<button class="continue">Continue Shopping</button>
+						<button class="continue" onclick="location.href='main.do'">Continue Shopping</button>
 					</a>
 				</div>
 				<div class="cartlist">
@@ -53,7 +53,7 @@
 																<img src="../../images/cart/img_none.svg">
 															</div>
 														</div>
-														<img src="${i.img }">
+														<img src="${i.p_img }">
 													</div>
 												</a>
 												<p>In Stock</p>
@@ -137,15 +137,10 @@
 		</div>
 	</main>
 	
-	
-	
-<!--
-	
--->	
-
 	<%@ include file="../footer/footerMain.jsp" %>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/cart.js"></script>
+	<script type="text/javascript" src="../js/header/headerMain.js"></script>
 </body>
 </html>
