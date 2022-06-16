@@ -74,7 +74,7 @@ $(".shop_listbtn").mouseenter(function() {
 			
 				for(var count=0; count<data.food.length; count++) {
 				
-					var sctNo = '#?b=' + data.food[count].bct_no + '&m=' + data.food[count].mct_no + '&s=' + data.food[count].sct_no;
+					var sctNo = 'selectSColCateList.do?bno=' + data.food[count].bct_no + '&mno=' + data.food[count].mct_no + '&sno=' + data.food[count].sct_no;
 					
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).text(data.food[count].sct_name);
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).attr("href", sctNo);
@@ -83,7 +83,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.treats.length; count++) {
 					
-					var sctNo = '#?b=' + data.treats[count].bct_no + '&m=' + data.treats[count].mct_no + '&s=' + data.treats[count].sct_no;
+					var sctNo = 'selectSColCateList.do?bno=' + data.treats[count].bct_no + '&mno=' + data.treats[count].mct_no + '&sno=' + data.treats[count].sct_no;
 					
 					$(".treatsUl:nth-child(n) .treatsLi:nth-child(n) .treats" + count).text(data.treats[count].sct_name);
 					$(".treatsUl:nth-child(n) .treatsLi:nth-child(n) .treats" + count).attr("href", sctNo);
@@ -91,7 +91,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.supplies.length; count++) {
 					
-					var mctNo = '#?b=' + data.supplies[count].bct_no + '&m=' + data.supplies[count].mct_no;
+					var mctNo = 'selectMColCateList.do?bno=' + data.supplies[count].bct_no + '&mno=' + data.supplies[count].mct_no;
 					
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).text(data.supplies[count].mct_name);
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).attr("href", mctNo);
@@ -116,7 +116,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.shopall.length; count++) {
 				
-					var sctNo = '#?b=' + data.shopall[count].bct_no + '&m=' + data.shopall[count].mct_no + '&s=' + data.shopall[count].sct_no;
+					var sctNo = 'selectSColCateList.do?bno=' + data.shopall[count].bct_no + '&mno=' + data.shopall[count].mct_no + '&sno=' + data.shopall[count].sct_no;
 					
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).text(data.shopall[count].sct_name);
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).attr("href", sctNo);
@@ -125,7 +125,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.supplies.length; count++) {
 					
-					var mctNo = '#?b=' + data.supplies[count].bct_no + '&m=' + data.supplies[count].mct_no;
+					var mctNo = 'selectMColCateList.do?bno=' + data.supplies[count].bct_no + '&mno=' + data.supplies[count].mct_no;
 					
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).text(data.supplies[count].mct_name);
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).attr("href", mctNo);
@@ -146,7 +146,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.first.length; count++) {
 				
-					var sctNo = '#?b=' + data.first[count].bct_no + '&m=' + data.first[count].mct_no + '&s=' + data.first[count].sct_no;
+					var sctNo = 'selectSColCateList.do?bno=' + data.first[count].bct_no + '&mno=' + data.first[count].mct_no + '&sno=' + data.first[count].sct_no;
 					
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).text(data.first[count].sct_name);
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).attr("href", sctNo);
@@ -155,7 +155,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.second.length; count++) {
 					
-					var sctNo = '#?b=' + data.second[count].bct_no + '&m=' + data.second[count].mct_no + '&s=' + data.second[count].sct_no;
+					var sctNo = 'selectSColCateList.do?bno=' + data.second[count].bct_no + '&mno=' + data.second[count].mct_no + '&sno=' + data.second[count].sct_no;
 					
 					$(".treatsUl:nth-child(n) .treatsLi:nth-child(n) .treats" + count).text(data.second[count].sct_name);
 					$(".treatsUl:nth-child(n) .treatsLi:nth-child(n) .treats" + count).attr("href", sctNo);
@@ -163,7 +163,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.supplies.length; count++) {
 					
-					var mctNo = '#?b=' + data.supplies[count].bct_no + '&m=' + data.supplies[count].mct_no;
+					var mctNo = 'selectMColCateList.do?bno=' + data.supplies[count].bct_no + '&mno=' + data.supplies[count].mct_no;
 					
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).text(data.supplies[count].mct_name);
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).attr("href", mctNo);
@@ -185,7 +185,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.shopall.length; count++) {
 				
-					var mctNo = '#?b=' + data.shopall[count].bct_no + '&m=' + data.shopall[count].mct_no;
+					var mctNo = 'selectMColCateList.do?bno=' + data.shopall[count].bct_no + '&mno=' + data.shopall[count].mct_no;
 				
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).text(data.shopall[count].mct_name);
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).attr("href", mctNo);
@@ -205,7 +205,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.first.length; count++) {
 				
-					var sctNo = '#?b=' + data.first[count].bct_no + '&m=' + data.first[count].mct_no + '&s=' + data.first[count].sct_no;
+					var sctNo = 'selectSColCateList.do?bno=' + data.first[count].bct_no + '&mno=' + data.first[count].mct_no + '&sno=' + data.first[count].sct_no;
 					
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).text(data.first[count].sct_name);
 					$(".foodUl:nth-child(n) .foodLi:nth-child(n) .food" + count).attr("href", sctNo);
@@ -214,7 +214,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.second.length; count++) {
 					
-					var sctNo = '#?b=' + data.second[count].bct_no + '&m=' + data.second[count].mct_no + '&s=' + data.second[count].sct_no;
+					var sctNo = 'selectSColCateList.do?bno=' + data.second[count].bct_no + '&mno=' + data.second[count].mct_no + '&sno=' + data.second[count].sct_no;
 					
 					$(".treatsUl:nth-child(n) .treatsLi:nth-child(n) .treats" + count).text(data.second[count].sct_name);
 					$(".treatsUl:nth-child(n) .treatsLi:nth-child(n) .treats" + count).attr("href", sctNo);
@@ -222,7 +222,7 @@ $(".shop_listbtn").mouseenter(function() {
 				
 				for(var count=0; count<data.supplies.length; count++) {
 					
-					var mctNo = '#?b=' + data.supplies[count].bct_no + '&m=' + data.supplies[count].mct_no;
+					var mctNo = 'selectMColCateList.do?bno=' + data.supplies[count].bct_no + '&mno=' + data.supplies[count].mct_no;
 					
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).text(data.supplies[count].mct_name);
 					$(".suppliesUl:nth-child(n) .suppliesLi:nth-child(n) .supplies" + count).attr("href", mctNo);
