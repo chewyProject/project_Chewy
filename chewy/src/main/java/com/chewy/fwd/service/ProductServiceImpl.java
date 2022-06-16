@@ -95,13 +95,13 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
-	public List<CategoryVo> selectMCateList() throws Exception {
-		return productDao.selectMCateList();
+	public List<CategoryVo> selectMCateList(Map<String, Object> map) throws Exception {
+		return productDao.selectMCateList(map);
 	}
 
 	@Override
-	public List<CategoryVo> selectSCateList() throws Exception {
-		return productDao.selectSCateList();
+	public List<CategoryVo> selectSCateList(Map<String, Object> map) throws Exception {
+		return productDao.selectSCateList(map);
 	}
 
 	@Override
@@ -116,8 +116,8 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public List<ProductVo> selectBrandList() throws Exception {
-		return productDao.selectBrandList();
+	public List<ProductVo> selectBrandList(Map<String, Object> map) throws Exception {
+		return productDao.selectBrandList(map);
 	}
 	
 	@Override

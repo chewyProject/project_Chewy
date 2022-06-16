@@ -178,15 +178,15 @@ public class ProductDaoImpl implements ProductDao{
 	
 
 	@Override
-	public List<CategoryVo> selectMCateList() throws Exception {
+	public List<CategoryVo> selectMCateList(Map<String, Object> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
-		return mapper.selectMCateList();
+		return mapper.selectMCateList(map);
 	}
 
 	@Override
-	public List<CategoryVo> selectSCateList() throws Exception {
+	public List<CategoryVo> selectSCateList(Map<String, Object> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
-		return mapper.selectSCateList();
+		return mapper.selectSCateList(map);
 	}
 
 	@Override
@@ -204,9 +204,9 @@ public class ProductDaoImpl implements ProductDao{
 	}
 
 	@Override
-	public List<ProductVo> selectBrandList() throws Exception {
+	public List<ProductVo> selectBrandList(Map<String, Object> map) throws Exception {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
-		return mapper.selectBrandList();
+		return mapper.selectBrandList(map);
 	}
 	
 	@Override

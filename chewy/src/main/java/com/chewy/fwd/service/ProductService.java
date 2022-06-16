@@ -30,12 +30,12 @@ public interface ProductService {
 	 
 	public int getProductListCnt(Search search) throws Exception; // 검색
 	public List<CategoryVo> selectBCateList() throws Exception;
-	public List<CategoryVo> selectMCateList() throws Exception;
-	public List<CategoryVo> selectSCateList() throws Exception;
+	public List<CategoryVo> selectMCateList(Map<String, Object> map) throws Exception;
+	public List<CategoryVo> selectSCateList(Map<String, Object> map) throws Exception;
 	public List<ProductVo> sortBy(Map<String, Object> map) throws Exception;
 	public int sortByCnt(Search search) throws Exception;
 	
-	public List<ProductVo> selectBrandList() throws Exception;
+	public List<ProductVo> selectBrandList(Map<String, Object> map) throws Exception;
 	public List<ProductVo> selectMBrandList(Map<String, Object> map) throws Exception;
 	public List<ProductVo> selectSBrandList(Map<String, Object> map) throws Exception;
 	
