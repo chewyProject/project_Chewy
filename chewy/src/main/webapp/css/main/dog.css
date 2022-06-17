@@ -1,0 +1,569 @@
+.dept__banner {
+  background: #ffcc42 url(//cms-www.chewy.com/contentAsset/raw-data/99f3690f-ca5f-4101-b752-5e003522958e/mediumImage/43246945-9af5-4c92-9051-e80618536394) no-repeat 50%;
+}
+
+.dept__banner {
+    position: relative;
+    margin: 0 0 20px;
+    height: 310px;
+}
+
+.dept__banner__title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}   
+    
+@media (min-width: 970px) and (max-width: 1249px) {
+	.container {
+	    padding: 0 20px;
+	}
+    
+}
+.container_banner {
+    min-width: 750px;
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+    *zoom: 1;
+    transition: width .2s ease-out;
+}
+
+.dept__banner h1 {
+    font-size: 7rem;
+    font-weight: 600;
+    text-align: left;
+    line-height: .85em;
+    text-transform: lowercase;
+    color: #fff;
+}
+
+/* @media (min-width: 970px) { */
+/* 	.dept-slider__inner { */
+/* 	    padding: 15px 25px; */
+/* 	} */
+/* } */
+
+.dept-slider {
+	border: 1px solid #ddd;
+	padding: 2rem;
+	height: 35rem;
+	box-shadow: 0 1px 0 0 #ddd;
+	
+}
+
+.dept-slider header {
+/*     padding: 10px 25px 10px 0; */
+/*     margin: 0 0 25px; */
+}
+
+.dept-slider h2 span {
+    color: #0e70be;
+    font-size: .4em;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 1px solid #ddd;
+    background: url(/assets/img/icons/arrow-right-blue.svg) no-repeat 100%;
+    background-size: 6px 10px;
+}
+
+@media (min-width: 40em) {
+	h2 {
+	    font-size: 3rem;
+	    line-height: 1.2;
+	    margin-top: -0.3em;
+	    margin-bottom: 0.6666666667em;
+	    padding-top: 1.0em;
+	    font-weight: 300;
+	    color: #333;
+	    border: none;
+	}
+}
+	
+.dept-slider h2 a {
+    color: #444;
+    transition: color .2s ease-out;
+}
+
+
+/* .dept-slider__inner { */
+/*     background: #fff; */
+/*     border: 1px solid #ddd; */
+/*     border-radius: 5px; */
+/*     box-shadow: 0 1px 0 0 #ddd; */
+/*     overflow: hidden; */
+/*     margin: 0 0 20px; */
+/*     position: relative; */
+/* } */
+
+
+@media (min-width: 1025px) {
+	.dept-slider li a:hover {
+	    box-shadow: 0 1px 0 #ccc;
+	    border-color: #ccc;
+	}
+}
+
+.dept-slider .bxslider a {
+    display: block;
+}
+
+.bxslider img {
+	width: 80px;
+	height: 80px;
+	margin: 0;
+}
+
+
+.dept-slider a:hover {
+    text-decoration: none;
+}
+.dept-slider li a {
+    display: block;
+    padding: 10px;
+/*     min-height: 240px; */
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.dept-slider img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+/*     -webkit-transform: translateY(-50%); */
+/*     transform: translateY(-50%); */
+}
+
+@media (min-width: 970px) {
+	.dept-slider h2 span {
+	    margin: 0 0 0 15px;
+	    padding: 0 15px;
+	}
+}
+
+.dept-slider h2 a:hover {
+    color: #0e70be;
+}
+
+.dept-slider h2 span {
+    color: #0e70be;
+    font-size: .4em;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 1px solid #ddd;
+    background: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.svg) no-repeat 100%;
+    background-size: 6px 10px;
+}
+
+.dept-slider p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.11;
+    color: inherit;
+    text-transform: uppercase;
+    margin: 1rem;
+}
+
+.bx-wrapper {
+	box-shadow: 0 0 0 #fff;
+	border: none;
+	 
+}
+.controls .bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: -25%;
+    margin-top: -16px;
+    outline: 0;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+.controls .bx-wrapper .bx-next {
+    right: -5rem;
+/*     background: url(https://www.chewy.com/assets/img/icons/arrow-right-blue.png) no-repeat -43px -32px; */
+}
+
+.controls .bx-wrapper .bx-prev {
+   left: 83rem;
+/*     background: url(https://www.chewy.com/assets/img/icons/arrow-left-ddd-grey.png) no-repeat 0 -32px; */
+}
+
+
+/* --------------------------  사이드바 --------------------------------------*/
+
+.dept-sidebar>ul>li>a {
+    padding: 16px 10px;
+    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
+}
+
+@media (min-width: 970px) {
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+}
+.dept-sidebar>ul>li>a {
+    padding: 16px 10px;
+    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
+}
+
+.dept-sidebar>ul>li>a {
+    background-position: 212px;
+}
+@media (min-width: 970px) {
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+}
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
+}
+
+@media (min-width: 970px) {
+	.dept-sidebar {
+	    width: 230px;
+	}
+}
+
+.dept-sidebar {
+    float: left;
+    margin: 0 0 0 25%;
+}
+
+.dept-sidebar>ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.9rem;
+}
+
+
+.dept-sidebar>ul>li {
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.dept-sidebar li {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (min-width: 970px) {
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+}
+
+.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+
+.dept-sidebar>ul>li>a {
+    padding: 16px 10px;
+    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 13px;
+}
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
+}
+
+a, a:hover {
+    color: #0e70be;
+}
+
+
+@media (min-width: 970px) {
+	.dept-sidebar .dept__popover {
+	    width: 600px;
+	}
+}
+.dept-sidebar .dept__popover {
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+@media (min-width: 970px){
+	
+	.dept__popover {
+	    left: 245px;
+	}
+	
+}
+.dept__popover {
+    position: absolute;
+    top: -8px;
+}
+.dept__popover {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 60%);
+    padding: 25px;
+}
+
+
+@media (min-width: 970px) {
+	
+	.dept-sidebar .dept__popover {
+	    width: 600px;
+	}
+	
+}
+.dept-sidebar .dept__popover {
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+@media (min-width: 970px) {
+	.dept__popover {
+	    left: 245px;
+	}
+}
+.dept__popover {
+    position: absolute;
+    top: -8px;
+}
+.dept__popover {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 60%);
+    padding: 25px;
+}
+
+.dept__popover h3 {
+    padding-top: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1em;
+    text-transform: lowercase;
+    color: #0e70be;
+    margin: 0 0 15px;
+}
+
+@media (min-width: 40em) {
+	h3 {
+	    font-size: 2.4rem;
+	    line-height: 1.25;
+	    margin-top: -0.2916666667em;
+	    margin-bottom: 1em;
+	    padding-top: 1.25em;
+	    font-weight: 500;
+	    color: #333;
+	    border: none;
+	}
+}
+
+.dept__popover h3 a {
+    display: inline-block;
+    color: #0e70be;
+}
+
+.dept__popover a {
+    transition: color .2s ease-out;
+}
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
+}
+a, a:hover {
+    color: #0e70be;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+
+.dept__popover__inner:after, .dept__popover__inner:before {
+    content: "";
+    display: table;
+}
+
+
+.dept__popover__content {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dept__popover ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.dept__popover li {
+    margin: 0;
+    padding: 10px 0;
+    line-height: 1.22;
+}
+
+.dept-sidebar li {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.dept__popover a {
+    transition: color .2s ease-out;
+}
+
+.dept-sidebar a {
+    display: block;
+    color: #555;
+    position: relative;
+}
+
+
+
+@media (min-width: 970px) {
+	.dept-sidebar li:after {
+	    left: 237px;
+	}
+}
+
+.dept-sidebar li:after {
+    content: "";
+    display: block;
+    background: #fff;
+    -webkit-transform: translateY(-30%) rotate(45deg);
+    transform: translateY(-30%) rotate(45deg);
+    position: absolute;
+    top: 25px;
+    left: 230px;
+    width: 16px;
+    height: 16px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: -2px 2px 1px rgb(0 0 0 / 20%);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    transition: opacity .15s ease-out;
+}
+
+.dept-sidebar--active .dept__popover:before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 100%;
+}
+
+
+.dept__popover__img {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 -4px;
+}
+
+.dept__popover__img img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+fieldset, img {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dept__popover__inner:after {
+    clear: both;
+}
+.dept__popover__inner:after, .dept__popover__inner:before {
+    content: "";
+    display: table;
+}
+:after, :before {
+    box-sizing: inherit;
+}
+
+
+.dept-sidebar li.dept-sidebar--active, .dept-sidebar li:hover {
+    overflow: inherit;
+}
+
+.dept-sidebar li.dept-sidebar--active .dept__popover, .dept-sidebar li:hover .dept__popover {
+    visibility: visible;
+    opacity: 1;
+    z-index: 98;
+}
+
+.dept-sidebar>ul>li {
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+.dept-sidebar li {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+
+@media (min-width: 769px) {
+	
+	.dept-sidebar>ul>li:hover>a {
+	    color: #0e70be;
+	    background-image: url(https://www.chewy.com/assets/img/icons/arrow-right-grey.svg);
+	}
+}
+
+.dept-sidebar a:hover {
+    text-decoration: none;
+}
+@media (min-width: 970px) {
+	.dept-sidebar>ul>li>a {
+	    background-position: 212px;
+	}
+	
+}
+
+.bx-wrapper .bx-controls-direction a {
+    /* position: absolute; */
+    top: 50%;
+    margin-top: -140px;
+    outline: 0;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+
+

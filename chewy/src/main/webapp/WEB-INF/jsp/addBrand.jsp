@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>eeeee</h1>
+	<form method="post" enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input name="b_name" type="text" placeholder="title">
+		<button type="submit">ADD</button>
+	</form>
 </body>
 </html>

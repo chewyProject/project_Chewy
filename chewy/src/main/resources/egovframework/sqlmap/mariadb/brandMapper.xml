@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chewy.fwd.service.BrandMapper">
+
+	<select id="selectBrand" resultType="brandVo">
+		SELECT * FROM brand WHERE B_NAME = #{b_name}
+	</select>
+	
+	<select id="popular" resultType="brandVo">
+		SELECT * FROM brand WHERE ${b_name} = 1 AND B_LOGO IS NOT NULL ORDER BY popular DESC
+	</select>
+	
+	<select id="alphabet" resultType="brandVo">
+		SELECT * FROM brand WHERE ${bct} = 1 AND B_NAME LIKE CONCAT(#{b_name}, '%') ORDER BY B_NAME ASC
+	</select>
+	
+	<insert id="addBrand">
+		INSERT INTO brand (B_NAME, B_LOGO, Pet_parents) VALUES (#{b_name}, #{b_logo}, '1')
+	</insert>
+	
+	<update id="updateBrand">
+		UPDATE brand SET Pet_parents = 1 WHERE B_NAME = #{b_name}
+	</update>
+	
+	<update id="addLogo">
+		UPDATE brand SET B_LOGO = #{b_logo} WHERE B_NAME = #{b_name}
+	</update>
+	
+	
+	<select id="big" resultType="categoryVo">
+		SELECT * FROM bcategory
+	</select>
+	
+	<select id="medium" resultType="categoryVo">
+		SELECT * FROM mcategory WHERE ${ct} = 1
+	</select>
+	
+	<select id="bctName" parameterType="int" resultType="String">
+		SELECT bct_name FROM bcategory WHERE bct_no = ${ct}
+	</select>
+	
+	<select id="foodSelect" parameterType="categoryVo" resultType="String">
+		SELECT sct_name FROM scategory WHERE ${bct_name} = #{mct_no} AND 
+			sct_no = (SELECT sct_no FROM product WHERE bct_no = #{bct_no} AND mct_no = #{mct_no} GROUP BY sct_no ORDER BY COUNT(*) DESC LIMIT #{size},1)
+	</select>
+	
+	<select id="foodNo" resultType="categoryVo">
+		SELECT sct_no FROM product WHERE bct_no = #{bct_no} AND mct_no = #{mct_no} GROUP BY sct_no ORDER BY COUNT(*) DESC LIMIT 5
+	</select>
+	
+	<select id="treatsSelect" parameterType="categoryVo" resultType="String">
+		SELECT sct_name FROM scategory WHERE ${bct_name} = 2 AND 
+			sct_no = (SELECT sct_no FROM product WHERE bct_no = #{bct_no} AND mct_no = #{mct_no} GROUP BY sct_no ORDER BY COUNT(*) DESC LIMIT #{size},1)
+	</select>
+	
+	<select id="supSelect" resultType="String">
+		SELECT mct_name FROM mcategory WHERE mct_no = (SELECT mct_no FROM sold WHERE bct_no = #{bct_no} AND sct_no = 0 ORDER BY sold_count DESC LIMIT #{size},1);
+	</select>
+	
+	<select id="supNo" resultType="categoryVo">
+		SELECT mct_no FROM sold WHERE bct_no = #{bct_no} ORDER BY sold_count DESC LIMIT 11
+	</select>
+	
+	<select id="bctAd" resultType="String">
+		SELECT BCT_AD FROM bcategory WHERE BCT_NO = ${bctNo}
+	</select>
+	
+	<select id="shopby" resultType="categoryVo">
+		SELECT MCT_NO FROM product WHERE BCT_NO = #{bct_no} GROUP BY MCT_NO ORDER BY COUNT(*) DESC
+	</select>
+	
+	<select id="shopbyall" resultType="String">
+		SELECT MCT_NAME FROM mcategory WHERE MCT_NO = #{mct_no}
+	</select>
+
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chewy.fwd.service.CartMapper">
+	
+	<select id="memberCheck" resultType="cartVo">
+		SELECT * FROM cart WHERE M_NO = #{m_no} 
+	</select>
+	
+	<select id="selectCartList" resultType="productVo">
+		SELECT * FROM product WHERE P_NO = #{p_no}
+	</select>
+	
+	<delete id="itemDelete">
+		DELETE FROM cart WHERE P_NO = #{p_no}
+	</delete>
+</mapper>

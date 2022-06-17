@@ -1,0 +1,30 @@
+div {
+ 	display: block;
+ }
+
+.imgwrap_slider {
+	max-width: 90px;
+	height: 391px;
+	position: relative;
+	padding: 0;
+} 
+ 
+.img {
+	border: 1px solid #ddd;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0 4px 4px 0;
+	border-radius: 4px;
+	width: 100%;
+	position: relative;
+	height: 60px;
+}
+
+img {
+	height: 100%;
+	display: block;
+	object-fit: contain;
+	margin: auto;
+}
+
+ 

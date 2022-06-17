@@ -5,4 +5,28 @@
 	<select id="test" resultType="testVo">
 		SELECT * FROM test
 	</select>
+	
+	<select id="selectBrand" resultType="brandVo">
+		SELECT * FROM brand WHERE B_NAME = #{b_name}
+	</select>
+	
+	<select id="polularDog" resultType="brandvo">
+		SELECT * FROM brand WHERE dog = 1 AND B_LOGO IS NOT NULL
+	</select>
+	
+	<select id="polularCat" resultType="brandvo">
+		SELECT * FROM brand WHERE cat = 1 AND B_LOGO IS NOT NULL
+	</select>
+	
+	<insert id="addBrand">
+		INSERT INTO brand (B_NAME, B_LOGO, dog) VALUES (#{b_name}, #{b_logo}, '1')
+	</insert>
+	
+	<update id="updateBrand">
+		UPDATE brand SET dog = 1 WHERE B_NAME = #{b_name}
+	</update>
+	
+	<update id="addLogo">
+		UPDATE brand SET B_LOGO = #{b_logo} WHERE B_NAME = #{b_name}
+	</update>
 </mapper>
